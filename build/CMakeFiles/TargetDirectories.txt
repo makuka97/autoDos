@@ -1,0 +1,4 @@
+C:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32/build/CMakeFiles/AutoDOS32.dir
+C:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32/build/CMakeFiles/ALL_BUILD.dir
+C:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32/build/CMakeFiles/ZERO_CHECK.dir
+C:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32/build/_deps/nlohmann_json-build/CMakeFiles/ALL_BUILD.dir

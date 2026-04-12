@@ -1,0 +1,10 @@
+^C:\AUTODOS\AUTODOS32\AUTODOS32\AUTODOS32\BUILD\CMAKEFILES\48CD9D3192D9BCF64037379EDCCA4151\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32 -BC:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32/build/AutoDOS32.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

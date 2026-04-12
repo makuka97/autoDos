@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\build\_deps\nlohmann_json-subbuild\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\build\_deps\nlohmann_json-subbuild\Debug\nlohmann_json-populate</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\build\_deps\nlohmann_json-subbuild\Debug\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

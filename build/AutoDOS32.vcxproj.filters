@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\src\autodos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\build\_deps\nlohmann_json-src\nlohmann_json.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\src\miniz.c">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\AutoDos\AutoDos32\AutoDOS32\AutoDOS32\assets\icon.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{66557549-4F53-37F1-B9BD-104FEE4C4D75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

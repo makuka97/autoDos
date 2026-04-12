@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/AutoDos/AutoDos32/AutoDOS32/AutoDOS32/build/_deps/nlohmann_json-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
