@@ -1,0 +1,5 @@
+﻿*.glsl linguist-vendored
+*.dll linguist-vendored
+dosbox/ linguist-vendored
+tools/ linguist-vendored
+master_games.json linguist-vendored
