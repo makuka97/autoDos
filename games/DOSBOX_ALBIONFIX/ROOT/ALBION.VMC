@@ -1,5 +1,0 @@
-! VMM configuration for Albion
-VIRTUALSIZE = 16000
-MINMEM = 4096
-MAXMEM = 4096
-DELETESWAP

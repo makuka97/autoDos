@@ -1,0 +1,7 @@
+﻿build/
+dist/
+games/
+library.json
+__pycache__/
+*.spec
+*.pyc

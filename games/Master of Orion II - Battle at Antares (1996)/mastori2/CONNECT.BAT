@@ -1,3 +1,0 @@
-IPXNET CONNECT %1
-orion2.exe
-EXIT

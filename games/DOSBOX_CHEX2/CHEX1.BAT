@@ -1,2 +1,0 @@
-chex.exe
-end.exe

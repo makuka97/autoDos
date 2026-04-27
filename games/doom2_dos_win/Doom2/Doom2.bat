@@ -1,1 +1,0 @@
-.\DOSBOX\DOSBox.exe  -conf ".\DOSBOX\dosbox.conf" -conf ".\DOSBOX\run.conf" -no
