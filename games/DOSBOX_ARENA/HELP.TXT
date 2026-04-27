@@ -1,0 +1,152 @@
+#
+Configure Game Option.
+
+This option lets you select the type of advanced sound and/or 
+music card[s] you wish to use.  It will allow you to make 
+changes if your sound and/or music card is not set at the 
+factory default settings. If you do not have a sound or music 
+card, this option does not apply to you.
+#
+Make Boot Floppy.
+
+This option will make a start up floppy disk that will bring 
+you directly into the program.  It will also correct most
+memory problems.  You will need a diskette that fits in your 
+A: drive.  YOU CAN ONLY DO THIS IN YOUR A: DRIVE WITH A HIGH
+DENSITY DISKETTE.  Select MAKE BOOT FLOPPY and follow the 
+on-screen instructions.  To use this Boot Floppy, place the 
+disk in your A: drive and re-boot your computer.  If you do 
+not need a BOOT FLOPPY, proceed to INSTALL GAME.
+#
+Install Game.
+
+INSTALL GAME will install the program to the specified drive 
+and directory.
+#                 
+Exit.
+
+Selecting EXIT will terminate the install routine and return 
+you to the DOS prompt.
+#
+Sound Card.
+
+This will let you choose from a list of different sound cards
+that are supported by this program.  Move the highlighted bar 
+over the desired type of sound card and press <ENTER>.  After 
+you specify the type of sound card, move the highlighted bar 
+to CHANGE SOUND DEFAULT and press <ENTER>.  See the CHANGE 
+SOUND DEFAULT help-screen for assistance in setting the sound 
+card interrupts.  If you do not have an advanced sound card, 
+select DONE and proceed to INSTALL GAME.
+#
+Music Card
+
+This will allow those who have more than one sound card to 
+designate a specific sound card for music.  Move the high-
+lighted bar over the desired sound card and press <ENTER>.  
+Then move the highlighted bar to CHANGE SOUND DEFAULT and 
+press <ENTER>.  Follow the CHANGE SOUND DEFAULT help-screen 
+for assistance in setting the sound card interrupts. If you 
+do not have a music card, skip this option, select DONE and 
+proceed to INSTALL GAME.
+#
+Setup For IO, DMA and IRQ
+
+IO, DMA and IRQ settings refer to numerical parameters that 
+permit your computer to properly recognize and use your sound 
+card. If the sound card settings are IO ADDRESS 220, IRQ 7, 
+DMA 1, then skip this option and proceed with INSTALL GAME. 
+If the sound card does not have these settings you will have 
+to select this option and set-up the sound card. If you do not 
+know what these settings are, use the test program that came 
+with the sound card. If you still can not determine what the 
+settings are, you will have to contact the sound card company 
+for this information.
+#
+Setup For IO, DMA and IRQ
+
+IO, DMA and IRQ settings refer to numerical parameters that 
+permit your computer to properly recognize and use your sound 
+card. If the sound card settings are IO ADDRESS 220, IRQ 7, 
+DMA 1, then skip this option and proceed with INSTALL GAME. 
+If the sound card does not have these settings you will have 
+to select this option and set-up the sound card. If you do not 
+know what these settings are, use the test program that came 
+with the sound card. If you still can not determine what the 
+settings are, you will have to contact the sound card company 
+for this information.
+#
+Go Back to the Main Menu
+
+After you complete your selections and changes to the sound
+portion of the install routine, select DONE and return to
+the Main Menu.
+#
+Input Path
+
+Path refers to the drive and directory in which program files
+reside.  This program offers a default path that we recommend.
+You may alter the path by specifying the drive and existing
+directory in which you want the program to reside.  Type the
+drive letter and name of directory in the ENTER PATH field and
+press <ENTER>.
+
+#
+Change IO Address
+
+By selecting Change IO Address, you are allowed to change
+the default IO Address setting from 220.  Type the new 
+IO Address and press <ENTER>.
+#
+Change IRQ
+
+By selecting Change IRQ, you are allowed to change the
+default setting IRQ from 7 to whatever other setting your 
+card requires.  Type the new IRQ setting and press <ENTER>.
+#
+Change DMA
+
+By selecting Change DMA, you are allowed to change the DMA 
+setting from default 1.  Type the DMA Channel your sound card
+is using and press <ENTER>.
+#
+Return to the Configure Menu.
+
+This will bring you back to the Configure Menu after your 
+selections and changes are made.
+#
+How to enter the IO Address
+
+Type the three digit number to indicate the IO Address for 
+the sound card you are using.  Examples would be 220, 230, 240.
+#
+How to enter the IRQ
+
+Type the one digit number to indicate the IRQ setting for the 
+for the sound card you are using.  Examples would be 7, 5, 2. 
+[This program will not recognize two digit IRQ settings.]
+#
+How to enter the DMA
+
+Type the one digit number to indicate the DMA Channel for the
+sound card you are using.  Examples would be 1, 2, 3.
+#
+ADVISORY: You do not have enough memory to run game.
+
+Because of other programs you are running, or the way your 
+computer is configured, there is not enough CONVENTIONAL 
+MEMORY to run this game.  Use the MAKE BOOT FLOPPY option 
+to correct this problem.
+#
+ADVISORY: No EMS driver found. Create some...
+
+This game requires you to have an EMS driver.  This driver 
+will turn XMS (Extended Memory) into EMS (Expanded Memory).
+Use the CREATE A BOOT DISK option to correct this problem.
+#
+ADVISORY: Not enough EMS found.
+
+Your computer has fallen short of the required EMS memory.  
+You may try the CREATE A BOOT DISK option to correct this.
+#
+

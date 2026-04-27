@@ -1,0 +1,627 @@
+;                                         
+
+;fat.cat                              
+;Global Timbre Library assignments for sample AIL V2.0 applications
+;                                         
+;Usage: C:\>glib sample.cat
+;                                         
+
+
+outfile("fat.mt")          ;create Roland Global Timbre Library
+
+timbre(55,0) = MTB_file("gsaila.mtb")  ;Sound Canvas emulation
+timbre(55,64) = MTB_file("gsailb.mtb")
+timbre(60,0) = MTB_file("gsailr.mtb")  ;Sound Canvas Orch. Percussn
+timbre(100,0) = MTB_file("gsails.mtb")    ;Sound effects
+
+
+
+outfile("fat.ad")             ;create Adlib Orchestral Percussion GTL
+;outfile("fato.ad")             ;create Adlib Standard percussion GTL
+
+BNK_file("fatv10.bnk")          ;name of Adlib Insmaker Bankfile
+
+
+;
+;Bank 55: Adlib Melodic Instruments to emulate Sound Canvas timbres
+;
+
+timbre(55,0) = BNK_inst("am000",0)            ;Piano 1
+timbre(55,1) = BNK_inst("am001",0)            ;Piano 2
+timbre(55,2) = BNK_inst("am002",0)            ;Piano 3
+timbre(55,3) = BNK_inst("am003",0)            ;Honky Tonk
+timbre(55,4) = BNK_inst("am004",0)            ;E. Piano 1
+timbre(55,5) = BNK_inst("am005",0)            ;E. Piano 2
+timbre(55,6) = BNK_inst("am006",0)           ;Harpsichord
+timbre(55,7) = BNK_inst("am007",0)             ;Clav.
+timbre(55,8) = BNK_inst("am008",0)           ;Celesta
+timbre(55,9) = BNK_inst("am009",0)            ;Glockenspiel
+timbre(55,10) = BNK_inst("am010",0)           ;Music Box
+timbre(55,11) = BNK_inst("am011",0)           ;Vibraphone
+timbre(55,12) = BNK_inst("am012",0)           ;Marimba
+timbre(55,13) = BNK_inst("am013",0)           ;Xylophone
+timbre(55,14) = BNK_inst("am014",0)           ;Tubular Bells
+timbre(55,15) = BNK_inst("am015",0)           ;Santur
+timbre(55,16) = BNK_inst("am016",0)           ;Organ 1
+timbre(55,17) = BNK_inst("am017",0)           ;Organ 2
+timbre(55,18) = BNK_inst("am018",0)           ;Organ 3
+timbre(55,19) = BNK_inst("am019",0)            ;Church Org 1
+timbre(55,20) = BNK_inst("am020",0)            ;Reed Org
+timbre(55,21) = BNK_inst("am021",0)           ;Accordian Fr
+timbre(55,22) = BNK_inst("am022",0)            ;Harmonica
+timbre(55,23) = BNK_inst("am023",0)           ;Bandneon
+timbre(55,24) = BNK_inst("am024",0)             ;Nylon-str Gtr
+timbre(55,25) = BNK_inst("am025",0)             ;Steel-str Gtr
+timbre(55,26) = BNK_inst("am026",0)            ;Jazz Gtr
+timbre(55,27) = BNK_inst("am027",0)            ;Clean Gtr
+timbre(55,28) = BNK_inst("am028",0)             ;Muted Gtr
+timbre(55,29) = BNK_inst("am029",0)            ;Overdrive Gtr
+timbre(55,30) = BNK_inst("am030",0)            ;Distortion Gtr
+timbre(55,31) = BNK_inst("am031",0)             ;Gtr Harmonics
+timbre(55,32) = BNK_inst("am032",0)           ;Acoustic Bass
+timbre(55,33) = BNK_inst("am033",0)           ;Fingered Bass
+timbre(55,34) = BNK_inst("am034",0)           ;Picked Bass
+timbre(55,35) = BNK_inst("am035",0)           ;Fretless Bass
+timbre(55,36) = BNK_inst("am036",0)           ;Slap Bass 1
+timbre(55,37) = BNK_inst("am037",0)           ;Slap Bass 2
+timbre(55,38) = BNK_inst("am038",0)            ;Synth Bass 1
+timbre(55,39) = BNK_inst("am039",0)            ;Synth Bass 2
+timbre(55,40) = BNK_inst("am040",0)            ;Violin
+timbre(55,41) = BNK_inst("am041",0)            ;Viola
+timbre(55,42) = BNK_inst("am042",0)           ;Cello
+timbre(55,43) = BNK_inst("am043",0)          ;Contrabass
+timbre(55,44) = BNK_inst("am044",0)          ;Tremolo Str
+timbre(55,45) = BNK_inst("am045",0)            ;Pizzacato Str
+timbre(55,46) = BNK_inst("am046",0)            ;Harp
+timbre(55,47) = BNK_inst("am047",0)            ;Timpani
+timbre(55,48) = BNK_inst("am048",0)          ;Strings
+timbre(55,49) = BNK_inst("am049",0)          ;Slow Strings
+timbre(55,50) = BNK_inst("am050",0)          ;Syn Strings 1
+timbre(55,51) = BNK_inst("am051",0)          ;Syn Strings 2
+timbre(55,52) = BNK_inst("am052",0)           ;Choir Aahs
+timbre(55,53) = BNK_inst("am053",0)           ;Voice Oohs
+timbre(55,54) = BNK_inst("am054",0)           ;Synvox
+timbre(55,55) = BNK_inst("am055",0)          ;Orchestra Hit
+timbre(55,56) = BNK_inst("am056",0)           ;Trumpet
+timbre(55,57) = BNK_inst("am057",0)            ;Trombone
+timbre(55,58) = BNK_inst("am058",0)            ;Tuba
+timbre(55,59) = BNK_inst("am059",0)          ;Muted Trumpet
+timbre(55,60) = BNK_inst("am060",0)           ;French Horn
+timbre(55,61) = BNK_inst("am061",0)           ;Brass 1
+timbre(55,62) = BNK_inst("am062",0)          ;Synth Brass 1
+timbre(55,63) = BNK_inst("am063",0)          ;Synth Brass 2
+timbre(55,64) = BNK_inst("am064",0)             ;Soprano Sax
+timbre(55,65) = BNK_inst("am065",0)             ;Alto Sax
+timbre(55,66) = BNK_inst("am066",0)             ;Tenor Sax
+timbre(55,67) = BNK_inst("am067",0)             ;Baritone Sax
+timbre(55,68) = BNK_inst("am068",0)             ;Oboe
+timbre(55,69) = BNK_inst("am069",0)          ;English Horn
+timbre(55,70) = BNK_inst("am070",0)            ;Bassoon
+timbre(55,71) = BNK_inst("am071",0)           ;Clarinet
+timbre(55,72) = BNK_inst("am072",0)           ;Piccolo
+timbre(55,73) = BNK_inst("am073",0)           ;Flute
+timbre(55,74) = BNK_inst("am074",0)           ;Recorder
+timbre(55,75) = BNK_inst("am075",0)           ;Pan Flute
+timbre(55,76) = BNK_inst("am076",0)           ;Bottle Blow
+timbre(55,77) = BNK_inst("am077",0)           ;Shakuhachi
+timbre(55,78) = BNK_inst("am078",0)           ;Whistle
+timbre(55,79) = BNK_inst("am079",0)           ;Ocarina
+timbre(55,80) = BNK_inst("am080",0)            ;Square Wave
+timbre(55,81) = BNK_inst("am081",0)            ;Saw Wave
+timbre(55,82) = BNK_inst("am082",0)            ;Syn Calliope
+timbre(55,83) = BNK_inst("am083",0)            ;Chiffer Lead
+timbre(55,84) = BNK_inst("am084",0)            ;Charang
+timbre(55,85) = BNK_inst("am085",0)            ;Solo Vox
+timbre(55,86) = BNK_inst("am086",0)            ;5th Saw Wave
+timbre(55,87) = BNK_inst("am087",0)            ;Bass & Lead
+timbre(55,88) = BNK_inst("am088",0)           ;Fantasia
+timbre(55,89) = BNK_inst("am089",0)          ;Warm Pad
+timbre(55,90) = BNK_inst("am090",0)           ;Polysynth
+timbre(55,91) = BNK_inst("am091",0)           ;Space Voice
+timbre(55,92) = BNK_inst("am092",0)          ;Bowed Glass
+timbre(55,93) = BNK_inst("am093",0)           ;Metal Pad
+timbre(55,94) = BNK_inst("am094",0)           ;Halo Pad
+timbre(55,95) = BNK_inst("am095",0)           ;Sweep Pad
+timbre(55,96) = BNK_inst("am096",0)           ;Ice Rain
+timbre(55,97) = BNK_inst("am097",0)          ;Soundtrack
+timbre(55,98) = BNK_inst("am098",0)           ;Crystal
+timbre(55,99) = BNK_inst("am099",0)           ;Atmosphere
+timbre(55,100) = BNK_inst("am100",0)          ;Brightness
+timbre(55,101) = BNK_inst("am101",0)         ;Goblin
+timbre(55,102) = BNK_inst("am102",0)         ;Echo Drops
+timbre(55,103) = BNK_inst("am103",0)          ;Star Theme
+timbre(55,104) = BNK_inst("am104",0)          ;Sitar
+timbre(55,105) = BNK_inst("am105",0)            ;Banjo
+timbre(55,106) = BNK_inst("am106",0)           ;Shamisen
+timbre(55,107) = BNK_inst("am107",0)           ;Koto
+timbre(55,108) = BNK_inst("am108",0)          ;Kalimba
+timbre(55,109) = BNK_inst("am109",0)            ;Bag Pipe
+timbre(55,110) = BNK_inst("am110",0)           ;Fiddle
+timbre(55,111) = BNK_inst("am111",0)         ;Shannai
+timbre(55,112) = BNK_inst("am112",0)          ;Tinkle Bell
+timbre(55,113) = BNK_inst("am113",0)          ;Agogo
+timbre(55,114) = BNK_inst("am114",0)          ;Steel Drums
+timbre(55,115) = BNK_inst("am115",0)          ;Woodblock
+timbre(55,116) = BNK_inst("am116",0)           ;Taiko
+timbre(55,117) = BNK_inst("am117",0)           ;Melo Tom 1
+timbre(55,118) = BNK_inst("am118",0)           ;Synth Drum
+timbre(55,119) = BNK_inst("am119",0)          ;Reverse Cym
+timbre(55,120) = BNK_inst("am120",0)           ;Gtr Fretnoise
+timbre(55,121) = BNK_inst("am121",0)           ;Breath Noise
+timbre(55,122) = BNK_inst("am122",0)          ;Seashore
+timbre(55,123) = BNK_inst("am123",0)           ;Bird
+timbre(55,124) = BNK_inst("am124",0)           ;Telephone 1
+timbre(55,125) = BNK_inst("am125",0)          ;Helicopter
+timbre(55,126) = BNK_inst("am126",0)          ;Applause
+timbre(55,127) = BNK_inst("am127",0)           ;Gun Shot
+
+;
+;Bank 127: Adlib Melodic Inst to emulate GS Standard Drum Set
+;
+
+;timbre(127,27) = BNK_inst                         ;High Q
+;timbre(127,28) = BNK_inst                         ;Slap
+;timbre(127,29) = BNK_inst                         ;Scratch Push
+;timbre(127,30) = BNK_inst                         ;Scratch Pull
+;timbre(127,31) = BNK_inst                         ;Sticks
+;timbre(127,32) = BNK_inst                         ;Square Click
+;timbre(127,33) = BNK_inst                         ;Metronome Click
+;timbre(127,34) = BNK_inst                         ;Metronome Bell
+timbre(127,35) = BNK_inst("aps035",35)            ;Kick Drum 2
+timbre(127,36) = BNK_inst("aps035",35)            ;Kick Drum 1
+timbre(127,37) = BNK_inst("aps037",52)          ;Side Stick
+timbre(127,38) = BNK_inst("aps038",48)            ;Snare Drum 1
+timbre(127,39) = BNK_inst("aps039",58)          ;Hand Clap
+timbre(127,40) = BNK_inst("aps040",60)            ;Snare Drum 2
+timbre(127,41) = BNK_inst("aps041",47)             ;Low Tom 2
+timbre(127,42) = BNK_inst("aps042",43)          ;Closed Hi-hat
+timbre(127,43) = BNK_inst("aps041",49)             ;Low Tom 1
+timbre(127,44) = BNK_inst("aps044",43)          ;Pedal Hi-hat
+timbre(127,45) = BNK_inst("aps041",51)             ;Mid Tom 2
+timbre(127,46) = BNK_inst("aps046",43)            ;Open Hi-hat
+timbre(127,47) = BNK_inst("aps041",54)             ;Mid Tom 1
+timbre(127,48) = BNK_inst("aps041",57)             ;High Tom 2
+timbre(127,49) = BNK_inst("aps049",72)           ;Crash Cymbal 1
+timbre(127,50) = BNK_inst("aps041",60)             ;High Tom 1
+timbre(127,51) = BNK_inst("aps051",76)            ;Ride Cymbal
+timbre(127,52) = BNK_inst("aps052",84)           ;Chinese Cymbal
+timbre(127,53) = BNK_inst("aps053",36)            ;Ride Bell
+timbre(127,54) = BNK_inst("aps054",65)             ;Tambourine
+timbre(127,55) = BNK_inst("aps055",84)           ;Splash Cymbal
+timbre(127,56) = BNK_inst("aps056",83)             ;Cowbell
+timbre(127,57) = BNK_inst("aps057",84)           ;Crash Cymbal 2
+timbre(127,58) = BNK_inst("aps058",24)          ;Vibra-slap
+timbre(127,59) = BNK_inst("aps051",77)            ;Ride Cymbal 2
+timbre(127,60) = BNK_inst("aps060",60)           ;High Bongo
+timbre(127,61) = BNK_inst("aps061",65)           ;Low Bongo
+timbre(127,62) = BNK_inst("aps062",59)           ;Mute High Conga
+timbre(127,63) = BNK_inst("aps063",51)           ;Open High Conga
+timbre(127,64) = BNK_inst("aps064",45)           ;Low Conga
+timbre(127,65) = BNK_inst("aps065",71)           ;High Timbale
+timbre(127,66) = BNK_inst("aps066",60)           ;Low Timbale
+timbre(127,67) = BNK_inst("aps067",58)           ;High Agogo
+timbre(127,68) = BNK_inst("aps068",53)           ;Low Agogo
+timbre(127,69) = BNK_inst("aps069",64)            ;Cabasa
+timbre(127,70) = BNK_inst("aps070",71)           ;Maracas
+timbre(127,71) = BNK_inst("aps071",61)           ;Short Hi Whistle
+timbre(127,72) = BNK_inst("aps072",61)           ;Long Low Whistle
+timbre(127,73) = BNK_inst("aps073",44)            ;Short Guiro
+timbre(127,74) = BNK_inst("aps074",40)            ;Long Guiro
+timbre(127,75) = BNK_inst("aps075",69)           ;Claves
+timbre(127,76) = BNK_inst("aps076",68)           ;High Wood Block
+timbre(127,77) = BNK_inst("aps077",63)           ;Low Wood Block
+timbre(127,78) = BNK_inst("aps078",74)           ;Mute Cuica
+timbre(127,79) = BNK_inst("aps079",60)           ;Open Cuica
+timbre(127,80) = BNK_inst("aps080",80)             ;Mute Triangle
+timbre(127,81) = BNK_inst("aps081",64)             ;Open Triangle
+timbre(127,82) = BNK_inst("aps082",72)            ;Shaker
+timbre(127,83) = BNK_inst("aps083",73)             ;Jingle Bell
+timbre(127,84) = BNK_inst("aps084",70)             ;Bell Tree
+timbre(127,85) = BNK_inst("aps085",68)             ;Castanets
+timbre(127,86) = BNK_inst("aps086",48)           ;Mute Surdu
+timbre(127,87) = BNK_inst("aps087",53)            ;Open Surdu
+                             
+;
+;Bank 127: Adlib Melodic Inst to emulate GS Orchestral Drum Set
+;
+
+;timbre(127,27) = BNK_inst                         ;High Q
+;timbre(127,28) = BNK_inst                         ;Slap
+;timbre(127,29) = BNK_inst                         ;Scratch Push
+;timbre(127,30) = BNK_inst                         ;Scratch Pull
+;timbre(127,31) = BNK_inst                         ;Sticks
+;timbre(127,32) = BNK_inst                         ;Square Click
+;timbre(127,33) = BNK_inst                         ;Metronome Click
+;timbre(127,34) = BNK_inst                         ;Metronome Bell
+;timbre(127,35) = BNK_inst("apo035",35)            ;Concert BD 2
+;timbre(127,36) = BNK_inst("apo036",35)            ;Concert BD 1
+;timbre(127,37) = BNK_inst("apo037",47)          ;Side Stick
+;timbre(127,38) = BNK_inst("apo038",35)            ;Concert Snr Dr
+;timbre(127,39) = BNK_inst("apo039",60)          ;Castanets
+;timbre(127,40) = BNK_inst("apo040",41)            ;Concert Snr Dr
+;timbre(127,41) = BNK_inst("apo041",41)             ;Timpani F
+;timbre(127,42) = BNK_inst("apo042",42)          ;Timpani F#
+;timbre(127,43) = BNK_inst("apo043",43)             ;Timpani G
+;timbre(127,44) = BNK_inst("apo044",44)          ;Timpani G#
+;timbre(127,45) = BNK_inst("apo045",45)             ;Timpani A
+;timbre(127,46) = BNK_inst("apo046",46)            ;Timpani A#
+;timbre(127,47) = BNK_inst("apo047",47)             ;Timpani B
+;timbre(127,48) = BNK_inst("apo048",48)             ;Timpani c
+;timbre(127,49) = BNK_inst("apo049",49)           ;Timpani c#
+;timbre(127,50) = BNK_inst("apo050",50)             ;Timpani d
+;timbre(127,51) = BNK_inst("apo051",51)            ;Timpani d#
+;timbre(127,52) = BNK_inst("apo052",52)           ;Timpani e
+;timbre(127,53) = BNK_inst("apo053",53)            ;Timpani f
+;timbre(127,54) = BNK_inst("apo054",64)             ;Tambourine
+;timbre(127,55) = BNK_inst("apo055",72)           ;Splash Cymbal
+;timbre(127,56) = BNK_inst("apo056",83)             ;Cowbell
+;timbre(127,57) = BNK_inst("apo057",84)           ;Concert Cymbal 2
+;timbre(127,58) = BNK_inst("apo058",35)          ;Vibra-slap
+;timbre(127,59) = BNK_inst("apo059",57)            ;Concert Cymbal 1
+;timbre(127,60) = BNK_inst("apo060",60)           ;High Bongo
+;timbre(127,61) = BNK_inst("apo061",65)           ;Low Bongo
+;timbre(127,62) = BNK_inst("apo062",59)           ;Mute High Conga
+;timbre(127,63) = BNK_inst("apo063",50)           ;Open High Conga
+;timbre(127,64) = BNK_inst("apo064",44)           ;Low Conga
+;timbre(127,65) = BNK_inst("apo065",71)           ;High Timbale
+;timbre(127,66) = BNK_inst("apo066",60)           ;Low Timbale
+;timbre(127,67) = BNK_inst("apo067",58)           ;High Agogo
+;timbre(127,68) = BNK_inst("apo068",53)           ;Low Agogo
+;timbre(127,69) = BNK_inst("apo069",64)            ;Cabasa
+;timbre(127,70) = BNK_inst("apo070",71)           ;Maracas
+;timbre(127,71) = BNK_inst("apo071",61)           ;Short Hi Whistle
+;timbre(127,72) = BNK_inst("apo072",61)           ;Long Low Whistle
+;timbre(127,73) = BNK_inst("apo073",44)            ;Short Guiro
+;timbre(127,74) = BNK_inst("apo074",40)            ;Long Guiro
+;timbre(127,75) = BNK_inst("apo075",75)           ;Claves
+;timbre(127,76) = BNK_inst("apo076",70)           ;High Wood Block
+;timbre(127,77) = BNK_inst("apo077",65)           ;Low Wood Block
+;timbre(127,78) = BNK_inst("apo078",76)           ;Mute Cuica
+;timbre(127,79) = BNK_inst("apo079",60)           ;Open Cuica
+;timbre(127,80) = BNK_inst("apo080",85)             ;Mute Triangle
+;timbre(127,81) = BNK_inst("apo081",64)             ;Open Triangle
+;timbre(127,82) = BNK_inst("apo082",64)            ;Shaker
+;timbre(127,83) = BNK_inst("apo083",55)             ;Jingle Bell
+;timbre(127,84) = BNK_inst("apo084",70)             ;Bell Tree
+;timbre(127,85) = BNK_inst("apo085",64)             ;Castanets
+;timbre(127,86) = BNK_inst("apo086",59)           ;Mute Surdu
+;timbre(127,87) = BNK_inst("apo087",51)            ;Open Surdu
+;timbre(127,88) = BNK_inst("apo088",60)           ;Applause
+                            
+
+outfile("fat.opl")            ;create OPL3 Standard Percussion GTL
+;outfile("fato.opl")            ;create OPL3 Orchestral Percussion GTL
+
+BNK_file("fat-OPL3.bnk")       ;name of OPL3 Insmaker Gold bankfile
+
+;        
+;Bank 55: OPL3 melodic inst to emulate Sound Canvas Timbres
+;
+
+timbre(55,0) = BNK_inst("gm000",0)            ;Piano 1
+timbre(55,1) = BNK_inst("gm001",0)            ;Piano 2
+timbre(55,2) = BNK_inst("gm002",0)            ;Piano 3
+timbre(55,3) = BNK_inst("gm003",0)            ;Honky Tonk
+timbre(55,4) = BNK_inst("gm004",0)            ;E. Piano 1
+timbre(55,5) = BNK_inst("gm005",0)            ;E. Piano 2
+timbre(55,6) = BNK_inst("gm006",0)           ;Harpsichord
+timbre(55,7) = BNK_inst("gm007",0)             ;Clav.
+timbre(55,8) = BNK_inst("gm008",0)           ;Celesta
+timbre(55,9) = BNK_inst("gm009",0)            ;Glockenspiel
+timbre(55,10) = BNK_inst("gm010",0)           ;Music Box
+timbre(55,11) = BNK_inst("gm011",0)           ;Vibraphone
+timbre(55,12) = BNK_inst("gm012",0)           ;Marimba
+timbre(55,13) = BNK_inst("gm013",0)           ;Xylophone
+timbre(55,14) = BNK_inst("gm014",0)           ;Tubular Bells
+timbre(55,15) = BNK_inst("gm015",0)           ;Santur
+timbre(55,16) = BNK_inst("gm016",0)           ;Organ 1
+timbre(55,17) = BNK_inst("gm017",0)           ;Organ 2
+timbre(55,18) = BNK_inst("gm018",0)           ;Organ 3
+timbre(55,19) = BNK_inst("gm019",0)            ;Church Org 1
+timbre(55,20) = BNK_inst("gm020",0)            ;Reed Org
+timbre(55,21) = BNK_inst("gm021",0)           ;Accordian Fr
+timbre(55,22) = BNK_inst("gm022",0)            ;Harmonica
+timbre(55,23) = BNK_inst("gm023",0)           ;Bandneon
+timbre(55,24) = BNK_inst("gm024",0)             ;Nylon-str Gtr
+timbre(55,25) = BNK_inst("gm025",0)             ;Steel-str Gtr
+timbre(55,26) = BNK_inst("gm026",0)            ;Jazz Gtr
+timbre(55,27) = BNK_inst("gm027",0)            ;Clean Gtr
+timbre(55,28) = BNK_inst("gm028",0)             ;Muted Gtr
+timbre(55,29) = BNK_inst("gm029",0)            ;Overdrive Gtr
+timbre(55,30) = BNK_inst("gm030",0)            ;Distortion Gtr
+timbre(55,31) = BNK_inst("gm031",0)             ;Gtr Harmonics
+timbre(55,32) = BNK_inst("gm032",0)           ;Acoustic Bass
+timbre(55,33) = BNK_inst("gm033",0)           ;Fingered Bass
+timbre(55,34) = BNK_inst("gm034",0)           ;Picked Bass
+timbre(55,35) = BNK_inst("gm035",0)           ;Fretless Bass
+timbre(55,36) = BNK_inst("gm036",0)           ;Slap Bass 1
+timbre(55,37) = BNK_inst("gm037",0)           ;Slap Bass 2
+timbre(55,38) = BNK_inst("gm038",0)            ;Synth Bass 1
+timbre(55,39) = BNK_inst("gm039",0)            ;Synth Bass 2
+timbre(55,40) = BNK_inst("gm040",0)            ;Violin
+timbre(55,41) = BNK_inst("gm041",0)            ;Viola
+timbre(55,42) = BNK_inst("gm042",0)           ;Cello
+timbre(55,43) = BNK_inst("gm043",0)          ;Contrabass
+timbre(55,44) = BNK_inst("gm044",0)          ;Tremolo Str
+timbre(55,45) = BNK_inst("gm045",0)            ;Pizzacato Str
+timbre(55,46) = BNK_inst("gm046",0)            ;Harp
+timbre(55,47) = BNK_inst("gm047",0)            ;Timpani
+timbre(55,48) = BNK_inst("gm048",0)          ;Strings
+timbre(55,49) = BNK_inst("gm049",0)          ;Slow Strings
+timbre(55,50) = BNK_inst("gm050",0)          ;Syn Strings 1
+timbre(55,51) = BNK_inst("gm051",0)          ;Syn Strings 2
+timbre(55,52) = BNK_inst("gm052",0)           ;Choir Aahs
+timbre(55,53) = BNK_inst("gm053",0)           ;Voice Oohs
+timbre(55,54) = BNK_inst("gm054",0)           ;Synvox
+timbre(55,55) = BNK_inst("gm055",0)          ;Orchestra Hit
+timbre(55,56) = BNK_inst("gm056",0)           ;Trumpet
+timbre(55,57) = BNK_inst("gm057",0)            ;Trombone
+timbre(55,58) = BNK_inst("gm058",0)            ;Tuba
+timbre(55,59) = BNK_inst("gm059",0)          ;Muted Trumpet
+timbre(55,60) = BNK_inst("gm060",0)           ;French Horn
+timbre(55,61) = BNK_inst("gm061",0)           ;Brass 1
+timbre(55,62) = BNK_inst("gm062",0)          ;Synth Brass 1
+timbre(55,63) = BNK_inst("gm063",0)          ;Synth Brass 2
+timbre(55,64) = BNK_inst("gm064",0)             ;Soprano Sax
+timbre(55,65) = BNK_inst("gm065",0)             ;Alto Sax
+timbre(55,66) = BNK_inst("gm066",0)             ;Tenor Sax
+timbre(55,67) = BNK_inst("gm067",0)             ;Baritone Sax
+timbre(55,68) = BNK_inst("gm068",0)             ;Oboe
+timbre(55,69) = BNK_inst("gm069",0)          ;English Horn
+timbre(55,70) = BNK_inst("gm070",0)            ;Bassoon
+timbre(55,71) = BNK_inst("gm071",0)           ;Clarinet
+timbre(55,72) = BNK_inst("gm072",0)           ;Piccolo
+timbre(55,73) = BNK_inst("gm073",0)           ;Flute
+timbre(55,74) = BNK_inst("gm074",0)           ;Recorder
+timbre(55,75) = BNK_inst("gm075",0)           ;Pan Flute
+timbre(55,76) = BNK_inst("gm076",0)           ;Bottle Blow
+timbre(55,77) = BNK_inst("gm077",0)           ;Shakuhachi
+timbre(55,78) = BNK_inst("gm078",0)           ;Whistle
+timbre(55,79) = BNK_inst("gm079",0)           ;Ocarina
+timbre(55,80) = BNK_inst("gm080",0)            ;Square Wave
+timbre(55,81) = BNK_inst("gm081",0)            ;Saw Wave
+timbre(55,82) = BNK_inst("gm082",0)            ;Syn Calliope
+timbre(55,83) = BNK_inst("gm083",0)            ;Chiffer Lead
+timbre(55,84) = BNK_inst("gm084",0)            ;Charang
+timbre(55,85) = BNK_inst("gm085",0)            ;Solo Vox
+timbre(55,86) = BNK_inst("gm086",0)            ;5th Saw Wave
+timbre(55,87) = BNK_inst("gm087",0)            ;Bass & Lead
+timbre(55,88) = BNK_inst("gm088",0)           ;Fantasia
+timbre(55,89) = BNK_inst("gm089",0)          ;Warm Pad
+timbre(55,90) = BNK_inst("gm090",0)           ;Polysynth
+timbre(55,91) = BNK_inst("gm091",0)           ;Space Voice
+timbre(55,92) = BNK_inst("gm092",0)          ;Bowed Glass
+timbre(55,93) = BNK_inst("gm093",0)           ;Metal Pad
+timbre(55,94) = BNK_inst("gm094",0)           ;Halo Pad
+timbre(55,95) = BNK_inst("gm095",0)           ;Sweep Pad
+timbre(55,96) = BNK_inst("gm096",0)           ;Ice Rain
+timbre(55,97) = BNK_inst("gm097",0)          ;Soundtrack
+timbre(55,98) = BNK_inst("gm098",0)           ;Crystal
+timbre(55,99) = BNK_inst("gm099",0)           ;Atmosphere
+timbre(55,100) = BNK_inst("gm100",0)          ;Brightness
+timbre(55,101) = BNK_inst("gm101",0)         ;Goblin
+timbre(55,102) = BNK_inst("gm102",0)         ;Echo Drops
+timbre(55,103) = BNK_inst("gm103",0)          ;Star Theme
+timbre(55,104) = BNK_inst("gm104",0)          ;Sitar
+timbre(55,105) = BNK_inst("gm105",0)            ;Banjo
+timbre(55,106) = BNK_inst("gm106",0)           ;Shamisen
+timbre(55,107) = BNK_inst("gm107",0)           ;Koto
+timbre(55,108) = BNK_inst("gm108",0)          ;Kalimba
+timbre(55,109) = BNK_inst("gm109",0)            ;Bag Pipe
+timbre(55,110) = BNK_inst("gm110",0)           ;Fiddle
+timbre(55,111) = BNK_inst("gm111",0)         ;Shannai
+timbre(55,112) = BNK_inst("gm112",0)          ;Tinkle Bell
+timbre(55,113) = BNK_inst("gm113",0)          ;Agogo
+timbre(55,114) = BNK_inst("gm114",0)          ;Steel Drums
+timbre(55,115) = BNK_inst("gm115",0)          ;Woodblock
+timbre(55,116) = BNK_inst("gm116",0)           ;Taiko
+timbre(55,117) = BNK_inst("gm117",0)           ;Melo Tom 1
+timbre(55,118) = BNK_inst("gm118",0)           ;Synth Drum
+timbre(55,119) = BNK_inst("gm119",0)          ;Reverse Cym
+timbre(55,120) = BNK_inst("gm120",0)           ;Gtr Fretnoise
+timbre(55,121) = BNK_inst("gm121",0)           ;Breath Noise
+timbre(55,122) = BNK_inst("gm122",0)          ;Seashore
+timbre(55,123) = BNK_inst("gm123",0)           ;Bird
+timbre(55,124) = BNK_inst("gm124",0)           ;Telephone 1
+timbre(55,125) = BNK_inst("gm125",0)          ;Helicopter
+timbre(55,126) = BNK_inst("gm126",0)          ;Applause
+timbre(55,127) = BNK_inst("gm127",0)           ;Gun Shot
+
+;
+;Bank 127: OPL3 Melodic Inst to emulate GS Standard Drum Set
+;
+
+;timbre(127,27) = BNK_inst                         ;High Q
+;timbre(127,28) = BNK_inst                         ;Slap
+;timbre(127,29) = BNK_inst                         ;Scratch Push
+;timbre(127,30) = BNK_inst                         ;Scratch Pull
+;timbre(127,31) = BNK_inst                         ;Sticks
+;timbre(127,32) = BNK_inst                         ;Square Click
+;timbre(127,33) = BNK_inst                         ;Metronome Click
+;timbre(127,34) = BNK_inst                         ;Metronome Bell
+timbre(127,35) = BNK_inst("gps035",35)            ;Kick Drum 2
+timbre(127,36) = BNK_inst("gps035",35)            ;Kick Drum 1
+timbre(127,37) = BNK_inst("gps037",44)          ;Side Stick
+timbre(127,38) = BNK_inst("gps038",48)            ;Snare Drum 1
+timbre(127,39) = BNK_inst("gps039",58)          ;Hand Clap
+timbre(127,40) = BNK_inst("gps040",60)            ;Snare Drum 2
+timbre(127,41) = BNK_inst("gps041",48)             ;Low Tom 2
+timbre(127,42) = BNK_inst("gps042",43)          ;Closed Hi-hat
+timbre(127,43) = BNK_inst("gps041",49)             ;Low Tom 1
+timbre(127,44) = BNK_inst("gps044",43)          ;Pedal Hi-hat
+timbre(127,45) = BNK_inst("gps041",51)             ;Mid Tom 2
+timbre(127,46) = BNK_inst("gps046",43)            ;Open Hi-hat
+timbre(127,47) = BNK_inst("gps041",54)             ;Mid Tom 1
+timbre(127,48) = BNK_inst("gps041",57)             ;High Tom 2
+timbre(127,49) = BNK_inst("gps049",72)           ;Crash Cymbal 1
+timbre(127,50) = BNK_inst("gps041",60)             ;High Tom 1
+timbre(127,51) = BNK_inst("gps051",70)            ;Ride Cymbal
+timbre(127,52) = BNK_inst("gps052",60)           ;Chinese Cymbal
+timbre(127,53) = BNK_inst("gps053",36)            ;Ride Bell
+timbre(127,54) = BNK_inst("gps054",65)             ;Tambourine
+timbre(127,55) = BNK_inst("gps055",84)           ;Splash Cymbal
+timbre(127,56) = BNK_inst("gps056",59)             ;Cowbell
+timbre(127,57) = BNK_inst("gps057",84)           ;Crash Cymbal 2
+timbre(127,58) = BNK_inst("gps058",35)          ;Vibra-slap
+timbre(127,59) = BNK_inst("gps059",44)            ;Ride Cymbal 2
+timbre(127,60) = BNK_inst("gps060",67)           ;High Bongo
+timbre(127,61) = BNK_inst("gps061",66)           ;Low Bongo
+timbre(127,62) = BNK_inst("gps062",59)           ;Mute High Conga
+timbre(127,63) = BNK_inst("gps063",51)           ;Open High Conga
+timbre(127,64) = BNK_inst("gps064",45)           ;Low Conga
+timbre(127,65) = BNK_inst("gps065",71)           ;High Timbale
+timbre(127,66) = BNK_inst("gps066",60)           ;Low Timbale
+timbre(127,67) = BNK_inst("gps067",58)           ;High Agogo
+timbre(127,68) = BNK_inst("gps068",53)           ;Low Agogo
+timbre(127,69) = BNK_inst("gps069",64)            ;Cabasa
+timbre(127,70) = BNK_inst("gps070",71)           ;Maracas
+timbre(127,71) = BNK_inst("gps071",61)           ;Short Hi Whistle
+timbre(127,72) = BNK_inst("gps072",61)           ;Long Low Whistle
+timbre(127,73) = BNK_inst("gps073",48)            ;Short Guiro
+timbre(127,74) = BNK_inst("gps074",48)            ;Long Guiro
+timbre(127,75) = BNK_inst("gps075",69)           ;Claves
+timbre(127,76) = BNK_inst("gps076",68)           ;High Wood Block
+timbre(127,77) = BNK_inst("gps077",63)           ;Low Wood Block
+timbre(127,78) = BNK_inst("gps078",74)           ;Mute Cuica
+timbre(127,79) = BNK_inst("gps079",60)           ;Open Cuica
+timbre(127,80) = BNK_inst("gps080",80)             ;Mute Triangle
+timbre(127,81) = BNK_inst("gps081",64)             ;Open Triangle
+timbre(127,82) = BNK_inst("gps082",69)            ;Shaker
+timbre(127,83) = BNK_inst("gps083",55)             ;Jingle Bell
+timbre(127,84) = BNK_inst("gps084",75)             ;Bell Tree
+timbre(127,85) = BNK_inst("gps085",68)             ;Castanets
+timbre(127,86) = BNK_inst("gps086",48)           ;Mute Surdu
+timbre(127,87) = BNK_inst("gps087",53)            ;Open Surdu
+
+;
+;Bank 127: OPL3 Melodic Inst to emulate GS Orchestral Percussion
+;
+
+;timbre(127,27) = BNK_inst                         ;High Q
+;timbre(127,28) = BNK_inst                         ;Slap
+;timbre(127,29) = BNK_inst                         ;Scratch Push
+;timbre(127,30) = BNK_inst                         ;Scratch Pull
+;timbre(127,31) = BNK_inst                         ;Sticks
+;timbre(127,32) = BNK_inst                         ;Square Click
+;timbre(127,33) = BNK_inst                         ;Metronome Click
+;timbre(127,34) = BNK_inst                         ;Metronome Bell
+;timbre(127,35) = BNK_inst("gpo035",44)            ;Concert BD 2
+;timbre(127,36) = BNK_inst("gpo036",44)            ;Concert BD 1
+;timbre(127,37) = BNK_inst("gpo037",44)          ;Side Stick
+;timbre(127,38) = BNK_inst("gpo038",43)            ;Concert Snr Dr
+;timbre(127,39) = BNK_inst("gpo039",58)          ;Castanets
+;timbre(127,40) = BNK_inst("gpo040",38)            ;Concert Snr Dr
+;timbre(127,41) = BNK_inst("gpo041",41)             ;Timpani F
+;timbre(127,42) = BNK_inst("gpo042",42)          ;Timpani F#
+;timbre(127,43) = BNK_inst("gpo043",43)             ;Timpani G
+;timbre(127,44) = BNK_inst("gpo044",44)          ;Timpani G#
+;timbre(127,45) = BNK_inst("gpo045",45)             ;Timpani A
+;timbre(127,46) = BNK_inst("gpo046",46)            ;Timpani A#
+;timbre(127,47) = BNK_inst("gpo047",47)             ;Timpani B
+;timbre(127,48) = BNK_inst("gpo048",48)             ;Timpani c
+;timbre(127,49) = BNK_inst("gpo049",49)           ;Timpani c#
+;timbre(127,50) = BNK_inst("gpo050",50)             ;Timpani d
+;timbre(127,51) = BNK_inst("gpo051",51)            ;Timpani d#
+;timbre(127,52) = BNK_inst("gpo052",52)           ;Timpani e
+;timbre(127,53) = BNK_inst("gpo053",53)            ;Timpani f
+;timbre(127,54) = BNK_inst("gpo054",65)             ;Tambourine
+;timbre(127,55) = BNK_inst("gpo055",84)           ;Splash Cymbal
+;timbre(127,56) = BNK_inst("gpo056",56)             ;Cowbell
+;timbre(127,57) = BNK_inst("gpo057",84)           ;Concert Cymbal 2
+;timbre(127,58) = BNK_inst("gpo058",35)          ;Vibra-slap
+;timbre(127,59) = BNK_inst("gpo059",73)            ;Concert Cymbal 1
+;timbre(127,60) = BNK_inst("gpo060",67)           ;High Bongo
+;timbre(127,61) = BNK_inst("gpo061",66)           ;Low Bongo
+;timbre(127,62) = BNK_inst("gpo062",59)           ;Mute High Conga
+;timbre(127,63) = BNK_inst("gpo063",51)           ;Open High Conga
+;timbre(127,64) = BNK_inst("gpo064",45)           ;Low Conga
+;timbre(127,65) = BNK_inst("gpo065",72)           ;High Timbale
+;timbre(127,66) = BNK_inst("gpo066",60)           ;Low Timbale
+;timbre(127,67) = BNK_inst("gpo067",58)           ;High Agogo
+;timbre(127,68) = BNK_inst("gpo068",53)           ;Low Agogo
+;timbre(127,69) = BNK_inst("gpo069",64)            ;Cabasa
+;timbre(127,70) = BNK_inst("gpo070",71)           ;Maracas
+;timbre(127,71) = BNK_inst("gpo071",61)           ;Short Hi Whistle
+;timbre(127,72) = BNK_inst("gpo072",61)           ;Long Low Whistle
+;timbre(127,73) = BNK_inst("gpo073",55)            ;Short Guiro
+;timbre(127,74) = BNK_inst("gpo074",45)            ;Long Guiro
+;timbre(127,75) = BNK_inst("gpo075",75)           ;Claves
+;timbre(127,76) = BNK_inst("gpo076",70)           ;High Wood Block
+;timbre(127,77) = BNK_inst("gpo077",65)           ;Low Wood Block
+;timbre(127,78) = BNK_inst("gpo078",76)           ;Mute Cuica
+;timbre(127,79) = BNK_inst("gpo079",60)           ;Open Cuica
+;timbre(127,80) = BNK_inst("gpo080",85)             ;Mute Triangle
+;timbre(127,81) = BNK_inst("gpo081",85)             ;Open Triangle
+;timbre(127,82) = BNK_inst("gpo082",64)            ;Shaker
+;timbre(127,83) = BNK_inst("gpo083",55)             ;Jingle Bell
+;timbre(127,84) = BNK_inst("gpo084",70)             ;Bell Tree
+;timbre(127,85) = BNK_inst("gpo085",80)             ;Castanets
+;timbre(127,86) = BNK_inst("gpo086",59)           ;Mute Surdu
+;timbre(127,87) = BNK_inst("gpo087",51)            ;Open Surdu
+;timbre(127,88) = BNK_inst("gpo088",60)           ;Applause
+
+
+
+;BNK_file("fxv1.bnk")          ;name of Ad Lib Instrument Maker bankfile ;
+
+;
+;Bank 100-Sound effects
+;
+
+;timbre(100,0) = BNK_inst("bigexpl1",0)             
+;timbre(100,1) = BNK_inst("buzz1",0)             
+;timbre(100,2) = BNK_inst("drop1",0)             
+;timbre(100,3) = BNK_inst("expl1",0)           
+;timbre(100,4) = BNK_inst("expl2",0)           
+;timbre(100,5) = BNK_inst("expl3",0)          
+;timbre(100,6) = BNK_inst("fbeep1",0)             
+;timbre(100,7) = BNK_inst("fdemat1",0)             
+;timbre(100,8) = BNK_inst("fdemat2",0)             
+;timbre(100,9) = BNK_inst("fdoor1",0)             
+;timbre(100,10) = BNK_inst("fenerg1",0)            
+;timbre(100,11) = BNK_inst("fphase1",0)            
+;timbre(100,12) = BNK_inst("fping1",0)            
+;timbre(100,13) = BNK_inst("fscan1",0)             
+;timbre(100,14) = BNK_inst("ftorp1",0)             
+;timbre(100,15) = BNK_inst("fview2",0)          
+;timbre(100,16) = BNK_inst("gunsht1",0)         
+;timbre(100,17) = BNK_inst("gunsht2",0)           
+;timbre(100,18) = BNK_inst("hum1",0)           
+;timbre(100,19) = BNK_inst("hum2",0)          
+;timbre(100,20) = BNK_inst("hum3",0)           
+;timbre(100,21) = BNK_inst("laser1",0)          
+;timbre(100,22) = BNK_inst("laser2",0)       
+;timbre(100,23) = BNK_inst("laser3",0)       
+;timbre(100,24) = BNK_inst("missl1",0)          
+;timbre(100,25) = BNK_inst("plane1",0)        
+;timbre(100,26) = BNK_inst("swish1",0)         
+;timbre(100,27) = BNK_inst("thud1",0)         
+;
+;BNK_file("stafxv1.bnk")          ;name of Ad Lib Instrument Maker bankfile ; 
+
+;timbre(100,28) = BNK_inst("kexpl1",0)           
+;timbre(100,29) = BNK_inst("thud",0)          
+;timbre(100,30) = BNK_inst("elect1",0)           
+;timbre(100,31) = BNK_inst("Spark1",0)          
+;timbre(100,32) = BNK_inst("spark2",0)       
+;timbre(100,33) = BNK_inst("emotor1",0)       
+;timbre(100,34) = BNK_inst("creak1",0)          
+;timbre(100,35) = BNK_inst("thundr1",0)        
+;timbre(100,36) = BNK_inst("motor1",0)         
+;timbre(100,37) = BNK_inst("hrtbt1",0)         
+;timbre(100,38) = BNK_inst("kdrip1",0)           
+;timbre(100,39) = BNK_inst("fbird1",0)          
+;timbre(100,40) = BNK_inst("voice1",0)           
+;timbre(100,41) = BNK_inst("voice2",0)          
+;timbre(100,42) = BNK_inst("spark2",0)       
+;timbre(100,43) = BNK_inst("emotor1",0)       
+;timbre(100,44) = BNK_inst("drip2",0)          
+;timbre(100,45) = BNK_inst("motor2",0)        
+;timbre(100,46) = BNK_inst("thundr2",0)         
+;timbre(100,47) = BNK_inst("hrtbt1",0)         
+
+
+
+
+
+

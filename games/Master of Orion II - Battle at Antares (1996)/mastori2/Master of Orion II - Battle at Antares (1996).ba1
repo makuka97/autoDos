@@ -1,0 +1,9 @@
+@echo off 
+cd .. 
+cd .. 
+cd .. 
+IF NOT EXIST ".\games\mastori2\" goto end 
+".\dosbox\dosbox.exe" -conf ".\games\games\mastori2\dosbox.conf" -noconsole -exit 
+del stdout.txt 
+del stderr.txt 
+:end 

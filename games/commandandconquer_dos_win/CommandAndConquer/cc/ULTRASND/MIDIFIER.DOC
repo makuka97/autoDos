@@ -1,0 +1,354 @@
+
+                                            A d v a n c e d
+                    ÜÜÜÜ  ÜÜÜÜÜ    ÜÜÜÜ  ÜÜ    ÜÜ Ü  ÜÜÜÜÜ
+                   Ş  ÜÜ  Ş    İ  ŞÛ  Ûİ ŞÛ    Ûİ Û ŞÜÜÜÜÜ
+                   Ş    İ ŞßßÛß  ŞÛ    Ûİ ŞÛ  Ûİ  Û       İ
+                    ßßßß  ß   ß  ß      ß  ßßßß   ß  ßßßßß
+                   Advanced Gravis Computer Technology Ltd.
+
+       Fax (604) 435-9358                   BBS  (604) 431-5927 V32bis
+       Compuserve: GO PCVENB (71333,350)    InterNET EMail: tech@gravis.com
+       FidoNET: 1:153/978 or 1:153/878      SBCNET: 13:900/3
+       AOL: Adv Gravis                      Genie: Page M805 Topic 6
+
+                  Gravis UltraSound MIDIFIER (MIDFIR76.ZIP)
+         Copyright (C) 1993 by Advanced Gravis Computer Technology Ltd.
+                            All Rights Reserved
+
+ Midifier is a program written as a lab project to prove a concept. It
+ is not inteneded to be a Gravis product but rather a utility. We have
+ used it in house for a few months and decided to release it to you
+ (the public) as an XMas '93 gift. Enjoy.
+
+----------------------------Midifier documentation------------------------------
+
+Midifier is a program which will turn your Advanced Gravis UltraSound card
+into a fun-to-use general midi sound module.  Midifier will let you
+play music using an external MIDI keyboard hooked up to a UltraSound
+MIDI adapter.
+
+Once midifier is started, the display should look like the following:
+
+Éµ Configuration: Untitled ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+º  Program   Edit   Channel                                                 º
+º                                                                              º
+º Now displaying channel 1                                                     º
+º                                      ³                                       º
+º Volume: ±±±±±±±±±±±±±Û±±±± 100     ³ Pitch Bend: ±±±±±±±±±Û±±±±±±±± 08192º
+º                                      ³                                       º
+º Expression: ±±±±±±±±±±±±±±±±±Û 127 ³ PB Sensitivity: ±±Û±±±±±±±±±±02     º
+º                                      ³                                       º
+º Pan: ±±±±±±±±±Û±±±±±±±± 064        ³ [ ] Sustain                           º
+º                                      ³                                       º
+º Mod Wheel: Û±±±±±±±±±±±±±±±±±  000 ³ Program:  None                       º
+ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+º Patches Loaded:   Memory Available: 1024K        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿       º
+º ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ±±±±±±±±±±±±±±±±±±±±±±±±       ³   All Notes Off   ³       º
+º ³               ³                                ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ       º
+º ³               ³ [ ] Use 8-bit patches                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³ Unload Percussion ³                                      º
+º ³               ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³   Unload Patch    ³                                      º
+º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+                                                                                
+The top half of the screen is showing the current parameters for MIDI channel
+1.  When you use the MIDI keyboard to adjust parameters such as volume,
+expression, pan, mod wheel, or pitch bend, the screen will get updated to
+show you the new values.  You can also adjust the MIDI parameters by using
+the mouse or keyboard.
+
+Midifier won't actually make any sounds until you load instruments.  You
+can load instruments using one of several methods:
+
+    1) Click on the drop-down-menu next to the label "Program:" and a menu
+       will appear with a list of instruments.  The screen should look like
+       the following:
+
+Éµ Configuration: Untitled ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+º  Program   Edit   Channel                                                 º
+º                                                                              º
+º Now displaying channel 1                                                     º
+º                                      ³                                       º
+º Volume: ±±±±±±±±±±±±±Û±±±± 100     ³ Pitch Bend: ±±±±±±±±±Û±±±±±±±± 08192º
+º                                      ³                                       º
+º Expression: ±±±±±±±±±±±±±±±±±Û 127 ³ PB Sensitivity: ±±Û±±±±±±±±±±02     º
+º                                      ³                                       º
+º Pan: ±±±±±±±±±Û±±±±±±±± 064        ³ [ ] Sustain                           º
+º                                      ³                                       º
+º Mod Wheel: Û±±±±±±±±±±±±±±±±±  000 ³ Program: ¯None         ®             º
+ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ÄÄÄÄÄÄÄÄÄÄÄÄº
+º Patches Loaded:   Memory Available: 1024K       ³¯acpiano  000®³ÄÄÄÄ¿       º
+º ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ±±±±±±±±±±±±±±±±±±±±±±±±      ³ britepno 001 Û³f   ³       º
+º ³               ³                               ³ synpiano 002 ±³ÄÄÄÄÙ       º
+º ³               ³ [ ] Use 8-bit patches         ³ honky    003 ±³            º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿         ³ epiano1  004 ±³            º
+º ³               ³ ³ Unload Percussion ³         ³ epiano2  005 ±³            º
+º ³               ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ         ³ hrpschrd 006 ±³            º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿         ³ clavinet 007 ³            º
+º ³               ³ ³   Unload Patch    ³         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ            º
+º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+                                                                                
+       You can either type the name of the instrument you want, or
+       use the arrow keys or page up and page down keys to find
+       an instrument.  Or, you can hold down the first mouse button
+       and slide the mouse upwards or downwards beyond the top or
+       bottom of the listbox to scroll.  When the instrument you want
+       to load is highlighted, press return, or click with the mouse.
+
+The screen should looke something like the following:
+
+Éµ Configuration: Untitled ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+º  Program   Edit   Channel                                                 º
+º                                                                              º
+º Now displaying channel 1                                                     º
+º                                      ³                                       º
+º Volume: ±±±±±±±±±±±±±Û±±±± 100     ³ Pitch Bend: ±±±±±±±±±Û±±±±±±±± 08192º
+º                                      ³                                       º
+º Expression: ±±±±±±±±±±±±±±±±±Û 127 ³ PB Sensitivity: ±±Û±±±±±±±±±±02     º
+º                                      ³                                       º
+º Pan: ±±±±±±±±±Û±±±±±±±± 064        ³ [ ] Sustain                           º
+º                                      ³                                       º
+º Mod Wheel: Û±±±±±±±±±±±±±±±±±  000 ³ Program: ¯honky    003 ®             º
+ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+º Patches Loaded:   Memory Available: 0896K        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿       º
+º ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ÛÛÛ±±±±±±±±±±±±±±±±±±±±±       ³   All Notes Off   ³       º
+º ³ honky    003  ³                                ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ       º
+º ³               ³ [ ] Use 8-bit patches                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³ Unload Percussion ³                                      º
+º ³               ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³   Unload Patch    ³                                      º
+º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+The Honkytonk piano is loaded.
+
+    2) If you have a General MIDI keyboard, you can send choose the
+       instrument from your keyboard.
+    3) The Edit Patch Selection menu can be used to load group
+       patch selections.  This will be shown later.
+
+The bottom half of the screen lets you manage patches that are loaded.
+You can select one instrument out of the list of loaded instruments by
+double clicking on the insturment name in the listbox.  A selected
+instrument can be unloaded by pressing the "Unload Patch" button.
+
+If you get any "Hung notes," you can turn all playing notes off by
+pressing the "All Notes Off" button.
+
+If you have a MIDI keyboard with aftertouch, you can add a vibrato
+effect to a playing note by pressing the keys a little harder than normal
+after starting the note.
+
+Éµ Configuration: Untitled ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+º ¯Program ® Edit   Channel                                                 º
+º ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                                         º
+º ³¯New Config     ® ³el 1                                                     º
+º ³ Open Config...   ³                 ³                                       º
+º ³ Save Config      ³±±Û±±±± 100     ³ Pitch Bend: ±±±±±±±±±Û±±±±±±±± 08192º
+º ³ Save Config as...³                 ³                                       º
+º ³ ---------------  ³±±±±±±±±±±Û 127 ³ PB Sensitivity: ±±Û±±±±±±±±±±02     º
+º ³ About Midifier   ³                 ³                                       º
+º ³ ---------------  ³±±±± 064        ³ [ ] Sustain                           º
+º ³ Exit             ³                 ³                                       º
+º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±±±±±±±±±  000 ³ Program:  None                       º
+ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+º Patches Loaded:   Memory Available: 1024K        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿       º
+º ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ±±±±±±±±±±±±±±±±±±±±±±±±       ³   All Notes Off   ³       º
+º ³               ³                                ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ       º
+º ³               ³ [ ] Use 8-bit patches                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³ Unload Percussion ³                                      º
+º ³               ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³   Unload Patch    ³                                      º
+º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+The File menu can be used to save or load configurations.  Anything that
+you may have modified with the "Edit Patch Selections" menu can be
+saved and restored with the configuration files.  You can also use the
+File menu to exit the program.  Esc works too.
+
+Éµ Configuration: Untitled ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+º  Program  ¯Edit ® Channel                                                 º
+º            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                          º
+º Now display³¯Program Selection..® ³                                          º
+º            ³ Mod Wheel Action...  ³  ³                                       º
+º Volume: ±±³ Patch...             ³  ³ Pitch Bend: ±±±±±±±±±Û±±±±±±±± 08192º
+º            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ  ³                                       º
+º Expression: ±±±±±±±±±±±±±±±±±Û 127 ³ PB Sensitivity: ±±Û±±±±±±±±±±02     º
+º                                      ³                                       º
+º Pan: ±±±±±±±±±Û±±±±±±±± 064        ³ [ ] Sustain                           º
+º                                      ³                                       º
+º Mod Wheel: Û±±±±±±±±±±±±±±±±±  000 ³ Program:  None                       º
+ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+º Patches Loaded:   Memory Available: 1024K        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿       º
+º ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ±±±±±±±±±±±±±±±±±±±±±±±±       ³   All Notes Off   ³       º
+º ³               ³                                ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ       º
+º ³               ³ [ ] Use 8-bit patches                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³ Unload Percussion ³                                      º
+º ³               ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+º ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      º
+º ³               ³ ³   Unload Patch    ³                                      º
+º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      º
+ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+The Edit Program selection menu lets you do the following:
+	* Split the keyboard among multiple instruments
+	* Play multiple instruments simultaneous
+	* Play different instruments depending on how hard you hit the keys
+	* adjust instrument tuning
+	* add quick-and-dirty chorusing effect
+
+
+Ú´ Configuration: Untitled ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»³
+³º [ ] Respond to MIDI program change                                         º³
+³º ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ     º³
+³º Split patch selection by: (*) Note ( ) Velocity                            º³
+³º                                                                            º³
+³º       Note     To       Use Patch         Offset     Tune    Use           º³
+³º     ³ 0      ³ 127     acpiano  000     ³ 0       ³ 1018    [X]           º³
+³º     ÀÄÄÄÄÄ   ÀÄÄÄÄÄ                      ÀÄÄÄÄÄ    ÀÄÄÄÄÄÄÄ                º³
+³º     ³ 0      ³ 127     britepno 001     ³ 0       ³ 1020    [X]           º³
+³º     ÀÄÄÄÄÄ   ÀÄÄÄÄÄ                      ÀÄÄÄÄÄ    ÀÄÄÄÄÄÄÄ                º³
+³º     ³ 0      ³ 127     synpiano 002     ³ 0       ³ 1024    [X]           º³
+³º     ÀÄÄÄÄÄ   ÀÄÄÄÄÄ                      ÀÄÄÄÄÄ    ÀÄÄÄÄÄÄÄ                º³
+³º     ³ 0      ³ 127     honky    003     ³ 0       ³ 1030    [X]           º³
+³º     ÀÄÄÄÄÄ   ÀÄÄÄÄÄ                      ÀÄÄÄÄÄ    ÀÄÄÄÄÄÄÄ                º³
+³º     ³ 0      ³ 127     None             ³ 0       ³ 1024    [ ]           º³
+³º     ÀÄÄÄÄÄ   ÀÄÄÄÄÄ                      ÀÄÄÄÄÄ    ÀÄÄÄÄÄÄÄ                º³
+³º ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ º³
+³º                                                                ÚÄÄÄÄÄÄÄÄ¿  º³
+³º                                                                ³¯  Ok  ®³  º³
+³º                                                                ÀÄÄÄÄÄÄÄÄÙ  º³
+³ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼³
+³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+The Respond to MIDI program change button toggles between using the normal
+instrument selection, or the cool-neato instrument selection shown above.
+
+The keyboard can be split either by note (pitch) or velocity (volume).
+Each row can be used to select an instrument.  When a midi note is hit
+that falls in the range of the first column and second column, the note
+will be heard.  The offset can be used to adjust the pitch of a note
+by semitones.  There are 12 semitiones in an octave.  The tune column
+can be used to detune a patch.  If 1024 is used, no detune will occur.
+This number will be multiplied by the frequency, and then divided by
+1024.  So, 1085 will be one semitone, 1149 will be two, 1217 will be
+three, etc.  A simple chorusing effect can be creating by choosing numbers
+close to 1024, such as 1020, 1024, 1028, 1032, etc...
+
+A row can be turned off by clicking on the Use column until the X
+disappears.
+
+Other input methods:  If you are trying to set a range where a Piano
+should be heard (between c2 and b3), click in row one in the
+"Use Patch" column, and select acpiano.  Now, click in the first column
+to set the lower range.  Press the C2 note on your MIDI keyboard, and
+a 36 should appear in the first column.  Now press the tab key to advance
+to the next column, or click on the "To" column with the mouse.  Press
+the B3 note on your MIDI keyboard, and a 59 will appear in the "To"
+column.  Now, Midifier is set up to listen to only the notes between
+C2 and B3.  However, the offset column is still zero, and a MIDI note
+of zero is below you hearing range.  You should set up the offset so
+that it matches the low range.  Click your mouse in the offset field
+and press the C2 key, or type in 36.  To test out the setup, click on
+a field that won't be affected by a "note-on" MIDI event.  Tab to
+the "Use" column, it is a safe place to be while playing around.
+Now try playing your MIDI keyboard, and you'll notice that the piano
+only plays in the range from C2 to B3.  Using the same method, you
+can assign other rows to different instruments.  If the numbers in
+the first and second columns overlap between rows, you can play multiple
+instruments simultaneously.
+
+When you find an instrument selection that pleases you, click on the
+OK button.
+
+
+Ú´ Configuration: Untitled ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Program  ¯Edit ® Channel                                                 ³
+³                                                                              ³
+³ Now displayingÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»                 ³
+³               º                                            º                 ³
+³ Volume: ±±±±±º Use mod wheel on your keyboard to change:  º±Û±±±±±±±± 08192³
+³               º                                            º                 ³
+³ Expression: ±º   ( ) Vibrato                              º±±±±±±±±±02     ³
+³               º                                            º                 ³
+³ Pan: ±±±±±±±±º   ( ) Expression                           º                 ³
+³               º                                            º                 ³
+³ Mod Wheel: Û±º   (*) Pan                                  º                ³
+³ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº                                            ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ³
+³ Patches Loadedº ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ºÄÄÄÄÄÄÄÄÄ¿       ³
+³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄº                                ÚÄÄÄÄÄÄÄÄ¿  ºes Off   ³       ³
+³ ³ acpiano  000º                                ³   Ok   ³  ºÄÄÄÄÄÄÄÄÄÙ       ³
+³ ³ britepno 001º                                ÀÄÄÄÄÄÄÄÄÙ  º                 ³
+³ ³ synpiano 002ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼                 ³
+³ ³ honky    003  ³ ³ Unload Percussion ³                                      ³
+³ ³               ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      ³
+³ ³               ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                      ³
+³ ³               ³ ³   Unload Patch    ³                                      ³
+³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+The "Edit Mod Wheel Action..." menu can be used to change the effect of
+the mod wheel on your MIDI keyboard.  Normally the mod wheel will activate
+the frequency modulation for an instrument (vibrato).  Expression can
+be used to change the current volume for an instrument.  Pan can be used to
+move the instrument between the left and right speakers.
+
+
+Ú´ Configuration: Untitled ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  ProgramÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»           ³
+³         º                                                        º           ³
+³ Now dispº UltraSound memory allocated for                        º           ³
+³         º custom patch: 256K                                     º           ³
+³ Volume: º                                                        º±±±± 08192³
+³         º ÚÄÄÄÄÄÄÄÄ¿                                             º           ³
+³ Expressiº ³¯Record®³       [X] Loop                              º±±±02     ³
+³         º ÀÄÄÄÄÄÄÄÄÙ                                             º           ³
+³ Pan: ±±º                                                        º           ³
+³         º                                                        º           ³
+³ Mod Wheeº                                                        º           ³
+³ÄÄÄÄÄÄÄÄÄº Start loop: Û±±±±±±±±±±±±±±±±±±±±±±±±±±±             ºÄÄÄÄÄÄÄÄÄÄÄ³
+³ Patches º                                                        ºÄÄÄ¿       ³
+³ ÚÄÄÄÄÄÄÄº End loop:   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±             º   ³       ³
+³ ³       º                                                        ºÄÄÄÙ       ³
+³ ³       º ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ º           ³
+³ ³       º                                            ÚÄÄÄÄÄÄÄÄ¿  º           ³
+³ ³       º                                            ³   Ok   ³  º           ³
+³ ³       º                                            ÀÄÄÄÄÄÄÄÄÙ  º           ³
+³ ³       ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼           ³
+³ ³               ³ ³   Unload Patch    ³                                      ³
+³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                      ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                                                                                
+
+Another toy-feature of Midifier is the custom patch feature.  If you add
+a microphone to the second input jack from the bottom of your UltraSound
+card, you can create your own toy patch.  Just click on the record button
+while making noise into the microphone.  When you are done, press
+enter, space, or click the mouse button on the stop button.  Now start
+playing on your MIDI keyboard.  If you want to turn the looping off, press
+the loop button.  If you want to edit the loop points, move the start loop
+or end loop sliders.  You will not be able to create real fancy patches
+with this feature.  If you would like to create real patches, look for one
+of the many patch editors available from Advanced Gravis, or public networks
+such as Internet, Compuserve, Genie, America Online, etc.
+
+
+More features will be added to midifier at various times in the next 30 or
+40 years, so keep looking.
+
+	--Mike Leibow
+	Forte Technologies
+

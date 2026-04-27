@@ -1,0 +1,127 @@
+To the Public,                                       September 9, 1992
+
+I am distributing "Daymare I" as Shareware. This game also appeared on the
+Atari ST as "Daymare". The 2 player version for the Atari ST was known as
+"Mystic Mirror".
+
+If you can afford it, I strongly hope that you will register your game with
+me. For $16 you will receive the latest version of the program, a bonus
+program, and you will be on my mailing list for all future products and
+newsletters. Your support helps me to continue writing and improving
+my games.
+
+I am currently working on "Daymare 3". This game is being designed from
+scratch to work on the IBM as a one player game. I will be using VGA
+graphics for a 320 by 200 pixel screen in 256 colors. I am using flight
+simulator type graphics for a more realistic dungeon like that in Ultima
+Underworld(TM). It will also incorporate sound and scanned art.
+
+MAKE A BACKUP OF THIS DISK FOR YOUR ARCHIVES.
+
+OPERATING INSTRUCTIONS
+     A PC with at least a 286 processor is recommended to run "Daymare I".
+     Files included are GAME.EXE,RQFRAMES.DAT,RQICONS.DAT,RQMAPS.DAT.
+     To start a game double click GAME.EXE and follow the screen
+instructions.
+     To quit a game in progress press <escape> and the game will exit
+immediately.  You  should save your game if  you  want  it before
+you exit as a save is not made during exiting.
+     To save a game click on the disk icon with your mouse. The game
+will be saved as "PLAYER.SAV".
+     To attack a creature, click on the sword Icon. A slash mark will
+appear on the screen when you attack. The weapon in your right hand
+is the weapon used to attack with. If you do not have a weapon in that
+hand then bare-handed combat is used.
+     To use the special magic of an item (if any) then select on the
+white diamond. Note some items are one-shot. There are no multi-use
+items.
+     To cast a spell, you must select some spell symbols, then click
+on the white diamond. If you select to the left or right of the diamond
+then you can erase all the selected symbols. Note that you cannot use
+the special power of items while a spell is currently ready to be cast.
+A miscast spell drains all your stamina. So does a spell that is to
+difficult for you to cast. If you see the spell in a book and you can't
+seem to cast it, then try again when you gain a level.
+     There are four different kinds of armor. They are in the order that
+they appear: Physical, Fire, Electrical, and Poison. Note that clothing
+will give certain protection in each of the categories. Poison includes
+death spells and chemical attacks such as venomous clouds. If you are
+hit for damage, then an "X" will appear in each corner. A gold "X" is
+a magical attack. Physical armor protects against this randomly. A luck
+spell will cut all damage (after armor) in half. A bless spell causes
+a successful attack to only do one point of damage (ending the spell).
+     Note that some things have weight. The higher your weight in stuff
+being carried, the slower your stamina is restored. Stamina is used up
+when casting spells or attacking. If your stamina is to low then you
+will be unable to attack or cast spells or use some items.
+     The strike row will be occasionally be followed by a number. This
+number is the total damage done to critters at that instant. This helps
+you to determine if an attack form is having any effect.
+     Strength has effect on damage done with weapon attacks. It also
+allows faster stamina recovery when you are weighted down.
+     Agility has effect on attack rates and your chance to be hit by
+a monster. Shoes with good floor grip are useful here.
+     Reason has a multiplier effect on how well a spell works. Also
+it allows you to cast high level spells at a lower level. Note that
+some spells may not be cast till sufficient level is reached.
+     Vigor has a direct effect on your maximum health. Your maximum
+health is equal to Vigor times your Level divided by two.
+     In  the upper right you will see 4 vertical  bars. These  are
+your status bars.  In all cases the higher the bars the better off 
+you are. Starting from the left bar here is what they mean.
+     The green bar is your current health. If this bar drops below 
+zero then you will die.  The red  bar is your short  term  stamina
+level  and affects your ability to complete actions.  If this  bar 
+drops to low you will be unable to cast spells,  do melee attacks, 
+and perform many other actions. This bar drops whenever you attack
+or  perform many other actions.  The brown bar is your food  level 
+and affects how fast you recover health.  The last or blue bar  is 
+your water level and affects stamina recovery. Casting spells  and
+using magic items can also cause dehydration.
+     To open a door, click on it with the mouse. If there is a small
+half circle at the top of the door, then the door is locked. To unlock
+the door, hold the proper key in mouse pointer and click on the door
+with it. The iron key unlocks any wood door.
+     In a land far away a powerful wizard enchanted his life force
+into a golden skull and proclaimed himself to be a god.  Then in a 
+display  of his malevolence he conquered the citadel known as  the 
+MYSTIC  MIRROR.  You play the part of adventurer who has vowed  to 
+defeat  his evil plans and prevent the destruction of your  world.
+
+HELPFUL HINTS:
+1)  Get a character with good vigor. Health points are great  for
+staying alive.
+
+2)  Learn what to do with your treasure. Its not just  there  for
+decoration.
+
+3)  Watch  your food and water.  This affects  your  recovery  of
+health and stamina. You should carry extra water.
+
+4)  You will need to find keys to open certain doors.  There  are
+four different keys you will probably need. If you accidently destroy
+your keys, there is more than one way to open or get past most doors.
+
+5)  Learn  the monsters weak spots.  Many monsters are immune  to
+certain  attack forms.  It is quite difficult to kill the  walking 
+dead with a death spell. 
+
+6)  Many ordinary looking items actually have special powers.
+
+7)  Some levels regenerate monsters. You can never clean them up.
+
+8) The goal of the game is to kill the floating gold skull on the
+top level. There are 10 levels in the game.
+
+9) Don't miss the bag of holding early in game. This will save many
+trips. Also objects in the bag of holding have no weight.
+
+10) All the wells are slightly magical. You can slowly heal yourself
+by drinking water from them.
+
+Jim Todd
+Jing Gameware
+P.O. Box 281
+Beaverton, OR 97075-0281
+U.S.A.
+

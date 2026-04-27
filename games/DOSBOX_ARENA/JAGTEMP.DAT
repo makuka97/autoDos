@@ -1,0 +1,96 @@
+
+THE FOLLOWING SECTION IS ONLY VALID IF THE PC HAS THE FIRST PIECE OF THE
+STAFF OF CHAOS...
+
+This section for Foroozan:
+
+There is a base 20% chance after the first staff piece is recovered,
+that the random encounter when rolled, is actually a Jagar Tharn's creatures
+encounter. For each additional piece of the Staff in the PC's inventory, 
+the chance goes up by 5% (ie if the PC has three pieces of the Staff the 
+chance is 30%).
+If the random encounter is actually a Jagar Tharn's creatures encounter,
+you will run an anim and insert the text outlined in the following
+paragraphs in the lower letterbox area. After the anim finishes, fade it
+out and then run the encounter.
+If the random encounter is a Jagar Tharn's creatures encounter, roll every
+thing as you would for a normal random encounter except, add the number
+of Staff pieces in the PC's possession to the PC's level when determining
+enemies. This will add 1 - 8 levels to the PC's level when rolling the
+encounter, depending upon how many pieces he or she has currently.
+Once the PC has a Jagar Tharn's creatures encounter, he or she will not
+have another until another piece of the Staff is recovered. Also, if the
+PC doesn't get one while wandering around, we must force one if the PC
+picks the legendary location of the next Staff piece on the continental map.
+
+Example:
+My character has three (3) pieces of the Staff, and has successfully defended
+himself on two occasions, shortly after getting the first 2 pieces. He is
+now traveling and looking for the fourth piece. Each time we roll a random
+encounter we check to see if Jagar Tharn notices the PC. The chance is 30%.
+If we roll under 30 on 1 - 100, we then add 3 to the PC's level and roll
+a random encounter. We then run the anim and text, then fade back to the
+real world and run the encounter we rolled. 
+We must however run an encounter before the PC gets the fourth piece. 
+If by the time the PC learns on the continental map where the fourth 
+piece of the Staff is (Halls of Colossus), we haven't rolled a Jagar 
+Tharn's creatures encounter, then when the PC clicks the Halls of 
+Colossus to begin his journey to the fourth piece, we
+should force an encounter along his way.
+
+
+PC has 1st piece of the Staff in possession:
+I do not know who you are, but you have made a fatal mistake. I have 
+sent my minions, ones worthy of the attention you deserve, to relieve 
+you of the burden of the Staff piece you now hold. Give it to them 
+and I will order your death painless and quick. Resist and I shall see 
+you in such suffering that you will grovel for the sweet release of death...&
+
+PC has 2nd piece of the Staff in possession:
+You have survived the Labyrinthian, a place most dire. Continue along 
+this path however and you will face such things as to make your very 
+heart freeze. I will save you the ordeal for my servants approach you even 
+now. From your managled corpse I will take what is mine...& 
+
+PC has 3rd piece of the Staff in possession:
+Why do you choose to align against me when it is obvious that 
+I will destroy you. Even as each piece of the Staff comes into your 
+possession it becomes easier to find you, and I have done just that. Face 
+my creatures, if you dare. I am through toying with you...&
+
+PC has 4th piece of the Staff in possession:
+It is obvious, whoever you are, that you are a cunning and worthy foe. I 
+will not insult your intelligence with further digression. My minions soon 
+approach, but I will not consign you to the dark door of Death. 
+You have proven your worth. Once you are killed, I will raise you to 
+fight for me, as one servants. Give in to me now and I offer you 
+everlasting life...&
+
+PC has 5th piece of the Staff in possession:
+I have underestimated you, that is clear. You have not only defeated the 
+useless creatures I have sent against you, but managed to survive the 
+Crystal Tower, a feat that in and of itself could be legend. It is sad 
+that I am forced to destroy you. Prepare, for my minions arrive...&
+
+PC has 6th piece of the Staff in possession:
+You have rejected my offer of everlasting life, and defeated the Crypt 
+of Hearts. Your list of accomplishments grow. You will not however, 
+accomplish the forging of the Staff. My forces are inexhaustible, and 
+you will succumb. Prepare, for my servants arrive...&
+
+PC has 7th piece of the Staff in possession:
+You amaze me with your tenacity. It boots nothing to avoid my snares, 
+for this game is at an end. The final piece of the Staff is in Dagoth-Ur, in 
+the province of Morrowind. The information is useless to you, for none know 
+the entrance to the volcano, and even if you survive the creatures I have 
+sent against you now, you will not survive its depths. I bid you farewell, 
+%pcf. You have been a most worthy opponent...&
+
+PC has 8th piece of the Staff in possession:
+I congratulate you on your success. Have you discovered however, what 
+I have known all along? The Staff is drained of all magical potential. I 
+did it myself before scattering the pieces across the realm. It is a useless 
+stick, good for churning butter or rowing a boat, but not for saving the 
+Emperor. Come find me if you dare, and I will relieve you of any further 
+burdens you may think to face. My legions await...&
+

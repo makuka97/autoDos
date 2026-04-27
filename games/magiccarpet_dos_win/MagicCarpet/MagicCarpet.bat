@@ -1,0 +1,1 @@
+.\DOSBOX\DOSBox.exe  -conf ".\DOSBOX\dosbox.conf" -conf ".\DOSBOX\dosbox_single.conf" -no

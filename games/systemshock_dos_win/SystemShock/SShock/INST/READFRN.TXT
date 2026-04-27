@@ -1,0 +1,21 @@
+README.TXT, version CD 
+========================================
+
+A partir d'ici, vous pouvez installer le jeu, changer et tester vos 
+r‚glages de carte son, regarder ce fichier, ou configurer d'autres
+options telles que le langage et les r‚glages de contr“le. Nous vous
+sugg‚rons tout d'abord de configurer et de tester vos r‚glages de son,
+d'installer d'autres options comme les cutscenes … faible r‚solution,
+et enfin d'installer le jeu. Si vous voulez changer vos r‚glages sans
+avoir … r‚installer, choisissez l'option "sauver r‚glages et sortir" 
+sur le menu principal.
+
+Si vous avez des problŠmes techniques, ou si vous avez besoin de plus
+amples informations, lisez SVP le fichier readme.ss qui se trouve sur 
+ce CD.  
+
+Amusez-vous bien!
+
+-- L'‚quipe de d‚veloppement de System Shock
+   LookingGlass Technologies
+

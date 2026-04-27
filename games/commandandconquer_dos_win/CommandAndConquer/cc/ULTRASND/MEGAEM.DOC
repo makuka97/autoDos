@@ -1,0 +1,1124 @@
+
+                                         A d v a n c e d
+                  ‹‹‹‹  ‹‹‹‹‹    ‹‹‹‹  ‹‹    ‹‹ ‹  ‹‹‹‹‹
+                 ﬁ  ‹‹  ﬁ    ›  ﬁ€  €› ﬁ€    €› € ﬁ‹‹‹‹‹
+                 ﬁ    › ﬁﬂﬂ€ﬂ  ﬁ€    €› ﬁ€  €›  €       ›
+                  ﬂﬂﬂﬂ  ﬂ   ﬂ  ﬂ      ﬂ  ﬂﬂﬂﬂ   ﬂ  ﬂﬂﬂﬂﬂ
+                 Advanced Gravis Computer Technology Ltd.
+
+     Fax (604) 431-5155                   BBS  (604) 431-5927 V32bis
+     Compuserve: GO PCVENB (71333,350)    InterNET EMail: tech@gravis.com
+     FidoNET: 1:153/978                   SBCNET: 13:900/3
+     AOL: Adv Gravis                      Genie: Page M805 Topic 6
+
+                     MEGA-EM VERSION 2.07 - 02/22/95
+                               USERS MANUAL
+     Copyright (C) 1993-1995 by Advanced Gravis Computer Technology Ltd.
+                           All Rights Reserved
+
+
+                 0.0 Quick Readme Information
+                 1.0 Legal Information
+                 2.0 Introduction
+                 3.0 Installation
+                 4.0 Mega-Em Usage
+                 5.0 Compatibility Problems With Various Software
+                 6.0 Solutions to Commonly Encountered Problems
+                 7.0 Answers to Commonly Asked Questions
+                 8.0 Mega-Em Revision History
+
+
+0.0.0 ************ CHAPTER 0. - QUICK README INFORMATION *****************
+
+All internet support questions regarding Mega-Em should be sent via email
+to: jayeson@gravis.com (Jayeson Lee-Steere)
+
+ Quick notes: You must run MEGAEM, then EMUSET before any emulation is
+              active.
+
+              Always run EMUSET between programs. This will reset Mega-Em
+              internally. Many games require the sound devices to be in a
+              power on state to work correctly.
+
+              Should you choose to use a real Sound Blaster instead of
+              Mega-Em's emulation, you must run MEGAEM with the /SBOFF
+              switch.
+
+              All known compatibility problems are listed in chapter 5
+              of this manual.
+
+              Remove any debuggers from memory before loading Mega-Em.
+
+             IMPORTANT: Adaptec SCSI users must read section 4.1.2 of
+             this manual before using Mega-Em.
+
+
+1.0.0 **************** CHAPTER 1. - LEGAL INFORMATION ********************
+
+ This software and documentation are protected by copyright law,
+ with all rights reserved. Copyright is held by:
+
+ Advanced Gravis Computer Technology Ltd.
+ #101, 3750 North Fraser Way
+ Burnaby, B.C. V5J 5E9
+ CANADA
+
+ This software is provided as-is. Advanced Gravis makes no warranties,
+ express or implied, and does not warrant that the software will be fit
+ for any particular purpose. Advanced Gravis will in no event be liable
+ for loss of profits, nor incidental or consequential damages. You use
+ this software at your own risk.
+
+ This software may not be modified, disassembled or reverse engineered
+ in any way without written authorization from Advanced Gravis.
+
+ Mega-Em may be distributed in unmodified form freely to all Gravis
+ UltraSound owners, provided no charge is made for it, with the exclusion
+ of BBS (Bulletin Board System) service charges.
+
+ All trademarks and registered trademarks are the property of their
+ respective owners.
+
+
+2.0.0 ****************** CHAPTER 2. - INTRODUCTION ***********************
+
+ Mega-Em is a software program which allows you to emulate sound devices
+ other than those present in your system. Mega-Em allows you to emulate
+ the Roland MT-32 and Sound Canvas and the Sound Blaster (Digital Only)
+ using a Gravis UltraSound (GUS) sound card. Sound Blaster Music and Roland
+ MPU-401 MIDI interface emulation through the UltraSound MIDI port is
+ planned for the future.
+
+ Mega-Em has the following features:
+
+ * High Quality Roland Sound Canvas and MT-32 music emulation.
+ * Sound Blaster Digital (DAC) emulation, with generally improved sound
+   quality over a real Sound Blaster card.
+ * Loads entirely into the EMS memory space - uses no low/upper DOS memory.
+ * Fast - entirely written in assembler, utilizing the 386 instruction set
+ * High level of customization, while still retaining ease of use.
+
+ Mega-Em currently requires the following to function correctly:
+
+ * A 386 or better AT class personal computer.
+ * A hard drive.
+ * A Gravis UltraSound card.
+ * An Expanded Memory Manager, such as EMM386.EXE, QEMM386 or 386MAX.
+ * Approximately 64k of free Expanded Memory (EMS). Mega-Em uses no low DOS
+   memory (i.e. Memory in the 1st megabyte).
+
+NOTE: Adaptec SCSI users MUST read section 4.1.2 of this manual.
+
+
+3.0.0 ****************** CHAPTER 3. - INSTALLATION ***********************
+
+ To install Mega-Em to your hard drive do the following.
+
+ Step 1. Make and enter a directory where you wish to install Mega-Em. For
+         example if you wish to install to the directory C:\MEGAEM, type
+         the following:
+
+         C: <ENTER>
+         MD \MEGAEM <ENTER>
+         CD \MEGAEM <ENTER>
+
+ Step 2. Unzip the Mega-Em distribution archive into this directory. For
+         example if the archive is on a floppy disk in drive A:, you would
+         type:
+
+         PKUNZIP A:\MEGEM* <ENTER>
+
+ Step 3. It is now recommended that you add the Mega-Em directory to your
+         path. Only experienced users should try other methods such as
+         creating aliases for the executables.
+
+         To add this directory to your path do the following:
+
+         Edit your AUTOEXEC.BAT file (in the root directory of your boot
+         drive) using a text editor. eg:
+
+         EDIT AUTOEXEC.BAT <ENTER>
+
+         Look for a line that starts with PATH= or SET PATH=. eg:
+
+         PATH=C:\DOS;C:\ULTRASND
+
+         Add the directory name to the end of this line. For the above
+         example the line should look like this:
+
+         PATH=C:\DOS;C:\ULTRASND;C:\MEGAEM
+
+         Save the file.
+         Reboot your computer.
+         Mega-Em is now installed and ready to use.
+
+
+4.0.0 ****************** CHAPTER 4. - MEGA-EM USAGE **********************
+
+  4.1.0  Loading Mega-Em and Configuring The Emulation
+    4.1.1  Overview
+    4.1.2  Mega-Em Command Line Options
+    4.1.3  Emuset Command Line Options
+    4.1.4  The Default Options Files
+  4.2.0  Configuring Software For Use With Mega-Em
+  4.3.0  A Step By Step Example
+
+4.1.0 LOADING MEGA-EM AND CONFIGURING THE EMULATION.
+
+4.1.1 OVERVIEW
+
+ Mega-Em consists of two main parts. The first being the MEGAEM.EXE
+ executable which must be loaded first to provide your system with
+ emulation capability. This program should be considered a driver: just
+ loading this alone will not allow you to emulate anything. The second is
+ the EMUSET.EXE executable which allows you to turn emulations on or
+ off, and control which devices Mega-Em will emulate (e.g. MT-32, Sound
+ Canvas and/or Sound Blaster).
+
+ For example, first load MEGAEM.EXE by typing:
+
+ MEGAEM [options] <ENTER>
+
+ Valid MEGAEM.EXE options are listed in section 4.1.2, and are optional.
+ Assuming there were no problems, you should see INSTALLATION SUCCESSFULL
+ printed on the screen, and the resident driver portion of Mega-Em will
+ now be in memory. In most cases you should be able to leave MEGAEM.EXE
+ loaded indefinitely, switching emulation on and off as needed with
+ EMUSET.EXE. You can uninstall Mega-Em from memory at any time by typing
+ MEGAEM -F.
+
+ Now when you wish to run a program requiring emulation, type:
+
+ EMUSET [options] <ENTER>
+
+ Valid EMUSET.EXE options are listed in section 4.1.3, and are optional.
+ Mega-Em will now be configured for the emulation you specified, and you
+ are ready to run your software.
+
+Note that when emulation is active, Mega-Em hides the UltraSound from any
+other programs. Be careful to disable emulation by typing EMUSET OFF
+before running any 'native' UltraSound software.
+
+ In addition it is recommended that you run EMUSET between running
+ different software programs, as this will reset Mega-Em internally.
+
+ Confused? Read on. There is a step by step example in section 4.3
+
+
+4.1.2 MEGAEM.EXE COMMAND LINE OPTIONS
+
+ The following options can be added to the MEGAEM.EXE command line. As you
+ can see all options should be preceded by a '-', but can also be preceded
+ by a '/', or just separated by a space.
+
+
+ -H or -?  Display the MEGAEM.EXE help screen, which is basically a
+           shortened version of this section of the manual.
+
+ -U or -F  Uninstall Mega-Em from memory. Can also be referred to as
+           removing or freeing Mega-Em from memory. This option should
+           normally only be used with no other options on the command line.
+
+ -ROFF     Turns off Roland emulation.
+
+ -SBON     Turns on Sound Blaster emulation. Default for normal UltraSound
+           cards.
+
+ -SBOFF    Turns off Sound Blaster emulation. Default for UltraSound ACE.
+
+ -RIRQx    Specify Roland Irq number. By default Mega-Em will not generate
+           any Roland Irqs since very little software requires it. If your
+           software fails on Roland initialization, you should use this
+           option, preferably using Irq 2. Valid values are x=2,3,5 or 7.
+
+ -NOEMS    Forces Mega-Em to load when EMS services are disabled (for
+           example, when then NOEMS option is used in your EMM386 command
+           line). Note that you must still have a memory manager loaded to
+           run Mega-Em. Caution must be exercised when using this option,
+           since Mega-Em will use EMS to activate your memory manager. You
+           must manually make sure your memory manager is active to use
+           this option. Adding EMM386 ON to your AUTOEXEC.BAT will, for
+           example, achieve this. If you have programs loaded into upper
+           memory, the memory manager will most likely be active.
+
+ -RGDT     Relocate server GDT. This switch may be needed on some systems
+           with certain memory managers for Mega-Em to operate correctly.
+           You should only use this option if the system crashes as
+           MEGAEM.EXE loads, or the system becomes very unstable after
+           MEGAEM.EXE has been loaded, or MEGAEM.EXE suggests you use it.
+           It is possible that using this option may cause the above
+           mentioned problems. Use with caution.
+
+ -FGDT     Force server GDT expansion. This switch may allow Mega-Em to be
+           used with system/memory manager combinations which cause
+           MEGAEM.EXE to respond with 'EMM Incompatibility Error: Can not
+           expand server GDT'. There is however a good chance that using
+           this option will crash the system as MEGAEM.EXE loads, or
+           renders the system unstable after MEGAEM.EXE has loaded. This
+           option has precedence over the -RGDT option. Use with caution.
+
+ -P        Enable Adaptec (or compatible) SCSI controller protection.
+
+          IMPORTANT: Adaptec SCSI users must read this. Failure to read
+                     and understand this option may result in loss of data
+                     on SCSI drives. If you are not using an Adaptec SCSI
+                     device ignore this option.
+
+           Mega-Em requires special consideration when used with some
+           Adaptec SCSI devices. Many Adaptec SCSI controllers are factory
+           set to operate at an I/O base address of 330 (hex). Check your
+           controller manual, if your controller is not set to this address
+           you do not need to use this option. If you can change the base
+           address of your card, it is recommended that you do so and avoid
+           using this option.
+
+           What's the big deal you ask? Well unfortunately 330 (hex) is
+           also the default base address for the Roland MPU-401 MIDI
+           interface (i.e. Roland sound devices). This means any software
+           attempting to access a Roland card will instead access the SCSI
+           controller, resulting in the controller crashing, and possible
+           loss of data. In addition, without the -P option, Mega-Em will
+           consider any SCSI drivers to be Roland software, stopping the
+           SCSI controller from getting any commands, resulting a
+           guaranteed system crash.
+
+           Mega-Em overcomes the problem by distinguishing between Roland
+           and SCSI software. Any software loaded into the low 640k memory
+           area BEFORE Mega-Em, and any software in the ROM BIOS/High/Upper
+           Memory area is considered to be SCSI software. Any software
+           loaded into the low 640k memory area after Mega-Em is considered
+           to be Roland software.
+
+           This is not ideal. You must never load any SCSI software which
+           accesses the controller directly into low memory after Mega-Em
+           (including AFDISK.EXE). More importantly you must never load any
+           Roland software into High Memory, or before Mega-Em.
+
+           If you do not correctly understand what this option does and are
+           using an Adaptec SCSI device, please do not use Mega-Em until
+           you do understand.
+
+
+ The following options are not listed on the Mega-Em help screen. They are
+ primarily for debugging purposes, and are included here since they may be
+ of use to some users.
+
+ -SBBxxx   Specify Sound Blaster base address. By default Mega-Em will use
+           the UltraSound base address. This is primarily a debugging
+           feature allowing Mega-Em's Sound Blaster emulation to operate
+           over the top of a real Sound Blaster. Note that the occasional
+           DMA failure (and hence system crash) may occur with a real Sound
+           Blaster installed in the system. Valid values are xxx=210,220,
+           230,240,250 or 260.
+
+ -SBIx     Specify Sound Blaster Irq. Another debugging feature purely for
+           testing Sound Blaster software with different Irqs. By default
+           Mega-Em will use the UltraSound MIDI Irq. Valid values are
+           x=2,3,5 or 7. 7 is the recommended value, since a number of
+           programs are 'hard coded' to use this value.
+
+ -MEMx     Manually specifies the amount of memory on the UltraSound card.
+           There should be no need to use this option, since Mega-Em should
+           correctly auto-detect the amount of memory on the UltraSound
+           card.
+
+           x=1,2,3,4 for 256k,512k,768k,1024k respectively.
+
+
+4.1.3 EMUSET.EXE COMMAND LINE OPTIONS
+
+ The following options can be added to the EMUSET.EXE command line. As can
+ be seen all options should be preceded by a '-', but can also be preceded
+ by a '/', or just separated by a space.
+
+
+ -H or -?  Display the EMUSET.EXE help screen, which is basically a
+           shortened version of this section of the manual.
+
+ -OFF      Turns emulation off. The default is to turn emulation on. For
+           example just typing EMUSET <ENTER> will activate the emulation,
+           with default options. Typing EMUSET -OFF <ENTER> will then
+           disable any emulation.
+
+ -MT       Emulate a Roland MT-32/LAPC1. The default is to emulate a Roland
+           Sound Canvas. You should use this option if your software does
+           not have Sound Canvas/SCC1/General MIDI support, but does have
+           MT-32/LAPC1/Roland support. ("Roland" alone usually refers to
+           the MT-32/LAPC1 devices).
+
+ -L        Enable the UltraSound line input. This option can be useful in
+           some situations, such as when using a real Sound Blaster card.
+
+ -Mxx      Specify music volume level. The default level is 12. The valid
+           range is xxx=1-16. For the technically minded, this switch
+           adjusts the volume in 3dB increments.
+
+ -Vxx      Specify master volume level. The default level is 16. The valid
+           range is xxx=1-16. For the technically minded, this switch
+           also adjusts the volume in 3dB increments.
+
+ -MONO     Set music playback to mono. The default mode is stereo playback.
+           This option can be useful since a few pieces of music will cause
+           audible crackling during very fast stereo pans.
+
+ -SS       Causes sustained instruments to slowly fade away. With some
+           software programs, the notes will become stuck and without this
+           option, become very annoying.
+
+ -COn      Coexist with real MPU-401 MIDI interface. While Mega-Em will
+           function correctly with a real MPU-401 MIDI interface installed
+           in the system, no software will be able to access the real
+           interface while emulation is active and these options are not
+           used. These options allow Mega-Em to be used together with a
+           real MPU-401 MIDI interface. This can be useful for DOS based
+           MIDI sequencers. Note that when using this option, Mega-Em no
+           longer emulates the MPU-401 interface, however will intercept
+           all data sent to it.
+
+           -CO1  Allow both input and output to real MPU-401. With this
+                 option music will play through both the external MIDI
+                 device(s) and the selected Mega-Em output device.
+
+           -CO2  Only allows input from real MPU-401. Music will only play
+                 through the selected Mega-Em output device. Using this
+                 option may also increase Mega-Em's compatibility on
+                 systems with a real MPU-401.
+
+
+ The following options are not listed on the EMUSET help screen. They are
+ generally not needed, but are provided since they may be of use to some
+ users.
+
+ -VOxx     Specify the number of voices used for emulation output. The
+           valid range for xx is 14 to 32, with the default being 22. Using
+           a larger number of voices increases the number of simultaneous
+           notes that can be played, but also lowers the output sampling
+           rate and hence the sound quality.
+
+ -Fxx      Sets the sampling rate at which Mega-Em stores samples in the
+           UltraSounds memory.
+
+           -F22 Strips the samples to half the normal sampling rate of the
+                UltraSound patches, which is approximately 22kHz. This
+                approximately doubles the number of patches which can be
+                loaded, however also results in noisier music playback.
+                This is the default for 256k UltraSound cards.
+
+           -F44 Loads the samples at the normal sampling rate of the
+                UltraSound patches, which is approximately 44kHz. This
+                results in higher quality music playback. This is the
+                default for 512k, 768k and 1024k UltraSound cards.
+
+ -Xx       Specify Sound Blaster version to emulate. The default is -X1,
+           emulate original Sound Blaster.
+
+           -X1 Emulate Original Sound Blaster. Some software (including
+               newer Sierra) works better if you use this option.
+
+           -X2 Emulate Sound Blaster 2.0. This option is provided only for
+               completeness. No software tested has required this option,
+               including a number of programs which state they do require a
+               Sound Blaster 2.0. Some newer Sierra games will not work
+               with this option.
+
+
+4.1.4 THE DEFAULT OPTIONS FILES.
+
+ Since many users will use some options all of the time (such as -P),
+ Mega-Em supports the ability to make these default. For both MEGAEM.EXE
+ and EMUSET.EXE you can create a single line text file containing options
+ you would like to be automatically added to the command line. The files
+ should be named MEGAEM.OPT and EMUSET.OPT respectively.
+
+ For example if you want always use the -P option, create a single line
+ text file called MEGAEM.OPT in your Mega-Em directory, where the first
+ line reads:
+
+ -P
+
+ These text files can be created with any text editor, including the EDIT
+ program supplied with DOS 5 or DOS 6.
+
+
+4.2.0 CONFIGURING YOUR SOFTWARE FOR USE WITH MEGA-EM.
+
+ Software programs are configured for different sound devices in many
+ different ways. Some will attempt to auto-detect sound devices and use
+ the best one it finds, others will prompt you during the running of the
+ program. Most common is the use of a setup program, usually called SETUP,
+ INSTALL or CONFIG. Others require you to delete a configuration file,
+ after which you will be able to change the configuration. For the correct
+ procedure for a specific program, you should consult the program's manual.
+
+
+ Ok, I know how to configure my software, now what?
+
+ Well first make sure Mega-Em is loaded and emulation is on. If the program
+ is of the type that auto-detects, just run it and it should detect the
+ devices you are emulating. If you are prompted to select sound devices,
+ select the ones you have set up your emulation for.
+
+
+ But there are too many options there. What do I choose?
+
+ For the Roland MT-32 emulation you should look for 'MT-32' or 'LAPC1'.
+ Some software just has 'Roland' as an option. This usually refers to the
+ MT-32. Remember that if you select this option you must run EMUSET -MT,
+ otherwise Mega-Em will by default emulate a Sound Canvas.
+
+ For the Roland Sound Canvas emulation you should look for 'Sound Canvas',
+ 'SCC1' or 'General MIDI'.
+
+ If you have the option of MT-32 or Sound Canvas, in most cases selecting
+ Sound Canvas will give better performance.
+
+ For Sound Blaster emulation look for Sound Blaster (strangely enough).
+ Remember Mega-Em will not play Sound Blaster Music, only digital effects.
+
+
+ Now the program is asking for my sound card settings. What should they be?
+
+ If prompted for a MIDI interface, you should select Roland MPU-401.
+ If prompted for a Roland base address, you must select 330 (hex).
+ If prompted for a Roland IRQ setting, you should select IRQ 2/9. If your
+   software fails to initialize the Roland, try using the -IRQx switch with
+   MEGAEM.EXE.
+ If prompted for a Sound Blaster base address, select your UltraSound Base
+   address unless you have used the -SBBxxx switch with MEGAEM.EXE.
+ If prompted for a Sound Blaster Irq, select your UltraSound MIDI Irq
+   unless you have used the -SBIx switch with MEGAEM.EXE.
+ If prompted for a Sound Blaster DMA channel, you must select 1.
+
+ You should now be ready to run your software. Always remember to load
+ Mega-Em and turn emulation on before running the software. Many programs
+ will crash if set up for a music device, and are then unable to locate it.
+
+
+4.3.0 A STEP BY STEP EXAMPLE.
+
+ This example assumes you have already installed Mega-Em on your hard
+ drive.
+
+ In addition, it is assumed you have consulted you program's manual and it
+ states you configure your sound options with a program called INSTALL, and
+ the program is run by typing START <ENTER>.
+
+ Step 1.  Load MEGAEM.EXE by tying MEGAEM <ENTER>. If you need to use any
+          options type MEGAEM options <ENTER>.
+
+ Step 2.  Turn on emulation by typing EMUSET <ENTER>. Many programs will
+          only allow you to select sound devices it can detect.
+
+ Step 3.  Load you program's installation program by typing INSTALL
+          <ENTER>.
+
+ Step 4.  Answer any prompts until you are prompted to select a sound
+          device.
+
+          Assume you are given the following options:
+
+          AdLib
+          Sound Blaster
+          Roland MT-32/LAPC1
+          Roland Sound Canvas
+          Roland MT-32/LAPC1 with Sound Blaster
+          Roland Sound Canvas with Sound Blaster
+
+ Step 5.  In this case you should select 'Roland Sound Canvas with Sound
+          Blaster' as it will probably give the best music performance and
+          also give digital sound effects. Note that any of the above
+          examples will work with Mega-Em, although the 'AdLib' option will
+          not give any sound, and the 'Sound Blaster' option will not play
+          any music or 'FM' effects.
+
+ Step 6.  Complete the rest of the prompts from the installation program.
+          If prompted whether or not to save the configuration, select YES.
+
+ Step 7.  Load your program by typing START <ENTER>. That's it.
+
+ Note: You should not have to configure the program again. Just make sure
+       you have loaded Mega-Em and turned on the emulation by running EMUSET.
+
+
+5.0.0 **** CHAPTER 5. - COMPATIBILITY PROBLEMS WITH VARIOUS SOFTWARE *****
+
+  5.1.0  Software that requires 386 protected mode and can not run under a
+         memory manager.
+  5.2.0  Software which is incompatible with Mega-Em.
+    5.2.1  Incompatibilities with all of Mega-Em's Emulations.
+    5.2.2  Incompatibilities with Roland Emulation
+    5.2.3  Incompatibilities with Sound Blaster DAC Emulation.
+  5.3.0  Specific software with known compatibility problems.
+    5.3.1  Harpoon (Roland)
+    5.3.2  Darkseed (Sound Blaster DAC)
+    5.3.3  Kings Quest I, Firehawk, Stellar 7 (Sound Blaster DAC)
+    5.3.4  Microsoft Windows in Enhanced Mode.
+    5.3.5  SBOS and UltraMID.
+    5.4.6  Lemmings 2 (Roland).
+    5.3.7  The Incredible Machine (General MIDI).
+    5.3.8  Budokan (Roland).
+    5.3.9  Vectordemo (Sound Blaster DAC)
+    5.3.10 Older Sierra Titles (Sound Blaster DAC)
+    5.3.11 Netroom 3
+    5.3.12 NHL Hockey
+
+
+5.1 SOFTWARE THAT REQUIRES 386 PROTECTED MODE AND CAN NOT RUN UNDER A
+    MEMORY MANAGER.
+
+ A few high-end games use the 386 protected mode to achieve superior
+ performance. Since many of these require full control of the system they
+ will not operate if the system is already in protected mode, such as when
+ a memory manager is loaded (excluding HIMEM.SYS and several shareware
+ EMMs).
+
+ Mega-Em uses the power of 386 protected mode for its emulation, and hence
+ the aforementioned games are not compatible with Mega-Em. Examples of
+ known games which exhibit such problems are COMANCHE and ULTIMA 7.
+
+ The only current solution is to use SBOS to emulate a Sound Blaster, or if
+ the game supports the use of standard AIL (Miles) drivers, use the
+ UltraSound AIL drivers. Note that the AIL drivers used by ULTIMA 7 are not
+ standard.
+
+ Furthermore, most software which use protected mode under a memory manger
+ will also fail with Mega-Em. This is due to the fact that system control
+ is taken away from Mega-Em. Examples of such software are Privateer,
+ Strike Commander, Syndicate and Windows.
+
+
+5.2.0 SOFTWARE WHICH IS INCOMPATIBLE WITH MEGA-EM.
+
+5.2.1 INCOMPATIBILITIES WITH ALL OF MEGA-EM'S EMULATIONS.
+
+ Software Title          Reason                         Solution
+
+ Comanche                Protected mode conflict        Use SBOS
+ Doom                    Protected mode conflict        Use Native Support
+ Dracula Unleashed       Protected mode conflict        Use SBOS -x2
+ IndyCar Racing          Protected mode conflict        Use SBOS -o3
+ Links 386 (Pro)         Protected mode conflict        Use SBOS
+ Privateer               Protected mode conflict        Use SBOS
+ Rebel Assault           Protected mode conflict        Use Native Support
+ Shadowcaster            Protected mode conflict        Use SBOS
+ Strike Commander        Protected mode conflict        Use SBOS
+ Syndicate               Protected mode conflict        Use SBOS
+ Ultima 7                Protected mode conflict        Use SBOS
+ Windows                 Protected mode conflict        Use UltraSound
+                                                        Windows drivers
+
+5.2.2 INCOMPATIBILITIES WITH ROLAND EMULATION.
+
+ Software Title          Reason                         Solution
+
+ Legend Text Adventures  Needs smart mode compatibility Use SBOS(No Roland)
+ Terminator 2029         Unsure                         Use AIL drivers
+
+5.2.3 INCOMPATIBILITIES WITH SOUND BLASTER DAC EMULATION.
+
+ Software Title          Reason                       Solution
+
+ DMP (using -C1 option)  Non-standard DMA operation   Use GUS Support
+ Flight Simulator 5      Possibly buggy sound driver  May work with SBOS
+ Mortal Kombat           Protected mode conflict      Use SBOS
+ Panic                   Non-standard DMA operation   Use SBOS
+ Second Reality          Non-standard DMA operation   Use GUS Support
+
+5.3.0 SPECIFIC SOFTWARE WITH KNOWN INCOMPATIBILITIES.
+
+5.3.1 HARPOON (Roland).
+
+ While Harpoon does appear to have an MT-32 sound option, it does not
+ appear to use the Roland MPU-401 MIDI interface. Almost all other
+ software which supports Roland sound devices uses the MPU-401 interface.
+ Hence this is what Mega-Em uses for its emulation, and unfortunately is
+ not compatible with Harpoon.
+
+5.3.2 DARKSEED (Sound Blaster DAC)
+
+ You may find Mega-Em gives unstable performance with Darkseed. The Sound
+ Blaster DAC drivers appear to be buggy. There is an update patch available
+ for Darkseed and this should correct any problems.
+
+5.3.3 KINGS QUEST I, FIREHAWK, STELLAR 7 (Sound Blaster DAC)
+
+ All of these games have Sound Blaster drivers which will fail to
+ initialize on fast machines. This problem occurs even with a real Sound
+ Blaster. To overcome the problem run EMUSET with the -FAST switch. In
+ addition the above games have drivers hard coded to base address 220,
+ Irq 7.
+
+5.3.4 MICROSOFT WINDOWS IN ENHANCED MODE.
+
+ When Microsoft Windows is run in enhanced mode it uses an undocumented
+ interface to communicate with Expanded Memory Managers. While Windows will
+ run correctly in enhanced mode with Mega-Em loaded, upon exiting to DOS
+ the system will crash.
+
+ To prevent this from happening, Mega-Em is designed to detect when Windows
+ tries to enter enhanced mode, offering the user the option of using
+ standard mode, or exiting to DOS. Note that Mega-Em's emulations will not
+ work with Windows.
+
+ In future revisions of Mega-Em, this problem may be corrected, provided
+ some form of documentation for the interface used can be sourced.
+
+5.3.5 SBOS AND ULTRAMID.
+
+ You must not load either Mega-Em, SBOS or UltraMID into memory at the same
+ time. Doing so results in the programs' trying to use the UltraSound at
+ the same time, resulting in impaired performance, and possibly a system
+ crash.
+
+ This should not prove to be a problem since all three programs can be
+ removed from memory to allow the loading of one of the others. To remove
+ Mega-Em from memory type MEGAEM -f. To remove SBOS from memory, type
+ SBOS -f. To remove UltraMID from memory, type ULTRAMID -f.
+
+ Mega-Em is designed to automatically remove UltraMID and SBOS from memory.
+ UltraMID is designed to automatically remove SBOS from memory.
+
+5.3.6 LEMMINGS 2 (Roland)
+
+ With Mega-Em loaded, Lemmings 2 may have palette (colour) problems such as
+ abnormally flashing objects. Currently the only solution is to use a
+ different memory manager, or try removing other resident programs.
+
+5.3.7 THE INCREDIBLE MACHINE (General MIDI).
+
+ You may find that Mega-Em produces no output when The Incredible Machine
+ is configured for General MIDI (i.e. Mega-Em is configured for Sound
+ Canvas emulation). This should not be a major problem however, since The
+ Incredible Machine works correctly if you select MT-32 as your sound
+ device.
+
+5.3.8 BUDOKAN (Roland).
+
+ To use Budokan successfully with Mega-Em, you should load it by typing
+ BUDO Mt32 <ENTER>. If you choose Roland sound from within the game, you
+ may get no sound output, and the system may be rendered unstable.
+
+5.3.9 VECTORDEMO (Sound Blaster DAC)
+
+ This program may not always detect the Sound Blaster Irq correctly. To
+ overcome the problem, you should always run the install section of the
+ demo before executing the demo.
+
+5.3.10 OLDER SIERRA TITLES (Sound Blaster DAC)
+
+ If you are having problems with driver initialisation on early Sierra
+ titles and have a fast computer, run EMUSET with the -FAST switch. This
+ should overcome the problem.
+
+5.3.11 NETROOM 3
+
+ Mega-Em is not compatible with Netroom's cloaking features. To disable
+ these features run CUSTOMIZ, select CUSTOM SETUP and turn of system and
+ video cloaking in the custom setup menu. Note that the cloaked utilities
+ (DPMI server, disk cache e.t.c.) supplied with Netroom can not be used
+ with Mega-Em.
+
+5.3.12 NHL HOCKEY
+
+ You may experience some problems with NHL Hockey when using EMM386 as your
+ memory manager. If this happens you will need to use a third party memory
+ manager such as QEMM or 386MAX.
+
+
+6.0.0 ***** CHAPTER 6. - SOLUTIONS TO COMMONLY ENCOUNTERED PROBLEMS ******
+
+
+ PROBLEM:  When using Mega-Em, the music sounds choppy or there is a lot of
+           static and clicks.
+
+ SOLUTION: Many systems allow the ISA bus clock speed to be increased
+           beyond the standard speed of 8 MHz. The Gravis UltraSound is
+           designed to conform to the standard, and will not work reliably
+           on systems with high bus clock speeds. You should be able to
+           reduce the bus clock speed in one of your CMOS setup menus. The
+           CMOS setup is usually accessible by rebooting your computer.
+
+           You may have other software which works perfectly with a high
+           bus speed setting. There are two reasons why you may be able to
+           use them, yet not Mega-Em. Firstly a large amount of UltraSound
+           software is written in high level languages such as C. Mega-Em
+           is written in assembler which generally results in more
+           efficient (faster) code. Secondly Mega-Em is executed in
+           protected mode which results in I/O instructions being executed
+           faster than in virtual 8086 mode or real mode. Both of these
+           situations lead to the UltraSound being unable to 'keep up' with
+           Mega-Em.
+
+
+ PROBLEM:  Standard system information programs fail to show Mega-Em as
+           being present in memory. Examples of such programs include the
+           DOS MEM command, Nortons System Information, Quarterdeck
+           Manifest etc.
+
+ SOLUTION: Since Mega-Em installs in a non-standard way beyond the first
+           megabyte of memory, the standard DOS memory allocation system
+           will not know of it's presence. You should however see a drop
+           in free EMS memory after Mega-Em has been loaded, depending on
+           which memory manager you are using. The simplest way to see if
+           Mega-Em is installed in memory is to type EMUSET -? <ENTER>. If
+           Mega-Em is installed, you will see a help screen. If Mega-Em is
+           not installed you will see an error message stating this.
+
+
+ PROBLEM:  When I have Mega-Em loaded I get annoying pauses while running
+           certain software.
+
+ SOLUTION: This problem is most prominent with software which uses XMS/EMS
+           memory. It appears to caused by limitations of the 386/486
+           paging (virtual memory) system, and hence a side effect of
+           Mega-Em being resident and active in memory. There are several
+           work arounds you may try. Disable or remove any TSR programs
+           which use XMS/EMS such as disk caches. Limit your program's use
+           of XMS/EMS memory, or disk access.
+
+           Technical explanation: Memory managers use the 386/486 paging
+           mechanism to provide services such as EMS memory and upper
+           memory. Mega-Em loads high (above 8Mb) in the virtual memory
+           space to avoid conflicts with the memory manager. It appears
+           that the design of the paging mechanism is prone to the
+           occasional glitch, resulting in dramatic loss of speed. For
+           example, loading Mega-Em above the 32Mb mark in the virtual
+           memory space causes noticeable (on some systems intolerable)
+           slow-downs in the system speed. In theory this should not
+           happen. To back this up, the processors have special registers
+           soley for testing the paging mechanism, indicating the designers
+           were expecting problems. The only recourse would be to load
+           Mega-Em below the first megabyte of memory, but this would
+           however use an unpractical amount of precious DOS memory.
+
+
+7.0.0 ********* CHAPTER 7. - ANSWERS TO COMMONLY ASKED QUESTIONS *********
+
+
+ QUESTION: Could Mega-Em be modified so it does not require a 386 memory
+           manager, and hence work with software such as Comanche,
+           Ultima 7 etc. ?
+
+ ANSWER:   No. Mega-Em requires 386 protected mode for it's emulation to
+           operate. It uses the memory manager as a means of entering
+           protected mode, while still remaining compatible with a wide
+           variety of software. Mega-Em can not work with the above
+           mentioned software because they can not coexist with other
+           protected mode software. Furthermore, despite being able to run
+           with Mega-Em in memory, programs such as Strike Commander will
+           not work with Mega-Em because they take control of the 386
+           protected mode system, rendering Mega-Em inactive.
+
+
+ QUESTION: Well how come SBOS works with the above mentioned games?
+
+ ANSWER:   While SBOS is indeed a software emulator, it is hardware
+           assisted by specific features built into the UltraSound card.
+           The features will invoke SBOS when ever a program accesses
+           certain Sound Blaster port addresses. Mega-Em's emulation is
+           100% software, using special protection features of 386
+           protected mode.
+
+
+ QUESTION: Could features be added to Mega-Em to allow the UltraSound MIDI
+           port to be used as a Roland MPU-401 MIDI interface?
+
+ ANSWER:   Yes. This is already planned for future releases of Mega-Em.
+
+
+ QUESTION: Can I have the source code?
+
+ ANSWER:   No.
+
+
+ QUESTION: Why doesn't Mega-Em support OS/2?
+
+ ANSWER:   Mega-Em requires operating system privileges to function. OS/2,
+           like many multitasking operating systems will not allow DOS
+           programs to gain these. Most DOS memory managers will. Note that
+           it appears a suitable OS/2 driver would suffice. So anyone
+           contemplating writing OS/2 drivers for the UltraSound should
+           consider implementing similar features to Mega-Em.
+
+
+8.0.0 ************* CHAPTER 8. - MEGA-EM REVISION HISTORY ****************
+
+VERSION 2.07 02/22/95
+
+ * Changed version number since this clashed with a special version of
+   Mega-Em.
+
+VERSION 2.06 01/19/95
+
+ * Modified -SBOFF and -SBON switches for use with UltraSound ACE.
+
+VERSION 2.03 01/19/94
+
+ * EMUSET -OFF no longer returns a "Failed to detect Sound Blaster base
+   address" error.
+
+VERSION 2.02 12/22/93
+
+ * You no longer need to use the -X2 switch with EMUSET for Mega-Em to
+   work with Street Fighter 2 (digital).
+
+ * Removed beta information from the header of this file.
+
+VERSION 2.01 12/13/93
+
+ * The master volume switch (-Vxx) now works.
+
+ * Corrected problems with Irq 2 and EMM386.
+
+ * EMUSET will now check to make sure Sound Blaster Irq's are working.
+
+ * Added a general purpose check for other resident UltraSound software.
+
+ * Added -FAST switch to EMUSET for problems with Sierra software on fast
+   machines.
+
+ * Added support for Netroom 3 (not compatible with Netroom's cloaking).
+
+VERSION 2.00B023 (Beta) 11/15/93
+
+ * Corrected lockup problems with the latest SBDIG.ADV drivers.
+
+VERSION 2.00B022 (Beta) 11/12/93 (No Public Release)
+
+ * Added master volume control (-Vxx) to EMUSET.
+
+ * Changed default emulation from MT-32 to Sound Canvas.
+
+VERSION 2.00B021 (Beta) 11/03/93 (No Public Release)
+
+ * Now automatically removes SBOS and UltraMID from memory.
+
+ * Corrected bug with MIDI port initialization.
+
+ * Corrected bug with DMA and Irq latch priming on UltraSound revisions 3.4
+   and later.
+
+ * Now handles ULTRASND.INI files with patch banking definitions.
+
+VERSION 2.00B020 (Beta) 10/22/93 (No Public Release)
+
+ * Removed demonstration period since Mega-Em is no longer shareware.
+
+ * Improved speed of FM register emulation routines.
+
+ * Added support for a few pieces of software which use non standard and
+   rare Sound Blaster DAC routines.
+
+ * Modified the music volume control so it now has a more natural response.
+
+VERSION 1.10B019 (Beta) 10/13/93 (No Public Release)
+
+ * Improved speed of Sound Blaster 'Direct DAC' routines by 50%.
+
+ * Added support for 2.6 and 2 bit compressed samples.
+
+ * Sound Blaster compressed samples now decompress in the background to
+   prevent annoying pauses.
+
+ * Added routines to remove most of the clicking in the Sound Blaster DMA
+   playback routines. Special enhancements remove clicks that occur when
+   using a real Sound Blaster card.
+
+ * Corrected bugs in the Sound Blaster DMA routines where Mega-Em
+   would not play the entire sample when very small DMA buffers were used.
+
+ * Default music volume is now lower to better suit the Sound Blaster DAC
+   emulation.
+
+VERSION 1.10B018 (Beta) 09/30/93 (No Public Release)
+
+ * Better compatibility and cleaner performance from the Sound Blaster DAC
+   emulation. Some techniques still need to be implemented to reduce
+   clicking.
+
+ * Added routines for playback of Sound Blaster 2:1 compressed samples.
+
+VERSION 1.10B017 (Beta) 09/25/93 (No Public Release)
+
+ * Implemented many of the Sound Blaster DAC features. Now works with
+   around 80% of Sound Blaster software. Still needs a lot of fine tuning.
+
+VERSION 1.10B016 (Beta) 09/09/93 (No Public Release)
+
+ * Modified initial state of the virtual Roland MIDI interface. Previously
+   the Roland auto-detect on some Lucas Arts adventures would fail.
+
+ * Added basic support for Sound Blaster DAC emulation. Works only with
+   'Direct DAC' software.
+
+VERSION 1.00  08/29/93
+
+ * Mega-Em will now sustain instruments properly. To counter for stuck
+   notes the /SS option has been added to EMUSET.
+
+VERSION 1.00B015 (Beta)  08/22/93
+
+ * Sysex handling routines have been rewritten for improved speed.
+
+ * Modified protected mode interrupt handlers for increased stability.
+   Should cure problems with emulation failing on some software.
+
+ * Added support for UltraSound 'backward' samples.
+
+ * At requests from users, Mega-Em will now display a message to say it is
+   registered.
+
+ * EMUSET will now handle ULTRASND.INI files which have been edited with a
+   text editor which adds an EOF character to the end of the file.
+
+ * Several minor touch ups to the UltraSound playback routines.
+
+VERSION 1.00B014 (Beta)  08/16/93
+
+ * Fixed a minor bug in the enveloping routines which caused roll-under
+   (i.e. the volume would suddenly go very loud) when certain instruments
+   were played very softly. This has also reduced clicking slightly.
+
+ * Added /M option to EMUSET to specify the music output volume.
+
+ * Added Pitch Wheel support. The implementation uses a fixed sensitivity
+   of two semitones. The sensitivity has been fixed because of speed
+   considerations.
+
+ * Mega-Em should now be stable when running under 386MAX.
+
+ * Fixed a bug in the uninstallation routines which caused problems with
+   386MAX (and possibly other memory managers).
+
+ * Increased demonstration time to 20 minutes.
+
+VERSION 1.00B013 (Beta)  08/10/93
+
+ * Fixed problems with the anti-debugger routines incorrectly identifying
+   386 systems as being in 'no privilege' virtual 8086 mode.
+
+ * Changed protected mode installation routines slightly. The /NGDT switch
+   has been removed and the /RGDT has been added. See chapter 4 for
+   details.
+
+VERSION 1.00B012 (Beta)  08/09/93
+
+ * Due to several 'cracks' appearing for Mega-Em's registration system,
+   Mega-Em is now more resistant against reverse engineering techniques.
+   Side effects include a short pause as Mega-Em loads, larger executable
+   size, slower performance for unregistered users and a low tolerance of
+   memory resident debuggers.
+
+ * Added /NOEMS switch to MEGAEM.EXE, forcing Mega-Em to load if EMS has
+   been disabled. Useful for users who disable the EMS page frame for
+   extra upper memory, however requires some special considerations. See
+   chapter 4 for details.
+
+ * The UltraSound playback routines are now stereo. The /MONO switch has
+   been added to disable this, as the occasional piece of music can cause
+   audible crackling during very fast stereo pans.
+
+ * Made extensive modifications to Mega-Em's protected mode installation
+   routines. Mega-Em should now be exhibit improved compatibility and
+   stability with a wider range of memory managers and computer systems.
+   For stubborn cases two new MEGAEM.EXE options, /FGDT and /NGDT, have
+   been added. See chapter 4 for details.
+
+ * Temporarily removed support for 386MAX until stability can be guaranteed
+   when using Mega-Em. Currently the system is prone to potentially
+   dangerous system crashes when Mega-Em is loaded with 386MAX.
+
+ * Added many enhancements to Mega-Em's protected mode interrupt handlers.
+   This has improved stability and now allows Irq 5 to be used for the
+   UltraSound.
+
+ * Added /F switch to EMUSET to allow the user to specify the sampling rate
+   at which Mega-Em stores patches in the UltraSound DRAM. 44 uses the full
+   sampling rate of the UltraSound patch. 22 strips the sampling rate in
+   half, resulting in approximately twice as many patches being loaded,
+   however also results in noisier playback.
+
+ * Added /MEM switch to MEGAEM.EXE to allow users to manually specify the
+   amount of memory on their UltraSound card.
+
+ * Improved enveloping routines for UltraSound non-looped percussion
+   patches.
+
+VERSION 1.00B011 (Beta)  07/26/93 (No Public Release)
+
+ * Changed the memory allocation routines slightly. Stops Mega-Em from
+   'thrashing' the 386 paging mechanism, which was causing noticeable speed
+   slowdowns. This has also removed some incompatibilities introduced with
+   version 1.00B008. The latter appears to be caused by a 386 protected
+   mode processor bug.
+
+ * Added support for several MT32 sysex messages, including channel note
+   off and reset.
+
+ * Due to several programs still leaving 'stuck notes', all UltraSound
+   sustained instruments will now slowly fade away.
+
+VERSION 1.00B010 (Beta)  07/25/93 (No Public Release)
+
+ * Fixed problems in routines which set sample start, loop start and loop
+   end. Previously Mega-Em would play from the wrong portion of the
+   UltraSound's memory on some samples.
+
+ * Improved the UltraSound enveloping routines. Patches such as
+   APPLAUSE.PAT now play correctly.
+
+VERSION 1.00B009 (Beta)  07/22/93
+
+ * Fixed problems in version 1.00B008 with emulation failing on many
+   systems (except the development system of course). This was related to
+   the bugs regarding the /CO1 and /CO2 options, which should also work
+   correctly now.
+
+ * Added the /L switch to EMUSET. This enables the UltraSound line in.
+   Useful if using Mega-Em in conjunction with a real Sound Blaster card.
+
+ * The UltraSound patch set is now loaded at full sampling rate
+   (approximately 44kHz) for 512k users. In previous versions the sampling
+   rate was halved (approximately 22kHz) resulting in slightly noisy
+   output. The sampling rate is still halved when using 256k.
+
+VERSION 1.00B008 (Beta)  07/20/93
+
+ * Temporarily removed the 10 minute demonstration period, until the
+   UltraSound playback routines sound better.
+
+ * Experimented with the playback of the UltraSound patches. Patches should
+   now play on key, however the envelope on many percussion patches is
+   worse than previous versions of Mega-Em.
+
+VERSION 1.00B007 (Beta)  07/16/93 (No Public Release)
+
+ * Added /CO1 and /CO2 options to EMUSET, allowing Mega-Em to be used in
+   conjunction with a real MPU-401 MIDI interface.
+
+ * Slowed down certain UltraSound playback routines. On some systems the
+   routines were too efficient (fast) for the UltraSound to keep up.
+
+VERSION 1.00B006 (Beta)  07/14/93
+
+ * Fixed problems on some machines with EMUSET crashing at the end of the
+   UltraSound MIDI patch load. This was caused by a 'POPAD bug' present in
+   many 386 and 486 processors.
+
+ * EMUSET will now default to C:\ULTRASND\MIDI or (ULTRADIR)\MIDI if there
+   is no PatchDir definition in ULTRAMID.INI.
+
+ * Several minor bugs fixed in the error handling routines.
+
+VERSION 1.00B005 (Beta)  07/13/93
+
+ * Fixed ULTRASND environment variable checking. Mega-Em will now load with
+   the UltraSound Record DMA set to something other than 1.
+
+VERSION 1.00B004 (Beta)  07/12/93
+
+ * First Public Release. Features Roland MT-32 and Sound Canvas emulation
+   using a Gravis UltraSound card as the output device.
+
+
+                                  THE END

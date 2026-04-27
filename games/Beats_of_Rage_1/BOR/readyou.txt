@@ -1,0 +1,117 @@
+	Senile Team presents BEATS OF RAGE version 1.0028
+-----------------------------------------------------------------------
+		http://senile.mine.nu/beatsofrage
+-----------------------------------------------------------------------
+	This file was last edited on 27 january 2004 by Opla.
+-----------------------------------------------------------------------
+
+Index:
+
+1. Some words of wisdom
+2. Getting started
+3. Q&A
+4. Changelist
+
+
+
+1. Some words of wisdom
+
+Beats of Rage was created by Senile Team as a tribute to the Streets
+of Rage series, which originally appeared on Sega Megadrive/Genesis.
+We always hoped that Streets of Rage 4 would someday see the light of
+day, however SOR 4 never appeared, so we had to take matters into our
+own hands. And Beats of Rage is the result.
+
+The character sprites used in Beats of Rage are not created by Senile
+Team, but are actually 'borrowed' from SNK Playmore's King of Fighters
+series. Also some parts of the backgrounds are taken from KOF.
+
+As some parts of Beats of Rage were not created by us we wish to
+emphasise that the creators of Beats of Rage fully acknowledge the
+copyrights to Streets of Rage and King of Fighters, owned by SEGA and
+SNK Playmore, respectively. Also Beats of Rage is freeware; no fee may
+be charged for copying or distributing the Beats of Rage files.
+
+
+
+2. Getting started
+
+Step1.	Download borXXXXX.zip or 6 rars. 
+Step2.	Unpack the archive with either winzip (www.winzip.com) or 
+	winrar (www.rarlab.com). If you use windows XP, you don't need 
+	winzip, because it is built in, but you do need to copy or
+	cut the BOR files from the compressed folder.
+Step3.	Select bor.exe, press enter and start playing.
+Step3.	The standard sound settings in BOR are lowest quality, since 
+	this is most compatible. To improve the sound quality go to 
+	options, setup soundcard...
+
+
+
+3. Q&A
+
+Q: The game is not working.
+A: Multiple possibilities exist, so try if your problem may be one of 
+   these:
+   - The game is still packed, because BOR won't work from the zip 
+     file/compressed folder.
+   - Your operation system is windows 2000, or XP. These systems have 
+     lousy DOS compatibility, so try an older os or wait for the 
+     windows version.
+
+Q: Will there be a Mac, Linux, xbox, PS2, gamecube, DC, or Atari 2600 version?
+A: We haven't planned any conversion ourselves, but we may release the 
+   source code so others might make a conversion.
+
+Q: Why is the sound crappy?
+A: - Have you changed the sound settings in BOR to a higher quality 
+     (options, setup soundcard...)
+   - Your sound device does not support DOS properly.
+   - Your operation system is windows 2000, or XP. These systems have 
+     lousy DOS compatibility.
+
+Q: Who made the music?
+A: We didn't make the music ourselves, but used existing tracks of 
+   multiple artists.
+Level 1a: Coretex - Ascension
+Level 1b: SNK - King Of Fighters '95 AOF stage
+Level 2:  VNV Nation - Saviour
+Level 3:  Juno Reactor - Guardian Angel
+Level 4a: Jesper Kyd - Wasteland
+Level 4b: Front Line Assembly/Cydonia - Columbian necktie
+Level 5a: SNK - Music from Kizuna super tag battle
+Level 5b: Front Line Assembly - Columbian necktie (Goarge mix)
+Level 6a: Prodigy - The trick
+Level 6b: Project Pitchfork (VNV Nation remix) - Existence
+Mr. Y: Cubanate - Ordinary Joe
+Ending: Louis Armstrong - We have all the time in the world
+Bonus: Future Sound Of London - My Kingdom
+
+
+
+4. Changelist
+
+1.0028 -> 1.0029
+- By request, on a quick turn+jump, players now turn around instead of jumping backwards
+- By a mod editor's request, the jumping speed is now controlled by the character speed
+- Added a pretty icon.
+
+
+1.0027 -> 1.0028
+- Added option to display track titles
+- Added explanation for window offset option
+
+
+1.0024 -> 1.0027
+- Bugfix in texture code
+- Several minor fixes
+
+
+1.0021 -> 1.0024
+- Fixed level 2 (easy, normal, hard)
+- Fixed Heavy D's frame offsets
+- Added command-line options (to enable custom mods)
+- Fixed the bug known as the "K9999 error" where the program halts after lv 5
+- Added time item in level 5 (elevator)
+- Several minor changes
+

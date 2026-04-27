@@ -1,0 +1,215 @@
+@FLOORS
+*CEILING 200
+*BOXCAP 0
+flcas_a1.img
+*BOXCAP 1
+flcas_b1.img
+*BOXCAP 2
+flcasc.set      #2
+*BOXCAP 3
+flcasd.set      #2
+*BOXCAP 4
+flcas_e1.img
+*BOXCAP 14
+bluerug.img
+*BOXCAP 15
+redrug.img
+
+@WALLS
+*BOXSIDE 0
+table.img
+*DRYCHASM
+caspit.img
+*BOXSIDE 1
+*WETCHASM
+wcas.img
+*BOXSIDE 2
+*LAVACHASM
+caslava.img
+
+*DOOR 0
+dcas2.img
+*DOOR 0
+dcas3.img
+*DOOR 0
+dcas4.img
+*DOOR 0
+dcas5.img
+*DOOR 0
+dcas6.img
+
+*LEVELDOWN
+casd.img
+*LEVELUP
+casu.img
+
+*TRANS
+*DOOR 2
+portculs.img
+
+*BOXSIDE 3
+*BOXCAP 5
+*DOOR 1
+casa.set        #4
+*BOXSIDE 4
+*BOXCAP 6
+*DOOR 2
+casb.set        #3
+*BOXSIDE 5
+*BOXCAP 7
+*DOOR 1
+casc.set        #2
+*BOXSIDE 6
+*BOXCAP 8
+*DOOR 2
+casd.set        #4
+*BOXSIDE 7
+*BOXCAP 9
+*DOOR 1
+case.set        #4
+*BOXSIDE 8
+*BOXCAP 10
+*DOOR 2
+casf.set        #4
+*BOXSIDE 9
+*BOXCAP 11
+*DOOR 1
+casg.set        #3
+*BOXSIDE 10
+*BOXCAP 12
+*DOOR 2
+cash.set        #4
+*BOXSIDE 11
+*BOXCAP 13
+*DOOR 1
+casi.set        #4
+*BOXSIDE 12
+*DOOR 2
+casj.set        #3
+*BOXSIDE 13
+*DOOR 1
+cask.set        #3
+*BOXSIDE 14
+*DOOR 2
+casl.set        #2
+
+@FLATS NOSHOW
+king.img        F:1
+queen.img       F:1
+bagage1.img     F:1
+brazier.dfa     S:4
+candle.dfa      S:2
+nbones1.img
+chair3.img      F:65
+flag.img        F:65
+*ITEM 1
+key.img
+ncolumn1.img    F:1
+*ITEM 2
+deadbody.img
+*ITEM 3
+equipmen.img
+*ITEM 4
+treasre1.img
+*ITEM 5
+treasre2.img
+*ITEM 6
+treasre3.img
+daltar1.dfa     F:1
+imaiden.img     F:1
+coffin1.img     F:1
+coffin2.img     F:1
+roots1.img  	Y:-100
+roots2.img  	Y:-100
+roots3.img  	Y:-100
+chains1.img  	Y:-100
+chains2.img  	Y:-100
+rubble.img
+*ITEM 7
+chestc.img
+*ITEM 8
+chesto.img
+torchpst.dfa    s:3
+wcolumn1.dfa    F:1
+wcolumn2.dfa    F:1
+vase.img
+barrel.img
+books1.img
+firepit1.dfa    S:3
+naltar1.img     F:1
+nbarrel.img
+ncolumn2.img    F:1
+ncolumn3.img    F:1
+ncolumn4.img    F:1
+ncolumn5.img    F:1
+ncolumn6.img    F:1
+nfount1d.dfa    F:1
+nfount1m.dfa    F:1
+nfount1t.dfa    F:1
+ngrave1.img
+ngrave2.img
+ngrave3.img
+npost11.img     F:1
+wstatue1.dfa    F:1
+wstatue2.dfa    F:1
+guard1m.img     F:1
+guard1d.img     F:1
+pillow01.img
+parchflt.img
+globe.img
+writing1.img
+scroll1.img
+scroll2.img
+wardrobe.img
+pillow01.img
+*ITEM 47
+beholder.dfa
+*ITEM 72
+knight
+*ITEM 43
+ghost.dfa
+*ITEM 46
+wraith.dfa
+*ITEM 51
+firedaem.dfa
+*ITEM 52
+medusa.dfa
+
+@SOUND
+arrowfr.voc 2
+bash.voc 27
+birds.voc 24
+bodyfall.voc 20
+clank.voc 4
+clicks.voc 25
+closdoor.voc 5
+deepchoi.voc 29
+dirtl.voc 0
+dirtr.voc 1
+drip1.voc 16
+drip2.voc 17
+drums.voc 18
+eerie.voc 28
+ehit.voc 10
+explode.voc 8
+grind.voc 14
+lock.voc 21
+opendoor.voc 6
+portc.voc 15
+slowball.voc 7
+splash.voc 23
+swimming.voc 22
+swish.voc 11
+uhit.voc 9
+wind.voc 30
+
+@TEXT
+*TEXT 0
+The Imperial Guard sleeping quarters. 
+*TEXT 1
+The Main Hall
+*TEXT 2
+~Jagar Tharn bids thee welcome, foolish child.
+*TEXT 3
+~The Conference Hall
+

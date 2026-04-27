@@ -1,0 +1,362 @@
+@FLOORS
+*BOXCAP 0
+*CEILING 135 346
+floora.set      #4
+*BOXCAP 1
+floorb.set      #2
+*BOXCAP 2
+floorc.set      #3
+*BOXCAP 3
+floord.set      #2
+
+@WALLS
+*DRYCHASM
+pit.img
+*WETCHASM
+water.img
+*LAVACHASM
+lava.img
+
+*DOOR 0
+door1.img
+*DOOR 0
+door2.img
+*DOOR 0
+door3.img
+*DOOR 0
+door4.img
+*DOOR 0
+door5.img
+*DOOR 0
+door6.img
+
+dwa01.set       #2
+dwb01.set       #2
+dwc01.set       #2
+
+*LEVELDOWN
+stairdwn.img
+*LEVELUP
+stairup.img
+
+*TRANS
+*DOOR 90
+mcell.img
+
+*BOXSIDE 0
+*DOOR 1
+dwd01.set       #2
+*BOXSIDE 1
+*DOOR 2
+dwe01.set       #2
+*BOXSIDE 2
+*DOOR 1
+dwf01.set       #2
+*BOXSIDE 3
+*DOOR 2
+dwg01.set       #2
+*BOXSIDE 4
+*DOOR 1
+dwh01.set       #2
+*BOXSIDE 5
+*DOOR 2
+dwi01.set       #2
+*BOXSIDE 6
+*DOOR 1
+dwj01.set       #2
+*BOXSIDE 7
+*DOOR 2
+dwk01.set       #2
+*BOXSIDE 8
+*DOOR 1
+dwl01.set       #2
+*BOXSIDE 9
+*DOOR 2
+dwm01.set       #2
+*BOXSIDE 10
+*DOOR 1
+dwn01.set       #2
+*BOXSIDE 11
+*DOOR 2
+dwo01.set       #2
+*BOXSIDE 12
+*DOOR 1
+dwp01.set       #2
+*BOXSIDE 13
+*DOOR 2
+dwq01.set       #2
+*BOXSIDE 14
+*DOOR 1
+dwr01.set       #2
+
+@FLATS
+bagage1.img     F:1
+brazier.dfa     S:3
+candle.dfa      S:1
+nbones1.img
+flag.img
+*ITEM 1
+key.img
+ncolumn1.img    F:1
+*ITEM 2
+deadbody.img
+*ITEM 3
+equipmen.img
+*ITEM 4
+treasre1.img
+*ITEM 5
+treasre2.img
+*ITEM 6
+treasre3.img
+daltar1.dfa     F:1
+imaiden.img     F:1
+coffin1.img     F:1
+coffin2.img     F:1
+roots1.img
+roots2.img
+roots3.img
+chains1.img
+chains2.img
+rubble.img
+*ITEM 7
+chestc.img
+*ITEM 8
+chesto.img
+*ITEM 32
+rat.dfa
+*ITEM 33
+goblin.dfa
+*ITEM 34
+lizrdman.dfa
+*ITEM 35
+wolf.dfa
+*ITEM 36
+snowwolf.dfa
+*ITEM 37
+orc.dfa
+*ITEM 38
+skeleton.dfa
+*ITEM 39
+ogre.dfa
+*ITEM 40
+spider.dfa
+*ITEM 41
+ghoul.dfa
+*ITEM 42
+hellhoun.dfa
+*ITEM 43
+ghost.dfa
+*ITEM 44
+zombie.dfa
+*ITEM 45
+troll.dfa
+*ITEM 46
+wraith.dfa
+*ITEM 47
+beholder.dfa
+*ITEM 48
+icegolem.dfa
+*ITEM 49
+stonegol.dfa
+*ITEM 50
+irongole.dfa
+*ITEM 51
+firedaem.dfa
+*ITEM 52
+medusa.dfa
+*ITEM 53
+vampire.dfa
+*ITEM 54
+lich.dfa
+*ITEM 55
+Mage', 0
+*ITEM 56
+Spellswd
+*ITEM 57
+Battlemg
+*ITEM 58
+Sorceror
+*ITEM 59
+Healer
+*ITEM 60
+Nightbld
+*ITEM 61
+Bard
+*ITEM 62
+Burglar
+*ITEM 63
+Rogue
+*ITEM 64
+Acrobat
+*ITEM 65
+Thief
+*ITEM 66
+Assassin
+*ITEM 67
+Monk
+*ITEM 68
+Archer
+*ITEM 69
+Ranger
+*ITEM 70
+Barbaria
+*ITEM 71
+Warrior
+*ITEM 72
+Knight
+
+@SOUND
+arrowfr.voc 2
+bash.voc 27
+bodyfall.voc 20
+clank.voc 4
+clicks.voc 25
+closdoor.voc 5
+deepchoi.voc 28
+dirtl.voc 0
+dirtr.voc 1
+drip1.voc 16
+drip2.voc 17
+drums.voc 18
+eerie.voc 30
+ehit.voc 10
+explode.voc 8
+grind.voc 14
+hichoir.voc 29
+humeerie.voc 31
+lock.voc 21
+opendoor.voc 6
+portc.voc 15
+slowball.voc 7
+splash.voc 23
+swimming.voc 22
+swish.voc 11
+uhit.voc 9
+wind.voc 19
+
+@TEXT
+*TEXT 0
+A sign reads,
+The Bestiary - Section 1
+*TEXT 1
+A sign reads,
+The Bestiary - Section 2
+*TEXT 2
+A sign reads,
+The Bestiary - Section 3
+*TEXT 3
+A heavy, musky scent wafts through the 
+rough hewn corridors. In the distance
+you can hear what sounds to be low growls... 
+*TEXT 4
+The stench of offal and excrement is almost 
+unbearable. Nearby you can hear strange
+sounds issuing from what looks like cell doors...
+*TEXT 5
+Rats
+*TEXT 6
+Goblins
+*TEXT 7
+Lizard Man
+*TEXT 8
+You suddenly realize that the illegible scrawl may 
+have been a warning in trollish...
+*TEXT 9
+Snow Wolf
+Warning, specimen has ice breath attack.
+*TEXT 10
+Orcs
+*TEXT 11
+Skeleton
+*TEXT 12
+Minotaur
+*TEXT 13
+Spider
+Warning, this specimen is highly poisonous.
+*TEXT 14
+Ghoul
+Warning, highly cannabilistic.
+Do not feed.
+*TEXT 15
+Hell Hound
+Warning, this specimen is highly aggressive.
+*TEXT 16
++123
+On this troll's body you find a crudely drawn map, 
+obviously of this level. In the SE corner is a large, 
+red 'x'. The map also shows an illegible scrawl just NW
+of this room, marking a location just beyond the cell door...
+*TEXT 17
+Zombie
+Warning, this specimen causes disease.
+*TEXT 18
+Wraith
+Warning, specimen has spellcasting abilities.
+*TEXT 19
+Homoculus
+Warning, specimen has spellcasting abilities.
+*TEXT 20
+Ice Golem
+Warning, this specimen has a damage aura.
+*TEXT 21
+Stone Golem
+Warning, this specimen throws rocks.
+*TEXT 22
+Fire Daemon
+Warning, this guardian is extremely dangerous.
+*TEXT 23
+Medusa
+Warning, gaze attack.
+Do not stare.
+*TEXT 24
+This cell is empty. On a plaque to one side
+has been hastily etched your name.
+It seems someone has been expecting you...
+*TEXT 25
+You can see pits behind the creatures. This
+must be what the Troll keepers use to feed the
+the captive specimens...
+*TEXT 26
++20
+*TEXT 27
++15
+*TEXT 28
++20
+*TEXT 29
+Feeding Tube 1
+Caution: Specimens may inhabit these tunnels.
+*TEXT 30
+Feeding Tube 2
+Caution: Specimens may inhabit these tunnels.
+*TEXT 31
+Feeding Tube 3
+Caution: Specimens may inhabit these tunnels.
+*TEXT 32
+^10 0
+On the floor is a pressure plate. A sign above it reads,
+-
+Emergency cell release - Section 1 and 2
+-
+Push the plate? (y/n)
+:y
+:yes
+`CORRECT
+Along the halls you hear the sound of locks unbolting...
+`WRONG
+It occurs to you that releasing the locks on all the 
+cells would probably be a bad idea...
+*TEXT 33
+^15 0
+On the floor is a pressure plate. A sign above it reads,
+-
+Emergency cell release - Section 3
+-
+Push the plate? (y/n)
+:y
+:yes
+`CORRECT
+Along the halls you hear the sound of locks unbolting...
+`WRONG
+It occurs to you that releasing the locks on all the 
+cells would probably be a bad idea...
+

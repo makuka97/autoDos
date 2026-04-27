@@ -1,0 +1,193 @@
+@FLOORS
+*BOXCAP 0
+r2floora.set	#3
+*BOXCAP 1
+r2floorb.set	#3
+*BOXCAP 2
+r2floorc.set	#3
+*CEILING 200 400
+*BOXCAP 3
+r2floord.set	#3
+
+@WALLS
+*DRYCHASM
+dng2pit.img
+*WETCHASM
+dng2watr.img
+*LAVACHASM
+dng2lava.img
+
+*DOOR 0
+door1d2.img
+*DOOR 0
+door2d2.img
+*DOOR 0
+door3d2.img
+*DOOR 0
+door4d2.img
+*DOOR 0
+door5d2.img
+*DOOR 0
+door6d2.img
+
+dwa02.set	#2
+dwb02.set	#2
+dwc02.set	#2
+
+*LEVELDOWN
+strdwn2.img
+*LEVELUP
+strup2.img
+
+*TRANS
+*DOOR 90
+celdoor2.img
+
+*BOXSIDE 0
+*DOOR 1
+dwd02.set	#2
+*BOXSIDE 1
+*DOOR 2
+dwe02.set	#2
+*BOXSIDE 2
+*DOOR 1
+dwf02.set	#2
+*BOXSIDE 3
+*DOOR 2
+dwg02.set	#2
+*BOXSIDE 4
+*DOOR 1
+dwh02.set	#2
+*BOXSIDE 5
+*DOOR 2
+dwi02.set	#2
+*BOXSIDE 6
+*DOOR 1
+dwj02.set	#2
+*BOXSIDE 7
+*DOOR 2
+dwk02.set	#2
+*BOXSIDE 8
+*DOOR 1
+dwl02.set	#2
+*BOXSIDE 9
+*DOOR 2
+dwm02.set	#2
+*BOXSIDE 10
+*DOOR 1
+dwn02.set	#2
+*BOXSIDE 11
+*DOOR 2
+dwo02.set	#2
+*BOXSIDE 12
+*DOOR 1
+shelves.set	#4
+*BOXSIDE 15
+*DOOR 1
+shelf1.img
+shelf2.img
+
+@FLATS
+bagage1.img	F:1
+brazier.dfa	S:4
+candle.dfa	S:2
+nbones1.img
+flag.img
+*ITEM 1
+key.img
+ncolumn1.img	F:1
+*ITEM 2
+deadbody.img
+*ITEM 3
+equipmen.img
+*ITEM 4
+treasre1.img
+*ITEM 5
+treasre2.img
+*ITEM 6
+treasre3.img
+daltar1.dfa	F:1 S:2
+imaiden.img	F:1
+coffin1.img	F:1
+coffin2.img	F:1
+roots1.img  	Y:-100
+roots2.img  	Y:-100
+roots3.img  	Y:-100
+chains1.img  	Y:-100
+chains2.img  	Y:-100
+rubble.img
+*ITEM 7
+chestc.img
+*ITEM 8
+chesto.img
+books2.img
+crysball.dfa	S:1
+ndlamp.dfa	S:3
+dragon.dfa	F:65
+fishbowl.dfa
+pillow01.img
+skulcndl.dfa	S:2
+pillow01.img
+wardrobe.img
+parchflt.img
+scroll2.img
+*ITEM 53
+vampire.dfa
+*ITEM 42
+hellhoun.dfa
+*ITEM 46
+wraith.dfa
+*ITEM 43
+ghost.dfa
+*ITEM 47
+beholder.dfa
+*ITEM 51
+firedaem.dfa
+*ITEM 73
+JTHARN
+*ITEM 54
+lich.dfa
+*ITEM 49
+stonegol.dfa
+*ITEM 50
+irongole.dfa
+
+@SOUND
+arrowfr.voc 2
+bash.voc 27
+birds.voc 24
+bodyfall.voc 20
+clank.voc 4
+clicks.voc 25
+closdoor.voc 5
+deepchoi.voc 30
+dirtl.voc 0
+dirtr.voc 1
+drip1.voc 16
+drip2.voc 17
+drums.voc 18
+ehit.voc 10
+explode.voc 8
+grind.voc 14
+lock.voc 21
+opendoor.voc 6
+portc.voc 15
+scream1.voc 28
+scream2.voc 29
+slowball.voc 7
+splash.voc 23
+swimming.voc 22
+swish.voc 11
+uhit.voc 9
+wind.voc 19
+
+@TEXT
+*TEXT 0
+RED TEAM
+*TEXT 1
+RED TEAM DOOR
+*TEXT 2
+BLUE TEAM
+*TEXT 3
+BLUE TEAM DOOR
+

@@ -1,0 +1,256 @@
+Welcome.
+   
+Below is a brief description of 688 ATTACK SUB.  To run the game, we suggest
+you print this document for reference, as it contains several keyboard
+commands needed throughout the game.  At any time though, you can find a list
+of the key commands available on your screen by pressing F1 (the SPACE BAR
+advances to the next help screen, ESC exits help).  The first time you run the
+game, you might want to start by pressing the F1 key, visit all your sub's
+stations, and press F1 at each station.
+
+BEFORE YOU START...
+If you haven't already done so, please make a backup of your 688
+ATTACK SUB disk.  688 ATTACK SUB is not 'copy protected' software,
+you should make a backup copy of this disk using DISKCOPY (consult your DOS 
+manual if you don't know how to use DISKCOPY). Always play from your
+backup copy!
+
+IF YOU DON'T HAVE A HARD DISK:
+1.  Place your 688 ATTACK SUB disk in your floppy disk drive.  
+2.  At a DOS prompt, (A: for instance) type the letter of the floppy
+    drive that contains this disk, no space, a colon, then press ENTER.
+3.  Type CD \ then press ENTER.
+4.  Type 688 then press ENTER.
+5.  Follow the intructions you see on the screen.
+
+IF YOU DO HAVE A HARD DISK:
+You can copy all the files on your 688 disk to your hard disk.
+We have provided INSTALL.BAT, which will copy all the files from this disk
+onto a subdirectory called MAXELL at the root of your hard drive.
+1.  Place your 688 ATTACK SUB disk in your floppy disk drive.
+2.  At a DOS prompt, (A: for instance) type the letter of the floppy drive 
+    that contains this disk, no space, a colon, then press ENTER.
+3.  Type CD \ then press ENTER.
+4.  Type INSTALL, then press ENTER.
+5.  Follow the intructions you see on the screen.
+6.  Once INSTALL has finished, type 688 then press ENTER.
+7.  Follow the intructions you see on the screen.
+
+ONCE THE GAME IS LOADED...
+You will be asked to select between two scenarios.  We suggest you start with
+scenario one, the training exercise. Type the number of the scenario you would
+like to play.  First you will receive a mission description, your mission
+orders, and then you will find yourself at the Con (control room) of a 688
+ATTACK SUB (688 is the hull number of the USS Los Angeles, the first of this
+class of nuclear attack submarines). The game is paused whenever you are at the
+Con, so there is no rush.  You should press F1 to get help.  The Con is where
+you access different control areas (stations) of your sub, including the
+STATUS SCREEN, the SHIP'S CONTROL PANEL, the PERISCOPE, the NAVIGATION BOARD,
+the WEAPONS CONTROL PANEL, and the SONAR ROOM.
+
+FIRST, THE BASICS...
+Our interface is very versatile.  The interface is divided into levels.  At
+the top level is the CON.  The Con provides access to the next level down,
+called STATIONS (Stations can be rooms or panels). At every Station are
+FUNCTION BUTTONS, INDICATORS, and a DISPLAY SCREEN. The function buttons are
+grouped into areas of related functions (all the rudder positions are a group
+for instance).  All functions have 'hot spots' associated with them.  Hot
+spots are areas that perform a function if you press ENTER or a mouse button
+while at that location. There are many ways you can select hotspots.  Choose
+whatever suits your style...
+
+The TAB key will move you between all the groups available on your screen. 
+The LEFT and RIGHT arrow keys will move between all positions inside a group. 
+The UP and DOWN arrow keys will move to every position on the screen,
+regardless of groupings.  Press ENTER to make a selection.
+
+There are QUICK KEY assignments for most functions.  Press the letter 
+associated with the function, and your cursor will go directly there.  Often 
+the QUICK KEY is the first letter of the function, pressing F1 at a station 
+will list the assignments (if a function has a QUICK KEY assignment,
+it is printed in bold after the colon next to the function name in
+the help box).  Press ENTER to make the selection.
+
+The FUNCTION KEYS are assigned only to the stations, F2 through F8.  F1 
+gives you HELP on every screen.
+
+A MOUSE (with a Microsoft(TM)-compatible mouse driver) will move your cursor 
+anywhere on the station screen.  When you are over a hot spot, your cursor
+will change appearance.  Press any button on the mouse to select that 
+function.
+
+The NUMBER keys across the top of your keyboard are assigned to function 
+groups on each screen, and the groups are numbered top-to-bottom, 
+left-to-right.  Pressing a number will move you directly to the assigned 
+group.  Since the screens vary slightly, the number assignments can vary (the
+3 key will not always take you to the TARGET button for instance). Press ENTER
+to make the selection.
+
+All these methods can be used with each other-  You may mouse over to a 
+particular button, press ENTER to activate it, go directly to a station with a
+FUNCTION KEY, type a QUICK KEY followed by the mouse button to make another
+selection.  Beginners should find this easy to try. With practice you can find
+the method fastest for you.
+
+The stations in 688 ATTACK SUB have much in common.  The similar elements will
+be described below.  Other areas are explained in the individual help screens.
+(Press F1 on any screen for help). 
+
+1.  At the very top of the stations are two target information lines.  If you
+have selected a target, all known data regarding the target is printed here. 
+This will help you keep track of what your target is doing as you move from
+station to station.
+
+2.  Most of the stations contain a large DISPLAY SCREEN on the left hand 
+side.  The display screen is your 'window'.  There are three modes you can 
+select.  
+
+TOP-DOWN.  This presents the world as if you were looking at a map, with the
+darker colors indicating deeper water.
+
+CONTOUR MAPPING.  This shows you the underwater world as if looking through a
+'window' (Your 688 has been equipped with a device that functions like a
+depth finder.  It allows you to look at the actual bottom contours of the
+ocean around you.)
+
+PERISCOPE.  If your periscope is up, you will see the periscope view in 3D
+perspective.  You can see land and ships from here.  If your periscope is up,
+you will see the periscope view in place of the contour-mapping view.
+
+This display is controlled by the group of nine buttons in the lower left 
+corner of your screen.  You may select one of these buttons with the tab and
+arrow keys, your mouse, or by pressing the quick key on your keyboard that
+matches the button you want to press, below is a description of the functions
+of these buttons:  
+
+C = Turn on the contour mapping system.  
+
+P = Look to port when in contour mapping mode.  
+
+S = Look to starboard when in contour mapping mode.  
+
+F = Look forward when in contour mapping mode.  
+
+T = Turn on top-down map.  
+
+I = Zoom in the map when in top-down mode.  
+
+O = Zoom out the map when in top-down mode.  
+
+B = Turn on/off bottom contours on the top-down map.  
+
+H = Turn on/off Head-up-display
+
+The Head-up-display consists of two gauges.  At the top of the display screen
+is the compass bar, which shows your current heading.  Along the right side of
+the display screen is a depth gauge, calibrated from 0 to more than 2000
+feet.  The left edge of the depth gauge shows two markers. The dark marker
+shows where the bottom is, and the light marker shows your ship's depth (never
+let the light marker hit the dark marker!)
+
+Several things can appear on the display.  
+   
+A BOX at the center of the display:  That's you.  You are placed in the center
+of the display whenever possible.  
+
+X's:  an 'X' marker denotes a sonar contact.  The X marker is special.  It
+means that all you know about this contact is its bearing (bearing is the
+contact's position in degrees relative to north.  For instance, bearing 90
+is like saying 'due east').  You do NOT know how far away it is!  If you
+change map zoom (using the top-down map) the X's always appear to be the same
+distance away.  As soon as the sonar man can figure out how far away the
+target is, the X will change to the first available letter.  
+
+LETTERS: represent 'hard' contacts.  Your sonar man will assign a letter to
+each contact it can locate.  Once a contact has been located, a couple of
+things happen.  First, sonar starts tracking the object, leaving black dots
+behind the contact as it moves.  This gives you an idea of what direction a
+contact is moving.  The second thing sonar does is to analyze the audio
+spectrum of the contact, and try to identify the class and possibly the actual
+vessel's name.  If you TARGET the contact, this information is posted at the
+top of the screen as it is gathered, and the tracking markers for that contact
+will change color. 
+
+NUMBERS:  are placed as you set waypoints at the navigation board.  See the
+help screen (F1) at the nav board for a complete description.
+   
+At the bottom of the display screen your course (CRS), speed (SPEED), and
+depth (DEPTH) are constantly displayed. Your course is printed in degrees (90
+is east), your speed in knots, and your depth in feet.
+
+3.  The TARGET button appears on several screens, and allows you to select 
+contacts for attack.  Once you have hit the TARGET button, a cursor appears on
+the display screen (regardless of what mode the display is in).  The TAB key
+will cycle through the available contacts, (or you can use the arrow keys, the
+mouse, or type the letter of contact that have been assigned letters to place
+the cursor) and when the cursor is in the right position, (we suggest using
+the TAB key to do this, it seems the easiest) you will see the contact
+information updated on the target information line at the top of your screen. 
+You can use this feature to examine all your contacts to decide which ones you
+should (and shouldn't) attack.
+
+4.  At the bottom of your screen there are two lines of text.  The bottom line
+is the situation line, which always contains your map coordinates, and the
+time (since you started the scenario).  The upper line is the MESSAGE line. 
+Here, the crew keeps you informed of what is happening at other stations.  If
+you arm the torpedo tubes from the weapons control panel for instance, the
+weapons control officer will report to you when the torpedo is ready to fire
+even when you're looking through the periscope.
+
+
+IT'S TIME TO CHECK OUT YOUR SUB...   You're on the Con of the Los Angeles.  We
+recommend that you go to each station and press F1.  Learn about each station
+by reading the help screens.  Press the space bar to advance to the next HELP
+screen.  In the training scenario you start at periscope depth, with all
+engines stopped.  Somewhere nearby are three decommissioned warships that you
+have been ordered to destroy.  We suggest you go to the periscope, raise it,
+and take a look around (don't leave the periscope up too long though, because
+you may be detected).  From the periscope you may want to go to the weapons
+control panel to load some torpedoes.  Next, try going to the ship's control
+panel and set engines forward to 1/4 speed.  While the torpedoes are being
+armed, and the ship is accelerating, set a waypoint at the navigation board in
+the direction of your targets (they probably show up as X's, but be aware that
+whales, schools of shrimp and fish can show up as contacts.  As you head in
+the direction of the X's, the signals become stronger, and it becomes easier
+for sonar to determine what they are (remember though, you can't hear anything
+behind your sub, nor can your opponents hear behind their vessels).  Once an X
+is resolved, it will be replaced by a letter. Target that letter, and after a
+while you may get an identification.  If the periscope is still up, you should
+get identification immediately, but remember that beyond a few miles, ships
+are below the horizon.
+
+When the display screen is in contour mapping mode, lettered contacts are 
+represented by circles.  Larger circles mean closer contacts.  When lettered 
+contacts are very far away, only the letter will be displayed.  On EGA, MCGA 
+and VGA screens lettered contacts are assigned a color-  blue for underwater,
+green for surface, and red for weapons (they emit very high frequency sounds,
+so they are easy to identify)
+
+Good hunting!
+
+In the second scenario, you are being tailed by a Soviet Victor III class
+submarine, and your orders are to escape detection. Complicating the issue are
+other vessels, and more clever opponents. You have 15 minutes for this
+scenario. If you escape detection for a period of two minutes, the scenario
+will end.  You're on your own out here this time, facing new challenges.
+
+Replay both scenarios.  They play differently, with new starting locations,
+and different commanders on the other vessels.  Once you have mastered the
+Maxell Special Edition Scenarios, you will be ready to tackle Electronic Arts'
+own version, with even more: more scenarios, starting with a new training
+mission, ranging to missions of various levels of challenge, length and
+experience. There are more weapons that you can use, more ships to see, more
+maps to explore, more sounds to hear, more crewmen to meet.  You'll learn more
+about the tactics and strategies of submarine espionage, evasion and
+destruction, and face veteran enemies with new tricks of their own.  You will
+be able to test yourself against your friends with the MODEM option, or take
+the Con of the faster, deeper-diving soviet Alfa class ships.  Play either
+side of most scenarios! 
+
+Start 688 ATTACK SUB by typing 688 now, and answer the screen
+display options.  After you have played a few times, you will remember
+the number of your graphics mode.  Typing 688 4 will run 688 ATTACK
+SUB in MCGA mode without going to the graphics configuration screen.
+
+
+

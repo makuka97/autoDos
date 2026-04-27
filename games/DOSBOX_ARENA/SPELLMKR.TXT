@@ -1,0 +1,121 @@
+#00
+%0%% chance to inflict disease. Deterioration is %2 pts of 
+STR, AGI, SPD, and END, every round. +%1%% every %4 
+level(s). Duration is %5 rnd(s) per level.
+#01
+%0%% chance to inflict poison. Damage is %2 pts per %3 rnd(s). 
++%1%% every %4 level(s). Spell duration is %5 rnd(s) per level.
+#02
+%0%% chance to cause fear. +%1%% every %4 level(s). 
+Duration is %5 rnd(s) per %2 level(s).
+#03
+%0%% chance to paralyze. +%1%% every %4 level(s). Duration 
+is %5 rnd(s) per %2 level(s).
+#04
+%0%% chance to curse target(s). Deterioration is %2 pts of 
+INT, WIL, PER, and LUC every round. +%1%% every %4
+level(s). Duration is %5 rnd(s) per level.
+#05
+%0%% chance to cause death. +%1%% per %4 level(s).
+#06
+Cause %0 to %1 pts of damage to health every %a rnd(s). Duration 
+is %5 rnd(s). Damage is + %2 to %3 pts every %4 level(s).
+#07
+Cause %0 to %1 pts of damage to fatigue every %a rnd(s). Duration 
+is %5 rnd(s). Damage is + %2 to %3 pts every %4 level(s).
+#08
+Cause %0 to %1 pts of damage to spell points every %a rnd(s). 
+Duration is %5 rnd(s).+ %2 to %3 pts damage every %4 level(s).
+#09
+%0 hit pts shield created. +%1 pts every %4 level(s). 
+#10
+%0 wall(s) permanently created.
+#11
+%0 floor(s) permanently created.
+#12
+%0%% chance to cure a disease of equal level to the caster. 
++%1%% per %4 level(s).
+#13
+%0%% chance to cure poison of equal level to caster. +%1%% 
+per %4 level(s).
+#14
+%0%% chance to remove fear of equal level to caster. +%1%% 
+per %4 level(s).
+#15
+%0%% chance to cure paralyzation of equal level to caster. 
++%1%% per %4 level(s).
+#16
+%0%% chance to remove a curse of equal level to caster. 
++%1%% per %4 level(s).
+#17
+%0%% chance to resurrect a person of equal level to 
+caster. +%1%% per %4 level(s).
+#18
+%0 to %1 pts damage to health +%2 to %3 pts per %4 level(s).
+#19
+%0 to %1 pts damage to fatigue +%2 to %3 pts per %4 
+level(s).
+#20
+%0 to %1 pts damage to spell pts +%2 to %3 pts per %4 
+level(s).
+#21
+%0%% chance caster is ignored +%1%% per %4 level(s). 
+%5 rnd(s) per %2 level(s). You may %b cast other spells.
+#22
+%0 wall(s) permenantly negated.
+#23
+%0 floor(s) permenantly negated.
+#24
+%0 to %1 pts of damage to health +%2 to %3 pts per 
+%4 level(s).
+#25
+%0%% chance to disintegrate target(s) equal to caster's 
+level. +%1%% every %4 level(s).
+#26
+%0%% chance to dispel spells equal to caster's level. 
++%1%% per %4 level(s). Area is a %5 meter radius.
+#27
+%0 pts of %c drained from target(s) for %5 rnd(s) per 
+level. Target(s) recover %c at %1 pts per %4 rnd(s). 
+#28
+Resistance to %c +%0%% for %5 rnd(s) per %2 level(s) of 
+caster. +%1%% per %4 level(s) of caster.
+#29
++%0 pts of %c to caster for a %5 rnd(s) per level. 
+%c loss will occur at a rate of %1 pts per %4 rnd(s).
+#30
++%0 to %1 pts to %c + %2 to %3 pts per %4 level(s).
+#31
+Transfers %0 pts of %c from target(s) to caster.
+#32
+%0 hit point cage created around target(s). 
++%1 pts per %4 level(s).
+#33
+Caster invisible for %0 rnd(s) +%1 rnd(s) per %4 level(s).
+#34
+Caster can float for %0 rnd(s). +%1 rnd(s) per %4 level(s).
+#35
+Creates a globe of light for %5 rnd(s) per level. 
+The light %f.
+#36
+%0%% chance of magically locking a door. Duration is 
+%5 rnd(s) per %2 level(s). Lock strength +%1%% per %4 lev.
+#37
+%0%% chance of magically opening a locked door. Chance 
+increases +%1%% per %4 level(s).
+#38
+Regenerate %0 health points every %1 rnd(s) 
+for %4 rnd(s) per level.
+#39
+%0%% chance of silencing target(s) for %5 rnd(s) per %2 
+level(s), +%1%% per %4 level(s).
+#40
+%0%% chance to absorb spell points of an incoming spell. 
++%1%% per %4 level(s). Duration is %5 rnd(s) per %2 level(s).
+#41
+%0%% chance to reflect a spell back at opposing caster. 
++%1%% per %4 level(s). Duration is %5 rnd(s) per %2 level(s).
+#42
+%0%% chance to resist a incoming spell. +%1%% per %4 
+level(s). Duration is %5 rnd(s) per %2 level(s).
+#

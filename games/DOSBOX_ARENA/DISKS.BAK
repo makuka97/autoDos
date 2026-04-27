@@ -1,0 +1,44 @@
+copy c:\arena\names.dat c:\
+except (*.0? *.$* *.1? *.5? *.64 *.61 *.63) copy *.* c:\arena /U
+c:
+cd \arena
+del a.exe
+move arena.exe a.exe
+del a.bat
+del *.$*
+del *.1?
+del *.2?
+del *.3?
+del *.4?
+del *.5?
+del *.7?
+del *.8?
+del *.9?
+del *.60
+del *.61
+del *.62
+del *.63
+del *.64
+del *.66
+del *.67
+del *.68
+del *.69
+copy e:\games\mif\crypt.mif 41649375.mif
+copy e:\games\mif\khu.mif 40181409.mif
+copy e:\games\mif\fang.mif 42068779.mif
+copy e:\games\mif\skeep.mif 39699021.mif
+copy e:\games\mif\labrnth.mif 41418704.mif
+copy e:\games\mif\forti.mif 42110737.mif
+copy e:\games\mif\dagoth.mif 42026882.mif
+copy e:\games\mif\bgate.mif 39950681.mif
+copy e:\games\mif\crystal.mif 42488253.mif
+copy e:\games\mif\mgtempl.mif 41229981.mif
+copy e:\games\mif\elden.mif 40852494.mif
+copy e:\games\mif\selene.mif 40642738.mif
+copy e:\games\mif\halls.mif 39300577.mif
+copy e:\games\mif\agtempl.mif 40370128.mif
+copy e:\games\mif\murk.mif 40516921.mif
+copy e:\games\mif\gemin.mif 42194658.mif
+copy e:\games\mif\imppal.mif
+copy c:\names.dat c:\arena
+

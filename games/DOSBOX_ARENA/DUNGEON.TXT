@@ -1,0 +1,46 @@
+Halls of Colossus
+You stand before the gigantic walls of the Halls of Colossus, built by 
+giants in an age long past. The wind echoes mournfully through the empty 
+battlements. Here lies the fourth piece of the Staff of Chaos...
+#
+Crypt of Hearts
+The chill of death seems to touch your heart as you gaze upon the stone 
+walls of the Crypt of Hearts. Above the entrance stands a grinning skull, 
+a warning to those who would traverse the halls of the dead. You can sense 
+the sixth piece of the Staff of Chaos, somewhere below...
+#
+Crystal Tower
+The Crystal Tower dominates the area, rising like an accusatory finger 
+pointing at the sky above. This bastion of sorcery seemingly transcends 
+normal human conceptions, existing in many planes other than this. You 
+can sense the fifth piece of the Staff of Chaos, somewhere above...
+#
+Dagoth-Ur
+The sacred entrance of the Dwarven smiths into the fire mountain, Dagoth-Ur, 
+stands before you. Magical runes glow in the red firelight, shimmering with 
+heat. Sulphurous gouts of steam escape from vents within the rock face of
+the opening. The final piece of the Staff of Chaos beckons...
+#
+Elden Grove
+The small overgrown entrance to the Elden Grove stands before you, 
+guarding secrets forgotten for ages. Somewhere within its misty corridors  
+lies the third piece of the Staff of Chaos...
+#
+Fang Lair
+You stand before the dragon gate of Fang Lair, humbled before its 
+majesty. The Dwarven Hold seems abandoned long ago, its stone walls 
+cracking with age and neglect. Somewhere within its dank depths lies 
+the first piece of the Staff of Chaos...
+#
+Labyrinthian
+Stubborn grass and roots stand in the stiff arctic clime, refusing to 
+yield. Ahead of you stands the entrance to the Labyrinthian, testing 
+ground of the Archmagus Shalidor. Within its twisted paths lies 
+the second piece of the Staff of Chaos...
+#
+Murkwood
+The mists of Murkwood, the Black Forest, swirl about. Inside the dark 
+forest can be heard faint cries of despair, souls who have lost their way 
+within its cunning web. Though the smell of decay flows from every tree and 
+stone, within this forest lies the seventh piece of the Staff of Chaos...
+#

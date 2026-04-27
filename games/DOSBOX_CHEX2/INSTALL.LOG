@@ -1,0 +1,54 @@
+*** Installation Started 9/8/97 10:44 ***
+Title: Chex® Quest Installation
+Source: G:\SETUP.EXE
+INI New: Created INI
+INI File: C:\WINDOWS\chex.INI
+INI Sect: VIDEO
+INI Item: CD
+INI Val: 0
+INI File: C:\WINDOWS\chex.INI
+INI Sect: VIDEO
+INI Item: SIZE
+INI Val: 2
+Made Dir: f:\chex
+File Copy: f:\chex\intro.smk
+File Copy: f:\chex\end.smk
+File Copy: f:\chex\menu.exe
+File Copy: f:\chex\intro.exe
+File Copy: f:\chex\end.exe
+File Copy: f:\chex\SMACKE16.DLL
+File Copy: f:\chex\SMACKW16.DLL
+File Copy: f:\chex\SMACKW32.DLL
+File Copy: f:\chex\chex1.bat
+File Copy: f:\chex\readme.txt
+File Copy: f:\chex\chex.exe
+File Copy: f:\chex\setup.exe
+File Copy: f:\chex\chex.wad
+INI File: C:\WINDOWS\chex.INI
+INI Sect: CDROM
+INI Item: OS
+INI Val: 95
+Made Dir: C:\WINDOWS\STARTM~1\PROGRAMS\CHEX_Q~1
+Shell Link: C:\WINDOWS\Start Menu\Programs\Chexr Quest\Launch Chexr Quest.lnk
+Shell Link: C:\WINDOWS\Start Menu\Programs\Chexr Quest\Launch Chexr Quest Setup.lnk
+Shell Link: C:\WINDOWS\Start Menu\Programs\Chexr Quest\Install America Online.lnk
+File Copy: F:\CHEX\UNWISE.EXE
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Chex® Quest
+RegDB Val: Chex® Quest
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Chex® Quest
+RegDB Val: F:\CHEX\UNWISE.EXE F:\CHEX\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+Icon Group: Chex® Quest
+Icon Name: Uninstall Chex® Quest
+Icon Cmd: F:\CHEX\UNWISE.EXE F:\CHEX\INSTALL.LOG
+INI File: C:\WINDOWS\chex.ini
+INI Sect: CDROM
+INI Item: PATH
+INI Val: G:\
+INI File: C:\WINDOWS\chex.ini
+INI Sect: MENU
+INI Item: PATH
+INI Val: F:\CHEX\

@@ -1,0 +1,212 @@
+    
+                   The Elder Scrolls, Chapter I: Arena
+                              Version 1.06
+----------------------------------------------------------------------
+
+*PLEASE READ before installing patch 1.06 to your existing Arena directory.*
+
+The following features have been implemented in the 1.06 patch:
+
++ A Pentium slowdown has been included in the patch. To slow down game play
+for a Pentium, type:
+arena -delay:#
+at the DOS prompt, where # is an integer between 1 and 9. 1 causes the
+least delay, 9 causes the most delay. We recommend 4 as a good speed.
+If, after starting the game on your Pentium using this feature, you find
+the speed still is not right, you may adjust the delay using the + and -
+keys. 
+
++ Two lockups, one related to Travelling, and the other related to Wilderness
+Inns, have been fixed.
+
++ A problem arose where you shot a bow across water, and every other weapon in
+your inventory became unequippable. It has been corrected.
+
++ Some users found that they could not drop any items. This has been fixed.
+
++ Getting stuck in a wall: if this happens, check the automap - if there is
+an open tile adjacent to you, then just save your game, exit, and start up
+again, restoring the game. You will find yourself out of the wall. If there
+are no open tiles nearby, you will have to restore a previous game. We
+recommend that you do not Passwall into a stairwell, or you will almost
+certainly get stuck.
+
++ Can't get an Artifact Quest: This seems to be related to picking the
+Start New Game option while in the middle of another game. We recommend
+that you do not choose this option. If you do find that you have reached at
+least level 5, and you still get no Artifact Quest when asking townsfolk 
+for Rumors - General, then you may enable these quests by hitting:
+      [ALT] F5
+in combination. (a message should appear)
+NOTE: This will _not_ enable another quest if you already possess an
+artifact, and it could potentially ruin an Artifact Quest if you are
+currently on one. This fix is only intended to be used _once_, if at all.
+
+A general helpful tip is to save your game often, and keep one backup save 
+file handy.
+
+  Other bugs in various quests and major dungeons related to memory
+problems have been fixed, as well as various minor bugs. Many problems
+have been solved simply using the boot disk option from the install.
+
+  We would like to thank everyone who has called or sent us notices
+that have helped us make 1.06 as complete a patch as it is. Special
+thanks goes to the beta-testers who have been tirelessly testing
+ARENA since the beginning: Barry "Bandit" Boland, Michael Boutin,
+Steve Cotelesse, Whit "Barak Halfhand" Crowley, Robert "Arkay" Deutsch,
+Mary Jo DiBella, David Land, Ed Paquette, Virgil Rochowansky, Doug
+Roderick, Jim Seyfer, Peter Sutton, Marilyn "Mara" Wasserman, Judy
+Weller, Oliver Wenzel, and Stephen "Zen" Zepp. We'd also like to thank our
+new testers, who jumped in on 1.06 testing: Lawrence "Smaug" Szydlowski,
+Richard Gunter, Gary "Sage" Vandegrift, Steffen "Cyborg" Reinhart, Richard
+Rodway, and Adrian "Crez" Creswell.
+
+  We are currently in production for the second chapter of the Elder
+Scrolls, Daggerfall, expected to completed in early '95. Daggerfall 
+will feature the same open-endedness and breadth of area to explore that 
+Arena had, but will also include far more NPC interaction, a faster 
+and more flexible 3D engine, and a more sophisticated storyline. All 
+in all, Daggerfall will give you more opportunity to roleplay your 
+character as you choose. We are very excited about it, and would 
+appreciate any and all suggestions for it.
+
+If you want to hold onto a character for the sequel, save files *.0x,
+where x equals the number of the saved game (notice that 0 is the first 
+saved slot, and 9 is the last).	Note that there will be several files to
+save.
+
+        Thank you for playing the Elder Scrolls, Chapter I: Arena. 
+        Journey on.
+
+
+-- Bethesda Softworks
+
+
+Old Notes on Previous Patches:
+
+Patch 1.05
+THE AUTOMAP:
+  The 1.05 patch fixes a number of bugs from all previous versions of Arena,
+and has a number of features, but one of the most important is that your
+automap will no longer disappear on you. The bad news is that when the patch
+1.05 is first added to your existing Arena game, all current automaps will
+be wiped clean, so BE CERTAIN to get your character out of any dungeon
+before adding the patch. From that moment on, the last sixteen locations
+visited will be saved as automaps (each dungeon level counts as one location). 
+
+  Additional bug fixes and features are outlined below:
+
++ Light spell's duration has               + Buying magic items has been
+  been fixed                                 fixed
++ Holiday features have been               + Transfer spells have been
+  fixed                                      fixed
++ Key problems in dungeons have            + Weapon damage has been fixed 
+  been fixed                               + Player can now rename spells
++ Spellbooks are alphabetically		 	(left-click on the spell
+  arranged		 			 name)
++ Heal spells have been fixed              + ESC now takes you out of
++ The color of the cursor stands             the automap and logbook
+  out now                                  + The color of the text stands
++ Fire-based spells have been                out now
+  fixed                                    + New characters created from
++ Monsters will no longer trap               within the game will work
+  you when you swim under them             + Traveling estimated time
+  (they may attempt to block you)            closer to actual traveling time
++ Magic items that add points to           + Identifying potions fixed
+  attributes have been fixed               + Encumberance caused by the
++ Various artifact quest bugs                artifacts, the Skeleton's
+  have been fixed                            Key and King Orghum's Coffer
++ Memory problems associated with            has been fixed.
+  traveling has been fixed.                + Various noble quest bugs have
++ Diseases have been fixed                   been fixed
++ All stats maxxed to 100 bug has
+  been fixed.
+
+
+Patches 1.01, 1.02, 1.03, 1.04
+* Multiple 'Fortify' on a single spell now fortify all stats that are
+in the spell. Therefore a spell that fortifies STR, INT, and WIL will 
+now fortify all those stats rather than changing your gender, for example.
+It will NOT fix your gender if you're already changed. (sorry)
+
+* Not able to complete certain quests: 
+We found a bug in the quest generator and fixed it. It should
+correct the problem where quests that went to a city had no end point. 
+
+* New hot keys:
+Shift + C = Recast spell
+Ctrl + left arrow or right arrow  = Slide left or right
+'-' and '+' = scroll inventory up or down in charsheet.
+Shift + J = Standing long jump. (it actually was implemented in patch 3)
+
+* The travel routine was rewritten:
+Those of you with bugs involving travel times should find the new routine
+to work much better.
+
+* The problem with people losing stats when equipping / de-equiping certain
+items:
+We found a problem in the way the code calculated fortified stats due
+to spells vs. items such as a sword of strength. It is now fixed.
+
+* Lost or missing keys:
+We fixed the problem with keys being gone or 'worthless', but for the fix
+to take effect, you must reload a game BEFORE you have gotten any of the
+keys in question. Simply reloading the current game will NOT work.
+
+* Related but not the same, if you leave a dungeon after having unlocked
+some doors, those doors will now stay unlocked when you return. Any keys
+associated with those doors will be marked 'worthless'.
+
+* Witches Festival is now fixed so that you can now ID items for free.
+
+* Not being charged for a room at an inn is now fixed.
+
+* The F4 key now toggles message pixellation. If you would prefer
+messages to pop on to the screen rather than pixellate in, click
+the F4 key. Clicking the key again will toggle the messages back to
+pixellation.
+
+* Due to popular demand, spellcasters can now delete spells from
+their spellbooks. Simply go to the second page of your character
+sheet, click on spellbook, double-click on the spell you wish to
+delete, and when the spell description appears choose the new
+"delete" option.
+
+* Also due to popular demand, it is now possible to sell most all
+magic items in equipment stores, including torcs, crystals, rings,
+and bracelets.
+
+* Mouse movement has been improved.
+
+* It is now possible to lower the detail level even more for
+slower machines.
+
+* The F3 key now toggles damage response. There are three choices
+available: "Normal Roll", "Severe Roll", and "Cross Hatch". This is
+in response to the "Quadrant Jerk" complaint.
+
+* Reported problems with negotiation, character inventory,
+and other minor glitches have also been fixed.
+
+* Knights repair at 10x their level instead of 3x their level for items.
+
+* Random encounters in city at night have been reduced a bit.
+
+* Automapping in the interior (it used to garble up) has been fixed.
+
+* People who saved games in interiors experienced problems when exiting
+the interior in patch #1. This has been remedied.
+Note: If you are one of these people, you will not get any music until
+       you exit the interior or climb up or down a level inside. This
+       is not a bug. The system needs to reread a file.
+
+* To aid us in tracking bugs, a version number will be displayed when
+exiting the game. Please take note of it. The most current version is 1.06.
+
+* The standing long jump (shift+j) has been fixed.
+
+* There is no spell that will allow a caster to heal a drained attribute.
+This was a mistake in the manual.
+
+
+
