@@ -450,9 +450,43 @@ class App:
                      font=("TkDefaultFont", 28, "bold")).pack(pady=(18, 10))
 
     def _build_list(self):
-        """Build the scrollable game library panel."""
-        frame = tk.Frame(self.root, bg=BG, padx=12)
-        frame.pack(fill=tk.BOTH, expand=True, padx=0, pady=(0, 8))
+        """Build the search bar + scrollable game library panel."""
+        outer = tk.Frame(self.root, bg=BG, padx=12)
+        outer.pack(fill=tk.BOTH, expand=True, padx=0, pady=(0, 8))
+
+        # ── Search bar ────────────────────────────────────────────────────
+        search_frame = tk.Frame(outer, bg=BG)
+        search_frame.pack(fill=tk.X, pady=(0, 6))
+
+        self.search_var = tk.StringVar()
+
+        search_box = tk.Entry(
+            search_frame, textvariable=self.search_var,
+            bg=LIST_BG, fg=TEXT, relief="flat", bd=0,
+            font=("TkDefaultFont", 12),
+            highlightthickness=1, highlightbackground=BORDER,
+        )
+        search_box.pack(fill=tk.X, ipady=5)
+        search_box.insert(0, "Search games...")
+        search_box.config(fg=MUTED)
+
+        def on_focus_in(e):
+            if search_box.get() == "Search games...":
+                search_box.delete(0, tk.END)
+                search_box.config(fg=TEXT)
+
+        def on_focus_out(e):
+            if not search_box.get():
+                search_box.insert(0, "Search games...")
+                search_box.config(fg=MUTED)
+
+        search_box.bind("<FocusIn>",  on_focus_in)
+        search_box.bind("<FocusOut>", on_focus_out)
+        search_box.bind("<Escape>",   lambda e: (self.search_var.set(""), search_box.delete(0, tk.END), search_box.insert(0, "Search games..."), search_box.config(fg=MUTED)))
+
+        # ── Game list ─────────────────────────────────────────────────────
+        frame = tk.Frame(outer, bg=BG)
+        frame.pack(fill=tk.BOTH, expand=True)
 
         container = tk.Frame(frame, bg=BORDER, bd=1, relief="flat")
         container.pack(fill=tk.BOTH, expand=True)
@@ -477,6 +511,12 @@ class App:
         sb = ttk.Scrollbar(inner, orient=tk.VERTICAL, command=self.listbox.yview)
         sb.pack(side=tk.RIGHT, fill=tk.Y)
         self.listbox.configure(yscrollcommand=sb.set)
+
+        # Filtered indices — maps listbox position to library index
+        self._filtered_indices: list = []
+
+        # Attach search trace now that listbox exists
+        self.search_var.trace_add("write", self._on_search)
 
     def _build_buttons(self):
         """Build the bottom button bar."""
@@ -516,14 +556,42 @@ class App:
         """Persist library to library.json."""
         LIBRARY_FILE.write_text(json.dumps(self.library, indent=2))
 
-    def _refresh_list(self):
-        """Repopulate the listbox from self.library."""
+    def _refresh_list(self, query: str = ""):
+        """Repopulate the listbox, optionally filtered by search query."""
         self.listbox.delete(0, tk.END)
+        self._filtered_indices = []
+        q = query.strip().lower()
         for i, entry in enumerate(self.library):
+            if q and q not in entry["name"].lower():
+                continue
+            self._filtered_indices.append(i)
+            j = len(self._filtered_indices) - 1
             self.listbox.insert(tk.END, f"  {entry['name']}")
-            bg = LIST_BG if i % 2 == 0 else ALT_ROW_BG
-            self.listbox.itemconfig(i, bg=bg)
+            bg = LIST_BG if j % 2 == 0 else ALT_ROW_BG
+            self.listbox.itemconfig(j, bg=bg)
         self.btn_launch.state(["disabled"])
+
+    def _on_search(self, *_):
+        """Live filter the game list as user types."""
+        q = self.search_var.get()
+        if q == "Search games...":
+            q = ""
+        self._refresh_list(q)
+
+    def _get_selected_entry(self):
+        """Return the library entry for the current listbox selection, or None."""
+        sel = self.listbox.curselection()
+        if not sel:
+            return None
+        lib_idx = self._filtered_indices[sel[0]] if self._filtered_indices else sel[0]
+        return self.library[lib_idx]
+
+    def _get_selected_lib_index(self):
+        """Return the library index for the current listbox selection, or None."""
+        sel = self.listbox.curselection()
+        if not sel:
+            return None
+        return self._filtered_indices[sel[0]] if self._filtered_indices else sel[0]
 
     def _on_select(self, _event=None):
         """Enable/disable Launch button based on selection."""
@@ -536,14 +604,13 @@ class App:
 
     def _show_context_menu(self, event):
         """Show right-click context menu only when clicking on an actual game row."""
-        idx = self.listbox.nearest(event.y)
+        lb_idx = self.listbox.nearest(event.y)
 
-        # Bail out if no games, or click is in empty space below last row
-        if not self.library or idx < 0 or idx >= len(self.library):
+        # Bail out if no games or empty space
+        if not self._filtered_indices or lb_idx < 0 or lb_idx >= len(self._filtered_indices):
             return
 
-        # Check the click is actually within the row's bounding box
-        bbox = self.listbox.bbox(idx)
+        bbox = self.listbox.bbox(lb_idx)
         if not bbox:
             return
         _, row_y, _, row_h = bbox
@@ -551,16 +618,20 @@ class App:
             return
 
         self.listbox.selection_clear(0, tk.END)
-        self.listbox.selection_set(idx)
+        self.listbox.selection_set(lb_idx)
         self._on_select()
+
+        lib_idx = self._filtered_indices[lb_idx]
+        entry   = self.library[lib_idx]
 
         menu = tk.Menu(self.root, tearoff=0, bg=BTN_BG, fg=TEXT,
                        activebackground=SEL_BG, activeforeground=TEXT,
                        relief="flat", bd=0, font=("TkDefaultFont", 11))
-        menu.add_command(label="⚙  Game Settings", command=lambda: self._show_game_settings(self.library[idx]))
-        menu.add_command(label="🔄  Change EXE", command=lambda: self._show_exe_picker(self.library[idx]))
+        menu.add_command(label="✏  Rename",       command=lambda: self._rename_game(entry))
+        menu.add_command(label="⚙  Game Settings", command=lambda: self._show_game_settings(entry))
+        menu.add_command(label="🔄  Change EXE",   command=lambda: self._show_exe_picker(entry))
         menu.add_separator()
-        menu.add_command(label="🗑  Remove", command=self._remove_selected)
+        menu.add_command(label="🗑  Remove",        command=self._remove_selected)
 
         # Dismiss on any click outside
         menu.bind("<FocusOut>", lambda e: menu.unpost())
@@ -647,7 +718,9 @@ class App:
             self.library.append(entry)
             self._save_library()
             self.root.after(0, self._refresh_list)
-            self.root.after(0, lambda: self._launch_entry(entry))
+            self.root.after(0, lambda: RenameModal(
+                self.root, entry, on_save=self._on_rename_saved,
+                then=lambda: self._launch_entry(entry)))
         else:
             self.root.after(0, lambda: ExePickerModal(
                 self.root, exes, dest, entry,
@@ -661,7 +734,8 @@ class App:
         self.library.append(entry)
         self._save_library()
         self._refresh_list()
-        self._launch_entry(entry)
+        RenameModal(self.root, entry, on_save=self._on_rename_saved,
+                    then=lambda: self._launch_entry(entry))
 
     # ── CD Add Pipeline ───────────────────────────────────────────────────────
 
@@ -758,7 +832,8 @@ class App:
                 break
         self._save_library()
         self._show_disc_tip(entry)
-        self._launch_entry(entry)
+        RenameModal(self.root, entry, on_save=self._on_rename_saved,
+                    then=lambda: self._launch_entry(entry))
 
     def _show_disc_tip(self, entry: dict):
         """Show multi-disc tip if game has more than one ISO."""
@@ -774,12 +849,10 @@ class App:
     # ── Launch ────────────────────────────────────────────────────────────
 
     def _launch_selected(self):
-        """Launch the currently selected game — always read fresh from library."""
-        sel = self.listbox.curselection()
-        if not sel:
+        """Launch the currently selected game."""
+        entry = self._get_selected_entry()
+        if not entry:
             return
-        # Re-read from library to pick up any settings changes
-        entry = self.library[sel[0]]
         self._launch_entry(entry)
 
     def _launch_entry(self, entry: dict):
@@ -876,9 +949,12 @@ class App:
         if proc.returncode != 0:
             self.root.after(0, lambda: self._show_exe_picker(entry))
 
-    def _show_game_settings(self, entry: dict):
-        """Open per-game DOSBox settings dialog."""
-        GameSettingsModal(self.root, entry, on_save=self._on_settings_saved)
+    def _launch_selected(self):
+        """Launch the currently selected game."""
+        entry = self._get_selected_entry()
+        if not entry:
+            return
+        self._launch_entry(entry)
 
     def _on_settings_saved(self, entry: dict):
         """Save updated game settings to library."""
@@ -897,6 +973,22 @@ class App:
             return
         ExePickerModal(self.root, exes, dest, entry, on_confirm=self._on_exe_picked)
 
+    # ── Rename ───────────────────────────────────────────────────────────────
+
+    def _rename_game(self, entry: dict):
+        """Open rename dialog for a game from the context menu."""
+        RenameModal(self.root, entry, on_save=self._on_rename_saved)
+
+    def _on_rename_saved(self, entry: dict, new_name: str):
+        """Save renamed game back to library."""
+        entry["name"] = new_name
+        for i, e in enumerate(self.library):
+            if e["id"] == entry["id"]:
+                self.library[i] = entry
+                break
+        self._save_library()
+        self._refresh_list()
+
     # ── Remove ────────────────────────────────────────────────────────────
 
     def _remove_selected(self):
@@ -904,10 +996,10 @@ class App:
         Only offers to delete files if the folder is inside AutoDOS games dir.
         External CD game folders are never deleted.
         """
-        sel = self.listbox.curselection()
-        if not sel:
+        lib_idx = self._get_selected_lib_index()
+        if lib_idx is None:
             return
-        entry      = self.library[sel[0]]
+        entry      = self.library[lib_idx]
         ext_path   = Path(entry["extracted_path"])
         is_managed = ext_path.is_relative_to(GAMES_DIR)
 
@@ -931,7 +1023,7 @@ class App:
             if not result:
                 return
 
-        self.library.pop(sel[0])
+        self.library.pop(lib_idx)
         self._save_library()
         self._refresh_list()
 
@@ -1212,6 +1304,75 @@ class GameSettingsModal:
         self.entry["ems"]     = self.ems_var.get()
         self.win.destroy()
         self.on_save(self.entry)
+
+
+# ── Rename Modal ─────────────────────────────────────────────────────────────
+
+class RenameModal:
+    """Quick rename dialog shown after a game is added to the library.
+    Only changes the display name — nothing else is touched.
+    """
+
+    def __init__(self, parent, entry: dict, on_save, then=None):
+        self.entry   = entry
+        self.on_save = on_save
+        self.then    = then   # optional callback after save (e.g. launch)
+
+        self.win = tk.Toplevel(parent)
+        self.win.title("Name Your Game")
+        self.win.configure(bg=BG)
+        self.win.geometry("420x160")
+        self.win.resizable(False, False)
+        self.win.transient(parent)
+        self.win.lift()
+        self.win.focus_force()
+
+        tk.Label(self.win,
+                 text="Give this game a name for your library:",
+                 bg=BG, fg=TEXT, font=("TkDefaultFont", 11)
+                 ).pack(anchor="w", padx=16, pady=(18, 6))
+
+        self.name_var = tk.StringVar(value=entry["name"])
+        name_entry = tk.Entry(
+            self.win, textvariable=self.name_var,
+            bg=LIST_BG, fg=TEXT, relief="flat", bd=0,
+            font=("TkDefaultFont", 13),
+            highlightthickness=1, highlightbackground=BORDER,
+        )
+        name_entry.pack(fill=tk.X, padx=16, ipady=6)
+        name_entry.select_range(0, tk.END)
+        name_entry.focus_set()
+        name_entry.bind("<Return>", lambda e: self._save())
+        name_entry.bind("<Escape>", lambda e: self._skip())
+
+        btn_frame = tk.Frame(self.win, bg=BG)
+        btn_frame.pack(fill=tk.X, padx=16, pady=(12, 0))
+
+        style = ttk.Style()
+        style.configure("Pill.TButton", background=BTN_BG, foreground=TEXT,
+                        relief="flat", borderwidth=0, padding=(16, 8),
+                        font=("TkDefaultFont", 11))
+        style.map("Pill.TButton", background=[("active", BTN_ACTIVE)])
+
+        ttk.Button(btn_frame, text="OK", style="Pill.TButton",
+                   command=self._save).pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(btn_frame, text="Skip", style="Pill.TButton",
+                   command=self._skip).pack(side=tk.LEFT)
+
+    def _save(self):
+        new_name = self.name_var.get().strip()
+        if not new_name:
+            new_name = self.entry["name"]
+        self.win.destroy()
+        self.on_save(self.entry, new_name)
+        if self.then:
+            self.then()
+
+    def _skip(self):
+        """Keep current name and continue."""
+        self.win.destroy()
+        if self.then:
+            self.then()
 
 
 # ── ISO Exe Picker Modal ─────────────────────────────────────────────────────
