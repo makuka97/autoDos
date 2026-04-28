@@ -94,48 +94,45 @@ def detect_cd_source(game_dir: Path) -> list:
 
 
 def scan_iso_for_exes(iso_path: str) -> list:
-    """Use 7za to list ISO contents and return all candidate exe names.
+    """Scan an ISO 9660 disc image for game executables using pycdlib.
     Returns list of uppercase exe filenames e.g. ['WC3.EXE', 'INSTALL.EXE']
     Blacklisted names are filtered out.
     """
-    sevenzip = str(TOOLS_7ZA) if TOOLS_7ZA.exists() else shutil.which("7za") or shutil.which("7z")
-    if not sevenzip:
-        return []
     try:
-        result = subprocess.run(
-            [sevenzip, "l", iso_path],
-            capture_output=True, text=True, timeout=60
-        )
-        listing = result.stdout
-    except Exception:
+        import pycdlib
+    except ImportError:
         return []
 
     seen = set()
     candidates = []
-    for line in listing.splitlines():
-        line = line.strip()
-        if len(line) < 4:
-            continue
-        upper = line.upper()
-        if not (upper.endswith(".EXE") or upper.endswith(".COM") or upper.endswith(".BAT")):
-            continue
-        parts = line.split()
-        if not parts:
-            continue
-        fname = parts[-1]
-        for sep in ("/", "\\"):
-            if sep in fname:
-                fname = fname.split(sep)[-1]
-        name = fname.upper()
-        if not name or name in seen:
-            continue
-        stem = name.rsplit(".", 1)[0].lower() if "." in name else name.lower()
-        if stem in _ISO_EXE_BLACKLIST or len(stem) < 2:
-            continue
-        seen.add(name)
-        candidates.append(name)
 
-    # Sort: EXE first, then BAT, then COM
+    try:
+        iso = pycdlib.PyCdlib()
+        iso.open(iso_path)
+
+        for dirpath, dirlist, filelist in iso.walk(iso_path="/"):
+            for fname in filelist:
+                name = fname.upper()
+                # Strip Rock Ridge / Joliet version suffixes e.g. ";1"
+                if ";" in name:
+                    name = name[:name.index(";")]
+                if not name:
+                    continue
+                ext = name.rsplit(".", 1)[-1] if "." in name else ""
+                if ext not in ("EXE", "COM", "BAT"):
+                    continue
+                stem = name.rsplit(".", 1)[0].lower() if "." in name else name.lower()
+                if stem in _ISO_EXE_BLACKLIST or len(stem) < 2:
+                    continue
+                if name not in seen:
+                    seen.add(name)
+                    candidates.append(name)
+
+        iso.close()
+    except Exception:
+        return []
+
+    # Sort: EXE first, then BAT, then COM, then alphabetical
     def rank(name):
         ext = name.rsplit(".", 1)[-1] if "." in name else ""
         return ({"EXE": 0, "BAT": 1, "COM": 2}.get(ext, 3), name)
