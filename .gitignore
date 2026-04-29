@@ -5,3 +5,6 @@ library.json
 __pycache__/
 *.spec
 *.pyc
+controller_maps/
+AutoDOS.exe
+*.log
