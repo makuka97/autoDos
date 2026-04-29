@@ -26,7 +26,8 @@ if getattr(_sys, "frozen", False):
 else:
     BASE_DIR  = Path(__file__).parent
     ASSET_DIR = BASE_DIR
-GAMES_DIR       = BASE_DIR / "games"
+GAMES_DIR            = BASE_DIR / "games"
+CONTROLLER_MAPS_DIR  = BASE_DIR / "controller_maps"
 LIBRARY_FILE    = BASE_DIR / "library.json"
 LOGO_FILE       = ASSET_DIR / "logo.png"
 ICON_FILE       = ASSET_DIR / "icon.ico"
@@ -375,6 +376,151 @@ def extract_archive(archive: Path, dest: Path) -> None:
         raise RuntimeError(f"Unsupported archive format: {archive.suffix}")
 
 
+# ══════════════════════════════════════════════════════════════════════════════
+# CONTROLLER MODULE — XInput via ctypes, no external dependencies
+# ══════════════════════════════════════════════════════════════════════════════
+
+import ctypes, ctypes.wintypes as _wt
+
+class _XINPUT_GAMEPAD(ctypes.Structure):
+    _fields_ = [("wButtons",_wt.WORD),("bLeftTrigger",ctypes.c_ubyte),
+                ("bRightTrigger",ctypes.c_ubyte),("sThumbLX",ctypes.c_short),
+                ("sThumbLY",ctypes.c_short),("sThumbRX",ctypes.c_short),
+                ("sThumbRY",ctypes.c_short)]
+
+class _XINPUT_STATE(ctypes.Structure):
+    _fields_ = [("dwPacketNumber",_wt.DWORD),("Gamepad",_XINPUT_GAMEPAD)]
+
+try:    _xinput = ctypes.windll.xinput1_4
+except: _xinput = None
+
+AXIS_DEADZONE     = 10000
+TRIGGER_THRESHOLD = 50
+
+_BTN_MASK = {
+    "btn_a":0x1000,"btn_b":0x2000,"btn_x":0x4000,"btn_y":0x8000,
+    "btn_lb":0x0100,"btn_rb":0x0200,"btn_start":0x0010,"btn_select":0x0020,
+    "btn_dp_up":0x0001,"btn_dp_down":0x0002,"btn_dp_left":0x0004,"btn_dp_right":0x0008,
+}
+
+CTRL_INPUTS = [
+    ("btn_a","Button A"),("btn_b","Button B"),("btn_x","Button X"),("btn_y","Button Y"),
+    ("btn_lb","Left Bumper"),("btn_rb","Right Bumper"),
+    ("btn_lt","Left Trigger"),("btn_rt","Right Trigger"),
+    ("btn_start","Start"),("btn_select","Back/Select"),
+    ("btn_dp_up","D-Pad Up"),("btn_dp_down","D-Pad Down"),
+    ("btn_dp_left","D-Pad Left"),("btn_dp_right","D-Pad Right"),
+    ("ls_up","Left Stick Up"),("ls_down","Left Stick Down"),
+    ("ls_left","Left Stick Left"),("ls_right","Left Stick Right"),
+    ("rs_up","Right Stick Up"),("rs_down","Right Stick Down"),
+    ("rs_left","Right Stick Left"),("rs_right","Right Stick Right"),
+]
+
+DOSBOX_KEYS = [
+    "key_up","key_down","key_left","key_right",
+    "key_lctrl","key_rctrl","key_lalt","key_ralt",
+    "key_lshift","key_rshift","key_space","key_enter",
+    "key_escape","key_tab","key_backspace",
+    "key_1","key_2","key_3","key_4","key_5","key_6","key_7","key_8","key_9","key_0",
+    "key_f1","key_f2","key_f3","key_f4","key_f5",
+    "key_a","key_b","key_c","key_d","key_e","key_f","key_g","key_h","key_i","key_j",
+    "key_k","key_l","key_m","key_n","key_o","key_p","key_q","key_r","key_s","key_t",
+    "key_u","key_v","key_w","key_x","key_y","key_z",
+    "key_comma","key_period","key_slash","key_minus","(none)",
+]
+
+GENRE_PRESETS = {
+    "FPS": {
+        "ls_up":"key_up","ls_down":"key_down","ls_left":"key_left","ls_right":"key_right",
+        "btn_a":"key_lctrl","btn_b":"key_space","btn_x":"key_lshift","btn_y":"key_tab",
+        "btn_lb":"key_comma","btn_rb":"key_period",
+        "btn_lt":"key_1","btn_rt":"key_lctrl",
+        "btn_dp_up":"key_w","btn_dp_down":"key_s","btn_dp_left":"key_a","btn_dp_right":"key_d",
+    },
+    "Platformer": {
+        "ls_left":"key_left","ls_right":"key_right","ls_up":"key_up","ls_down":"key_down",
+        "btn_a":"key_lalt","btn_b":"key_lctrl","btn_x":"key_space","btn_y":"key_lshift",
+        "btn_lb":"key_1","btn_rb":"key_2","btn_start":"key_enter","btn_select":"key_escape",
+    },
+    "Custom": {},
+}
+
+_XINPUT_TO_BINDING = {
+    "btn_a":"stick_0 button 0","btn_b":"stick_0 button 1",
+    "btn_x":"stick_0 button 2","btn_y":"stick_0 button 3",
+    "btn_lb":"stick_0 button 4","btn_rb":"stick_0 button 5",
+    "btn_lt":"stick_0 button 6","btn_rt":"stick_0 button 7",
+    "btn_start":"stick_0 button 8","btn_select":"stick_0 button 9",
+    "btn_dp_up":"stick_0 hat 0 up","btn_dp_down":"stick_0 hat 0 down",
+    "btn_dp_left":"stick_0 hat 0 left","btn_dp_right":"stick_0 hat 0 right",
+    "ls_up":"stick_0 axis 1 0","ls_down":"stick_0 axis 1 1",
+    "ls_left":"stick_0 axis 0 0","ls_right":"stick_0 axis 0 1",
+    "rs_up":"stick_0 axis 3 0","rs_down":"stick_0 axis 3 1",
+    "rs_left":"stick_0 axis 2 0","rs_right":"stick_0 axis 2 1",
+}
+
+
+def read_xinput() -> dict | None:
+    """Poll XInput controller 0. Returns dict of input_key->bool or None."""
+    if not _xinput:
+        return None
+    state = _XINPUT_STATE()
+    if _xinput.XInputGetState(0, ctypes.byref(state)) != 0:
+        return None
+    gp = state.Gamepad
+    r = {}
+    for key, mask in _BTN_MASK.items():
+        r[key] = bool(gp.wButtons & mask)
+    r["btn_lt"]  = gp.bLeftTrigger  > TRIGGER_THRESHOLD
+    r["btn_rt"]  = gp.bRightTrigger > TRIGGER_THRESHOLD
+    r["ls_up"]   = gp.sThumbLY >  AXIS_DEADZONE
+    r["ls_down"] = gp.sThumbLY < -AXIS_DEADZONE
+    r["ls_left"] = gp.sThumbLX < -AXIS_DEADZONE
+    r["ls_right"]= gp.sThumbLX >  AXIS_DEADZONE
+    r["rs_up"]   = gp.sThumbRY >  AXIS_DEADZONE
+    r["rs_down"] = gp.sThumbRY < -AXIS_DEADZONE
+    r["rs_left"] = gp.sThumbRX < -AXIS_DEADZONE
+    r["rs_right"]= gp.sThumbRX >  AXIS_DEADZONE
+    return r
+
+
+def prepare_controller_conf(entry: dict) -> str | None:
+    """Write a per-game dosbox .map file AND a per-game .conf that includes it.
+    DOSBox Staging 0.82 does not support -mapperfile CLI arg — must use conf.
+    Returns path to the per-game .conf, or None if no mapping set.
+    """
+    ctrl_map = entry.get("controller_map", {})
+    if not ctrl_map:
+        return None
+
+    CONTROLLER_MAPS_DIR.mkdir(exist_ok=True)
+
+    # Write the .map file
+    map_path  = CONTROLLER_MAPS_DIR / (entry["id"] + ".map")
+    conf_path = CONTROLLER_MAPS_DIR / (entry["id"] + ".conf")
+
+    lines = []
+    for input_key, dosbox_key in ctrl_map.items():
+        if not dosbox_key or dosbox_key == "(none)":
+            continue
+        binding = _XINPUT_TO_BINDING.get(input_key, "")
+        if binding:
+            lines.append(f'{dosbox_key} "{binding}"')
+
+    if not lines:
+        return None
+
+    # Write a per-game conf that points to the map file
+    # Use a safe filename for the map (no spaces) so DOSBox can parse it
+    safe_map = CONTROLLER_MAPS_DIR / (entry["id"].replace(" ", "_") + ".map")
+    safe_map.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    conf_content = f"""[mapper]
+mapperfile = {safe_map}
+"""
+    conf_path.write_text(conf_content, encoding="utf-8")
+    return str(conf_path)
+
+
 # ── App ──────────────────────────────────────────────────────────────────────
 
 class App:
@@ -535,7 +681,11 @@ class App:
 
         ttk.Button(bar, text="💿  Add CD",
                    style="Pill.TButton",
-                   command=self._add_cd).pack(side=tk.LEFT)
+                   command=self._add_cd).pack(side=tk.LEFT, padx=(0, 6))
+
+        ttk.Button(bar, text="🎮  Controller",
+                   style="Pill.TButton",
+                   command=self._show_controller_setup).pack(side=tk.LEFT)
 
         ttk.Button(bar, text="🗑  Remove",
                    style="Pill.TButton",
@@ -905,8 +1055,11 @@ class App:
             c_path  = str(extracted)
             mount_c = f'mount c "{c_path}"' if " " in c_path else f"mount c {c_path}"
             run_cmd = f'"{cd_exe}"' if " " in cd_exe else cd_exe
-            cmd = [binary] + prefix + [
-                "-conf", str(ASSET_DIR / "dosbox.conf"),
+            ctrl_conf = prepare_controller_conf(entry)
+            cmd = [binary] + prefix + ["-conf", str(ASSET_DIR / "dosbox.conf")]
+            if ctrl_conf:
+                cmd += ["-conf", ctrl_conf]
+            cmd += [
                 "-c", f"cpu_cycles {conf_cycles}",
                 "-c", f"cpu_cycles_protected {conf_cycles}",
                 "-c", f"set memsize={memsize}",
@@ -930,8 +1083,11 @@ class App:
         mount_c     = f'mount c "{exe_dir_str}"' if " " in exe_dir_str else f"mount c {exe_dir_str}"
         run_cmd     = f'"{exe_name}"' if " " in exe_name else exe_name
 
-        cmd = [binary] + prefix + [
-            "-conf", str(ASSET_DIR / "dosbox.conf"),
+        ctrl_conf = prepare_controller_conf(entry)
+        cmd = [binary] + prefix + ["-conf", str(ASSET_DIR / "dosbox.conf")]
+        if ctrl_conf:
+            cmd += ["-conf", ctrl_conf]
+        cmd += [
             "-c", f"cpu_cycles {conf_cycles}",
             "-c", f"cpu_cycles_protected {conf_cycles}",
             "-c", f"set memsize={memsize}",
@@ -988,6 +1144,27 @@ class App:
                 break
         self._save_library()
         self._refresh_list()
+
+    # ── Controller Setup ──────────────────────────────────────────────────────
+
+    def _show_controller_setup(self):
+        """Open controller mapping UI for the selected game."""
+        entry = self._get_selected_entry()
+        if not entry:
+            messagebox.showinfo("Select a Game",
+                "Select a game from the list first, then click Controller.",
+                parent=self.root)
+            return
+        ControllerSetupModal(self.root, entry, on_save=self._on_controller_saved)
+
+    def _on_controller_saved(self, entry: dict, ctrl_map: dict):
+        """Save controller mapping to library."""
+        entry["controller_map"] = ctrl_map
+        for i, e in enumerate(self.library):
+            if e["id"] == entry["id"]:
+                self.library[i] = entry
+                break
+        self._save_library()
 
     # ── Remove ────────────────────────────────────────────────────────────
 
@@ -1439,6 +1616,208 @@ class IsoExePickerModal:
         chosen = self.exe_candidates[sel[0]]
         self.win.destroy()
         self.on_confirm(self.entry, chosen)
+
+
+# ── Controller Setup Modal ───────────────────────────────────────────────────
+
+class ControllerSetupModal:
+    """Per-game controller mapping UI with genre presets and live button detection."""
+
+    def __init__(self, parent, entry: dict, on_save):
+        self.entry   = entry
+        self.on_save = on_save
+        self.mapping = dict(entry.get("controller_map", {}))
+        self._polling     = False
+        self._poll_target = None
+
+        self.win = tk.Toplevel(parent)
+        self.win.title(f"Controller — {entry['name']}")
+        self.win.configure(bg=BG)
+        self.win.geometry("560x580")
+        self.win.resizable(False, False)
+        self.win.transient(parent)
+        self.win.lift()
+        self.win.focus_force()
+        self.win.protocol("WM_DELETE_WINDOW", self._close)
+        self._build_ui()
+        self._refresh_table()
+
+    def _build_ui(self):
+        # Preset row
+        hdr = tk.Frame(self.win, bg=BG)
+        hdr.pack(fill=tk.X, padx=16, pady=(14, 4))
+        tk.Label(hdr, text="Preset:", bg=BG, fg=TEXT,
+                 font=("TkDefaultFont", 11)).pack(side=tk.LEFT, padx=(0, 8))
+        for preset in GENRE_PRESETS:
+            ttk.Button(hdr, text=preset, style="Pill.TButton",
+                       command=lambda p=preset: self._apply_preset(p)
+                       ).pack(side=tk.LEFT, padx=(0, 4))
+
+        # Status
+        self.status_var = tk.StringVar(
+            value="Click Assign next to any input, then press a button on your controller.")
+        tk.Label(self.win, textvariable=self.status_var,
+                 bg=BG, fg=MUTED, font=("TkDefaultFont", 10),
+                 wraplength=520, justify=tk.LEFT
+                 ).pack(fill=tk.X, padx=16, pady=(0, 6))
+
+        # Table
+        tframe = tk.Frame(self.win, bg=BORDER, bd=1)
+        tframe.pack(fill=tk.BOTH, expand=True, padx=16, pady=(0, 8))
+        inner = tk.Frame(tframe, bg=LIST_BG)
+        inner.pack(fill=tk.BOTH, expand=True, padx=1, pady=1)
+
+        # Header row
+        hrow = tk.Frame(inner, bg=BTN_BG)
+        hrow.pack(fill=tk.X)
+        tk.Label(hrow, text="Controller Input", bg=BTN_BG, fg=TEXT,
+                 font=("TkDefaultFont", 10), width=22, anchor="w", padx=8).pack(side=tk.LEFT)
+        tk.Label(hrow, text="DOSBox Key", bg=BTN_BG, fg=TEXT,
+                 font=("TkDefaultFont", 10), anchor="w", padx=8).pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        # Scrollable rows via canvas
+        canvas = tk.Canvas(inner, bg=LIST_BG, highlightthickness=0)
+        sb = ttk.Scrollbar(inner, orient=tk.VERTICAL, command=canvas.yview)
+        canvas.configure(yscrollcommand=sb.set)
+        sb.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        self.row_frame = tk.Frame(canvas, bg=LIST_BG)
+        win_id = canvas.create_window((0, 0), window=self.row_frame, anchor="nw")
+        self.row_frame.bind("<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.bind("<Configure>",
+            lambda e: canvas.itemconfig(win_id, width=e.width))
+
+        # Bottom buttons
+        btn_row = tk.Frame(self.win, bg=BG)
+        btn_row.pack(fill=tk.X, padx=16, pady=(0, 14))
+        ttk.Button(btn_row, text="✓  Save", style="Pill.TButton",
+                   command=self._save).pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(btn_row, text="Clear All", style="Pill.TButton",
+                   command=self._clear_all).pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(btn_row, text="Cancel", style="Pill.TButton",
+                   command=self._close).pack(side=tk.LEFT)
+
+        self._row_widgets = {}
+
+    def _refresh_table(self):
+        for w in self.row_frame.winfo_children():
+            w.destroy()
+        self._row_widgets = {}
+        for i, (key, label) in enumerate(CTRL_INPUTS):
+            bg = LIST_BG if i % 2 == 0 else ALT_ROW_BG
+            row = tk.Frame(self.row_frame, bg=bg)
+            row.pack(fill=tk.X)
+            tk.Label(row, text=label, bg=bg, fg=TEXT,
+                     font=("TkDefaultFont", 11), width=22, anchor="w",
+                     padx=8, pady=4).pack(side=tk.LEFT)
+            assigned = self.mapping.get(key, "(none)")
+            val_lbl = tk.Label(row, text=assigned, bg=bg,
+                               fg=TEXT if assigned != "(none)" else MUTED,
+                               font=("TkDefaultFont", 11), anchor="w", padx=8)
+            val_lbl.pack(side=tk.LEFT, fill=tk.X, expand=True)
+            ttk.Button(row, text="Assign", style="Pill.TButton",
+                       command=lambda k=key, l=label: self._start_listen(k, l)
+                       ).pack(side=tk.RIGHT, padx=4, pady=2)
+            self._row_widgets[key] = val_lbl
+
+    def _apply_preset(self, preset: str):
+        self.mapping = dict(GENRE_PRESETS.get(preset, {}))
+        self._refresh_table()
+        self.status_var.set(f"Applied {preset} preset. Click Assign to customise.")
+
+    def _start_listen(self, input_key: str, label: str):
+        if self._polling:
+            return
+        self._polling     = True
+        self._poll_target = input_key
+        self.status_var.set(f"Press a button on your controller for '{label}'...")
+        self.win.after(100, self._poll_for_input)
+
+    def _poll_for_input(self):
+        if not self._polling:
+            return
+        state = read_xinput()
+        if state is None:
+            self.status_var.set("Controller not detected.")
+            self._polling = False
+            return
+        pressed = [k for k, v in state.items() if v]
+        if pressed:
+            detected = pressed[0]
+            inp_label = next((l for k, l in CTRL_INPUTS if k == detected), detected)
+            self._polling = False
+            self.status_var.set(f"Detected: {inp_label}. Now choose the DOSBox key.")
+            self._show_key_chooser(self._poll_target, detected, inp_label)
+        else:
+            self.win.after(50, self._poll_for_input)
+
+    def _show_key_chooser(self, input_key: str, detected_input: str, inp_label: str):
+        picker = tk.Toplevel(self.win)
+        picker.title("Choose DOSBox Key")
+        picker.configure(bg=BG)
+        picker.geometry("300x400")
+        picker.resizable(False, False)
+        picker.transient(self.win)
+        picker.lift()
+        picker.focus_force()
+
+        tk.Label(picker, text=f"Assign {inp_label} to:",
+                 bg=BG, fg=TEXT, font=("TkDefaultFont", 11)
+                 ).pack(anchor="w", padx=12, pady=(12, 4))
+
+        frame = tk.Frame(picker, bg=BORDER, bd=1)
+        frame.pack(fill=tk.BOTH, expand=True, padx=12, pady=(0, 8))
+        inner = tk.Frame(frame, bg=LIST_BG)
+        inner.pack(fill=tk.BOTH, expand=True, padx=1, pady=1)
+
+        lb = tk.Listbox(inner, bg=LIST_BG, fg=TEXT,
+                        selectbackground=SEL_BG, selectforeground=TEXT,
+                        activestyle="none", relief="flat", bd=0,
+                        font=("TkDefaultFont", 11), highlightthickness=0)
+        sb2 = ttk.Scrollbar(inner, orient=tk.VERTICAL, command=lb.yview)
+        lb.configure(yscrollcommand=sb2.set)
+        sb2.pack(side=tk.RIGHT, fill=tk.Y)
+        lb.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        for k in DOSBOX_KEYS:
+            lb.insert(tk.END, f"  {k}")
+        current = self.mapping.get(input_key, "(none)")
+        if current in DOSBOX_KEYS:
+            idx = DOSBOX_KEYS.index(current)
+            lb.selection_set(idx)
+            lb.see(idx)
+
+        def confirm():
+            sel = lb.curselection()
+            if not sel:
+                return
+            chosen = DOSBOX_KEYS[sel[0]]
+            self.mapping[input_key] = chosen
+            lbl = self._row_widgets.get(input_key)
+            if lbl:
+                lbl.config(text=chosen, fg=TEXT if chosen != "(none)" else MUTED)
+            self.status_var.set(f"Assigned {inp_label} → {chosen}")
+            picker.destroy()
+
+        lb.bind("<Double-Button-1>", lambda e: confirm())
+        lb.bind("<Return>",          lambda e: confirm())
+        ttk.Button(picker, text="OK", style="Pill.TButton",
+                   command=confirm).pack(pady=(0, 12))
+
+    def _clear_all(self):
+        self.mapping = {}
+        self._refresh_table()
+        self.status_var.set("All mappings cleared.")
+
+    def _save(self):
+        self.on_save(self.entry, self.mapping)
+        self.status_var.set("Saved!")
+        self.win.after(600, self._close)
+
+    def _close(self):
+        self._polling = False
+        self.win.destroy()
 
 
 # ── Entry Point ───────────────────────────────────────────────────────────────
